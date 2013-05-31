@@ -20,27 +20,17 @@ describe App do
   describe 'routing' do
     let (:app_class) { Class.new(App) }
 
-    it 'should route GET' do
+    it 'should match a route for any supported verbs' do
       url = random_url
+      verb = App::HTTP_VERBS.sample
+
       app_class.class_eval do
-        get url do
+        send verb, url do
           'foo'
         end
       end
 
-      res = mock_request :get, url, app_class
-      res[2].first.should == 'foo'
-    end
-
-    it 'should route POST' do
-      url = random_url
-      app_class.class_eval do
-        post url do
-          'foo'
-        end
-      end
-
-      res = mock_request :post, url, app_class
+      res = mock_request verb, url, app_class
       res[2].first.should == 'foo'
     end
   end

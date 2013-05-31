@@ -1,8 +1,9 @@
 module LittleFrank
   class App
+    HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
     extend ClassMethods
 
-    [:get, :post].each do |method|
+    HTTP_VERBS.each do |method|
       define_singleton_method method do |path, &blk|
         (routes[method] ||= {})[path] = Proc.new &blk
       end
