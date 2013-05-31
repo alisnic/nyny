@@ -16,7 +16,7 @@ module LittleFrank
 
         RequestScope.new(self.class.defaults, req).apply_to &handler
       rescue KeyError
-        [404, {"Content-Type" => "text/html"}, [""]]
+        [404, self.class.defaults[:headers], [""]]
       end
     end
 
