@@ -1,8 +1,10 @@
+require 'rack'
+
 module Frankie
   class App
     extend ClassLevelApi
+
     RouteNotFoundError = Class.new StandardError
-    #include the api exposed to the developers
     RES_NOT_FOUND = Rack::Response.new '', 404, defaults[:headers]
 
     def initialize app=nil
@@ -38,7 +40,6 @@ module Frankie
     end
 
     def build_middleware_chain
-      # #<Mid1> -> #<Mid2> -> ...
       @top = self.class.middlewares.reverse.reduce (self) do |prev, entry|
         klass, args, blk = entry
         klass.new prev, *args, &blk
