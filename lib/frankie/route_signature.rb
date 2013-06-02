@@ -26,7 +26,7 @@ module Frankie
 
       if data
         if pattern.respond_to? :names
-          Hash[data.names.map {|n| [n.to_sym, data[n]]}]
+          Hash[data.names.map {|n| [n.to_sym, URI.unescape(data[n])]}]
         else
           {}
         end
