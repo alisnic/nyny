@@ -21,7 +21,7 @@ describe App do
     url = random_url
     verb = ClassLevelApi::HTTP_VERBS.sample
 
-    app_class.class_eval do
+    app_class = Class.new(App) do
       send verb, url do
         'foo'
       end
@@ -29,6 +29,19 @@ describe App do
 
     res = mock_request verb, url, app_class
     res.body.first.should == 'foo'
+  end
+
+  it 'should support route patterns' do
+    app_class = Class.new(App) do
+      get '/:name' do
+        "hello #{params[:name]}"
+      end
+    end
+
+    url = random_url
+    env = Rack::MockRequest.env_for url
+    res = app_class.new.call(env)
+    res.body.first.should == "hello #{url.split('/').last}"
   end
 
 end

@@ -1,5 +1,6 @@
 module Frankie
   class App
+    RouteNotFoundError = Class.new StandardError
     #include the api exposed to the developers
     extend ClassLevelApi
 
@@ -8,14 +9,21 @@ module Frankie
       build_middleware_chain
     end
 
+    def handler_for_path method, path
+      self.class.routes.fetch(method.downcase.to_sym).each do |sig, h|
+        params = sig.match path
+        return [h, params] if params
+      end
+
+      raise RouteNotFoundError
+    end
+
     def route req
       begin
-        handler = self.class.routes
-                      .fetch(req.request_method.downcase.to_sym)
-                      .fetch(req.path)
-
+        handler, params = handler_for_path req.request_method, req.path
+        req.params.merge! params unless params.empty?
         RequestScope.new(self.class.defaults, req).apply_to &handler
-      rescue KeyError
+      rescue KeyError, RouteNotFoundError
         Rack::Response.new '', 404, self.class.defaults[:headers]
       end
     end

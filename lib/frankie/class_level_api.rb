@@ -1,11 +1,9 @@
 module Frankie
   module ClassLevelApi
-    HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put,
-                  :trace]
-
+    HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
     HTTP_VERBS.each do |method|
-      define_method method do |path, &blk|
-        (routes[method] ||= {})[path] = Proc.new &blk
+      define_method method do |str, &blk|
+        (routes[method] ||= {})[RouteSignature.new(str)] = Proc.new &blk
       end
     end
 
