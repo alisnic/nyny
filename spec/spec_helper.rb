@@ -1,6 +1,6 @@
-require 'little_frank'
+require 'frankie'
 require 'rack'
-include LittleFrank
+include Frankie
 
 def extended_modules_for kls
   (class << kls; self end).included_modules

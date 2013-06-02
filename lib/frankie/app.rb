@@ -1,4 +1,4 @@
-module LittleFrank
+module Frankie
   class App
     #include the api exposed to the developers
     extend ClassLevelApi

@@ -1,4 +1,4 @@
-module LittleFrank
+module Frankie
   module ClassLevelApi
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put,
                   :trace]

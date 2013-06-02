@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 describe RequestScope do
   let (:env) { Rack::MockRequest.env_for '/', :params => {:some => 'param'} }
   let (:dummy_request) { Rack::Request.new(env) }
-  let (:defaults) { LittleFrank::App.defaults }
+  let (:defaults) { Frankie::App.defaults }
   let (:subject) { RequestScope.new defaults, dummy_request }
   let (:handler) {
     Proc.new {"hello"}
