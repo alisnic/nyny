@@ -1,8 +1,9 @@
 module Frankie
   class App
+    extend ClassLevelApi
     RouteNotFoundError = Class.new StandardError
     #include the api exposed to the developers
-    extend ClassLevelApi
+    RES_NOT_FOUND = Rack::Response.new '', 404, defaults[:headers]
 
     def initialize app=nil
       @app = app
@@ -24,7 +25,11 @@ module Frankie
         req.params.merge! params unless params.empty?
         RequestScope.new(self.class.defaults, req).apply_to &handler
       rescue KeyError, RouteNotFoundError
-        Rack::Response.new '', 404, self.class.defaults[:headers]
+        if @app
+          @app.call(req.env)
+        else
+          RES_NOT_FOUND
+        end
       end
     end
 
