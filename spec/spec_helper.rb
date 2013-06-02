@@ -17,3 +17,13 @@ def random_url levels=1
 
   "/#{parts.join('/')}"
 end
+
+class NullMiddleware
+  def initialize app
+    @app = app
+  end
+
+  def call env
+    @app.call env
+  end
+end

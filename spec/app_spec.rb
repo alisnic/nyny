@@ -1,37 +1,50 @@
 require_relative 'spec_helper'
 
 describe App do
-  it { should respond_to(:call) }
+  let (:app_class) { Class.new(App) }
 
   it 'should have the class methods included' do
     extended_modules_for(App).should include(ClassMethods)
   end
 
-  it 'should return a rack-compatible array on call' do
+  it 'should return a rack response array on call' do
     response = mock_request :get, '/'
-
-    response.should be_a(Array)
-    response.size.should == 3
-    response[0].should be_a(Fixnum)
-    response[1].should be_a(Hash)
-    response[2].should respond_to(:each)
+    response.should be_a(Rack::Response)
   end
 
-  describe 'routing' do
-    let (:app_class) { Class.new(App) }
+  it 'should return 404 for non-matched routes' do
+    response = mock_request :get, random_url
+    response.status.should == 404
+  end
 
-    it 'should match a route for any supported verbs' do
-      url = random_url
-      verb = App::HTTP_VERBS.sample
+  it 'should match a route for any supported verbs' do
+    url = random_url
+    verb = ClassMethods::HTTP_VERBS.sample
 
-      app_class.class_eval do
-        send verb, url do
-          'foo'
-        end
+    app_class.class_eval do
+      send verb, url do
+        'foo'
       end
+    end
 
-      res = mock_request verb, url, app_class
-      res[2].first.should == 'foo'
+    res = mock_request verb, url, app_class
+    res.body.first.should == 'foo'
+  end
+
+  describe 'middlewares' do
+    before do
+      app_class.class_eval do
+        use NullMiddleware
+      end
+    end
+
+    it 'should allow to add a middleware' do
+      app_class.middlewares.last.first.should == NullMiddleware
+    end
+
+    it 'should call the middleware when called' do
+      NullMiddleware.any_instance.should_receive :call
+      response = mock_request :get, random_url, app_class
     end
   end
 end
