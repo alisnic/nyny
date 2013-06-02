@@ -3,6 +3,10 @@ module LittleFrank
     attr_reader :request
     attr_accessor :response
 
+    def self.add_helper_module hmodule
+      include hmodule
+    end
+
     def initialize defaults, req
       @headers = defaults[:headers].dup
       @status = 200

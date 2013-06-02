@@ -27,3 +27,6 @@ class NullMiddleware
     @app.call env
   end
 end
+
+module NullHelper
+end

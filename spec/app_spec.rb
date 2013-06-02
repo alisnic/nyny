@@ -7,7 +7,7 @@ describe App do
     extended_modules_for(App).should include(ClassMethods)
   end
 
-  it 'should return a rack response array on call' do
+  it 'should return a rack response on call' do
     response = mock_request :get, '/'
     response.should be_a(Rack::Response)
   end
@@ -31,20 +31,4 @@ describe App do
     res.body.first.should == 'foo'
   end
 
-  describe 'middlewares' do
-    before do
-      app_class.class_eval do
-        use NullMiddleware
-      end
-    end
-
-    it 'should allow to add a middleware' do
-      app_class.middlewares.last.first.should == NullMiddleware
-    end
-
-    it 'should call the middleware when called' do
-      NullMiddleware.any_instance.should_receive :call
-      response = mock_request :get, random_url, app_class
-    end
-  end
 end

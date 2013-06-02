@@ -30,5 +30,9 @@ module LittleFrank
     def use middleware, *args, &block
       middlewares << [middleware, args, block]
     end
+
+    def helpers *args
+      args.each {|m| RequestScope.add_helper_module m }
+    end
   end
 end
