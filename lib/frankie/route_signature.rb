@@ -2,8 +2,12 @@ module Frankie
   class RouteSignature
     NAME_PATTERN = /:(\S+)/
     attr_reader :pattern
-    def initialize string
-      @pattern = pattern_for string.dup
+    def initialize route
+      @pattern = if route.is_a? Regexp
+                   route
+                 else
+                   pattern_for route.dup
+                 end
     end
 
     def pattern_for string
