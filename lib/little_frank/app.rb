@@ -1,5 +1,6 @@
 module LittleFrank
   class App
+    #include the api exposed to the developers
     extend ClassLevelApi
 
     def initialize app=nil

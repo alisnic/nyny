@@ -3,8 +3,8 @@ module LittleFrank
     attr_reader :request
     attr_accessor :response
 
-    def self.add_helper_module hmodule
-      include hmodule
+    def self.add_helper_module m
+      include m
     end
 
     def initialize defaults, req
