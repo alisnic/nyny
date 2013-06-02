@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-describe ClassMethods do
+describe ClassLevelApi do
   let (:app_class) { Class.new(App) }
   describe 'middlewares' do
     before do

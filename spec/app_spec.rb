@@ -4,7 +4,7 @@ describe App do
   let (:app_class) { Class.new(App) }
 
   it 'should have the class methods included' do
-    extended_modules_for(App).should include(ClassMethods)
+    extended_modules_for(App).should include(ClassLevelApi)
   end
 
   it 'should return a rack response on call' do
@@ -19,7 +19,7 @@ describe App do
 
   it 'should match a route for any supported verbs' do
     url = random_url
-    verb = ClassMethods::HTTP_VERBS.sample
+    verb = ClassLevelApi::HTTP_VERBS.sample
 
     app_class.class_eval do
       send verb, url do

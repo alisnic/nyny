@@ -1,6 +1,6 @@
 module LittleFrank
   class App
-    extend ClassMethods
+    extend ClassLevelApi
 
     def initialize app=nil
       @app = app
