@@ -1,3 +1,4 @@
+require 'uri'
 require "frankie/version"
 require 'frankie/request_scope'
 require 'frankie/route_signature'
