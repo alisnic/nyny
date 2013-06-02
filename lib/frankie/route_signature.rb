@@ -1,6 +1,7 @@
 module Frankie
   class RouteSignature
     NAME_PATTERN = /:(\S+)/
+
     attr_reader :pattern
     def initialize route
       @pattern = if route.is_a? Regexp

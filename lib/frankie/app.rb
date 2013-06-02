@@ -25,7 +25,7 @@ module Frankie
       begin
         handler, params = handler_for_path req.request_method, req.path
         req.params.merge! params unless params.empty?
-        RequestScope.new(self.class.defaults, req).apply_to &handler
+        RequestScope.new(self, req).apply_to &handler
       rescue KeyError, RouteNotFoundError
         if @app
           @app.call(req.env)

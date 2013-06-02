@@ -7,9 +7,10 @@ module Frankie
       end
     end
 
-    def middlewares
-      @middlewares ||= []
-    end
+    def middlewares;  @middlewares ||= []   end
+    def routes;       @routes ||= {}        end
+    def before_hooks; @before_hooks ||=[]   end
+    def after_hooks;  @after_hooks ||=[]    end
 
     def defaults
       @defaults ||= {
@@ -17,8 +18,12 @@ module Frankie
       }
     end
 
-    def routes
-      @routes ||= {}
+    def before &blk
+      before_hooks << Proc.new(&blk)
+    end
+
+    def after &blk
+      after_hooks << Proc.new(&blk)
     end
 
     def content_type type
