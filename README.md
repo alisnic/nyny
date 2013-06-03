@@ -101,7 +101,7 @@ Frankie supports helpers as Sinatra does:
         helpers MyHelperModule
     end
 
-Using a helpers implies that the helpor module is included in the [RequestScope][2], and that all the methods in that midule will be available inside a route definition block.
+Using a helper implies that the helper module is included in the [RequestScope][2], and that all the methods in that module will be available inside a route definition block.
 
 ## F. A. Q.
 TBD.
