@@ -11,7 +11,7 @@ I wanted to understand how sinatra works, but the code was pretty challenging. S
 ## Why you might want to use Frankie instead of Sinatra
 - It's very small (<200 LOC), which is just a little overhead on top of Rack.
 - Sinatra is a drop-in replacement for Frankie. Anytime you feel that you need more, you just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
-- It's at least __2 times faster__ than Sinatra (see [Performance][performance] for details)
+- It's __~2 times faster__ than Sinatra (see [Performance][performance] for details)
 - You want to dig into the source code and change to your needs (Frankie's source code is more welcoming)
 - Each Frankie app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.
 
@@ -101,7 +101,7 @@ Frankie supports helpers as Sinatra does:
         helpers MyHelperModule
     end
 
-Using a helpers implies that the helpor module is included in the [RequestScope][2], and that all the methods in taht midule will be available inside a route definition block.
+Using a helpers implies that the helpor module is included in the [RequestScope][2], and that all the methods in that midule will be available inside a route definition block.
 
 ## F. A. Q.
 TBD.
