@@ -44,4 +44,32 @@ describe App do
     res.body.first.should == "hello #{url.split('/').last}"
   end
 
+  it 'should support adding before filers' do
+    app_class = Class.new(App) do
+      before do
+        request.should_not == nil
+      end
+
+      get '/' do
+        "hello"
+      end
+    end
+
+    mock_request :get, '/', app_class
+  end
+
+  it 'should support adding after filers' do
+    app_class = Class.new(App) do
+      after do
+        response.should_not == nil
+      end
+
+      get '/' do
+        "hello"
+      end
+    end
+
+    mock_request :get, '/', app_class
+  end
+
 end
