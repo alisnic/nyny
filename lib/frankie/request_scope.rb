@@ -8,7 +8,7 @@ module Frankie
 
     def initialize app, req
       @app = app
-      @headers = {}
+      @headers = {'Content-Type' => 'text/html'}
       @status = 200
       @request = req
     end
