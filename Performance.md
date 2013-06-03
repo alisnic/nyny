@@ -8,7 +8,7 @@ Hardware: Intel(R) Core(TM) i7-2620M CPU @ 2.70GHz, 6 GB DDR3
 
 | Benchmark | Frankie (req/s) | Sinatra (req/s) |
 |-----------|:---------------:|:---------------:|
-| Simple    |4838             |2328             |
+| Simple    |__4838__         |2328             |
 
 See below the code for each benchmark
 
