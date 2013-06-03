@@ -120,4 +120,4 @@ TBD.
 [2]: https://github.com/alisnic/frankie/blob/master/lib/frankie/request_scope.rb
 [3]: http://rack.rubyforge.org/doc/classes/Rack/Request.html
 [4]: http://rack.rubyforge.org/doc/classes/Rack/Response.html
-[performance]: https://github.com/alisnic/frankie/blob/master/README.md
+[performance]: https://github.com/alisnic/frankie/blob/master/Performance.md
