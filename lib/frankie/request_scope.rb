@@ -17,6 +17,10 @@ module Frankie
       request.params
     end
 
+    def cookies
+      request.cookies
+    end
+
     def headers hash
       @headers.merge! hash
     end

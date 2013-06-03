@@ -9,7 +9,7 @@ Sinatra is a wonderul gem (in both senses), but it fails at one thing: to be an 
 I wanted to understand how sinatra works, but the code was pretty challenging. So I decided I should re-implement the basic things sinatra has. Thus, __Frankie__ was born.
 
 ## Why you might want to use Frankie instead of Sinatra
-- It's very small (200 LOC), which is just a little overhead on top of Rack.
+- It's very small (<200 LOC), which is just a little overhead on top of Rack.
 - Sinatra is a drop-in replacement for Frankie. Anytime you feel that you need more, you just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
 - It's faster than Sinatra (TODO: benchmarks)
 - You want to dig into the source code and change to your needs (Frankie's source code is more welcoming)
@@ -55,6 +55,7 @@ As was said above, when you pass a block to a route definition, that block is ev
 - `headers` - allows you to add headers to the response (ex: `headers 'Content-Type' => 'text/html'`)
 - `status` - allows you to set the status of the response (ex: `status 403`)
 - `redirect_to` - sets the response to redirect (ex: `redirect_to 'http://google.com'`)
+- `cookies` - a hash which allows you to access/modify cookies (ex: `cookies[:foo] = 'bar'`)
 
 ### Filters
 
