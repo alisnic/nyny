@@ -21,7 +21,9 @@ A Frankie app must _always_ be in a class which inherits from `Frankie::App`.
 
     #config.ru
     class App < Frankie::App
-        get '/' { 'Hello, World' }
+        get '/' do 
+            'Hello, World'
+        end
     end
 
     run App.new
@@ -71,7 +73,9 @@ Unlike Sinatra, Frankie supports only "generic" before and after filters. This m
             puts response.inspect
         end
 
-        get '/' { 'hello' }
+        get '/' do
+            'hello'
+        end
     end
 
 Before and after filters are also evaluated in a RequestScope context. A little exception are the after filters, which can access the __response__ object ([Rack::Response][4]).
