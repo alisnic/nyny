@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Frankie::VERSION
   spec.authors       = ["Andrei Lisnic"]
   spec.email         = ["andrei.lisnic@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{sinatra's little brother}
+  spec.summary       = %q{sinatra's little brother}
   spec.homepage      = ""
   spec.license       = "MIT"
 
