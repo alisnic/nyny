@@ -11,6 +11,7 @@ Hardware: Intel(R) Core(TM) i7-2620M CPU @ 2.70GHz, 6 GB DDR3
 |-----------|:---------------:|:---------------:|
 | Simple    |__5012__         |2534             |
 | UrlPattern|__4564__         |2338             |
+| Filters   |__4510__         |2465             |
 
 See below the code for each benchmark
 
@@ -24,9 +25,24 @@ See below the code for each benchmark
     end
     
 ### UrlPattern
-    class App < Frankie::App
+    class App < Frankie::App #(or Sinatra::Base)
       get '/hello/:name' do
         "Hello #{params[:name]}!"
+      end
+    end
+
+### Filters
+    class App < Frankie::App #(or Sinatra::Base)
+      before do
+        request
+      end
+    
+      after do
+        response
+      end
+    
+      get '/' do
+        'Hello World!'
       end
     end
 
