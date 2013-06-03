@@ -2,12 +2,16 @@ require 'frankie'
 require 'rack'
 include Frankie
 
+class Rack::MockRequest
+  def trace(uri, opts={})   request("TRACE", uri, opts)   end
+end
+
 def extended_modules_for kls
   (class << kls; self end).included_modules
 end
 
-def mock_request method, url, kls=App
-  kls.new.call Rack::MockRequest.env_for(url, :method => method)
+def mock_app &blk
+  Rack::MockRequest.new Class.new(App, &blk).new
 end
 
 def random_url levels=1

@@ -3,7 +3,6 @@ require_relative 'spec_helper'
 describe RequestScope do
   let (:env) { Rack::MockRequest.env_for '/', :params => {:some => 'param'} }
   let (:dummy_request) { Rack::Request.new(env) }
-  let (:defaults) { Frankie::App.defaults }
   let (:subject) { RequestScope.new Frankie::App.new, dummy_request }
   let (:handler) {
     Proc.new {"hello"}
@@ -16,6 +15,8 @@ describe RequestScope do
 
   describe 'exposed methods' do
     its (:params) { should == dummy_request.params }
+    its (:cookies) { should == dummy_request.cookies }
+    its (:session) { should == dummy_request.session }
 
     it '#headers should set the header values' do
       subject.headers 'Head' => 'Tail'

@@ -1,19 +1,19 @@
 require_relative 'spec_helper'
 
 describe App do
-  let (:app_class) { Class.new(App) }
+  let (:app) { mock_app {} }
 
   it 'should have the class methods included' do
     extended_modules_for(App).should include(ClassLevelApi)
   end
 
   it 'should return a rack response on call' do
-    response = mock_request :get, '/'
+    response = app.get '/'
     response.should be_a(Rack::Response)
   end
 
   it 'should return 404 for non-matched routes' do
-    response = mock_request :get, random_url
+    response = app.get random_url
     response.status.should == 404
   end
 
@@ -21,31 +21,29 @@ describe App do
     url = random_url
     verb = ClassLevelApi::HTTP_VERBS.sample
 
-    app_class = Class.new(App) do
+    app = mock_app do
       send verb, url do
         'foo'
       end
     end
 
-    res = mock_request verb, url, app_class
-    res.body.first.should == 'foo'
+    res = app.send verb, url
+    res.body.should == 'foo'
   end
 
   it 'should support route patterns' do
-    app_class = Class.new(App) do
+    app = mock_app do
       get '/:name' do
         "hello #{params[:name]}"
       end
     end
 
-    url = random_url
-    env = Rack::MockRequest.env_for url
-    res = app_class.new.call(env)
-    res.body.first.should == "hello #{url.split('/').last}"
+    res = app.get '/foo'
+    res.body.should == "hello foo"
   end
 
   it 'should support adding before filers' do
-    app_class = Class.new(App) do
+    app = mock_app do
       before do
         request.should_not == nil
       end
@@ -55,11 +53,28 @@ describe App do
       end
     end
 
-    mock_request :get, '/', app_class
+    app.get('/')
+  end
+
+  it 'does not maintain state between requests' do
+    app = mock_app do
+      get '/state' do
+        @foo ||= "new"
+        body = "Foo: #{@foo}"
+        @foo = 'discard'
+        body
+      end
+    end
+
+    2.times do
+      response = app.get('/state')
+      response.should be_ok
+      'Foo: new'.should == response.body
+    end
   end
 
   it 'should support adding after filers' do
-    app_class = Class.new(App) do
+    app = mock_app do
       after do
         response.should_not == nil
       end
@@ -68,8 +83,18 @@ describe App do
         "hello"
       end
     end
-
-    mock_request :get, '/', app_class
+    app.get '/'
   end
 
+  it 'should be able to set cookies' do
+    app_class = Class.new(App) do
+      post '/write' do
+        cookies.merge! params
+      end
+    end
+
+    req = Rack::MockRequest.env_for '/write?foo=bar', :method => :post
+    res = app_class.new.call(req)
+    res.headers['Set-Cookie'].should == 'foo=bar'
+  end
 end
