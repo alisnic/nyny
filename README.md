@@ -94,13 +94,16 @@ __Frankie__ also supports middleware itself, and that means you can use __Rack__
 
 ### Helpers
 
-__Frankie__ supports helpers as sinatra does:
+__Frankie__ supports helpers as __Sinatra__ does:
 
     class App < Frankie::App
         helpers MyHelperModule
     end
     
 Using a helpers implies that the helpor module is included in the [RequestScope][2], and that all the methods in taht midule will be available inside a route definition block.
+
+## FAQ
+TBD.
 
 
 ## Contributing
