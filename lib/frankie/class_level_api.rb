@@ -20,10 +20,6 @@ module Frankie
       after_hooks << Proc.new(&blk)
     end
 
-    def content_type type
-      defaults[:headers]["Content-Type"] = type
-    end
-
     def use middleware, *args, &block
       middlewares << [middleware, args, block]
     end
