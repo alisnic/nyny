@@ -12,12 +12,6 @@ module Frankie
     def before_hooks; @before_hooks ||=[]   end
     def after_hooks;  @after_hooks ||=[]    end
 
-    def defaults
-      @defaults ||= {
-        :headers => {"Content-Type" => "text/html"}
-      }
-    end
-
     def before &blk
       before_hooks << Proc.new(&blk)
     end

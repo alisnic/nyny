@@ -5,7 +5,7 @@ module Frankie
     extend ClassLevelApi
 
     RouteNotFoundError = Class.new StandardError
-    RES_NOT_FOUND = Rack::Response.new '', 404, defaults[:headers]
+    RES_NOT_FOUND = Rack::Response.new '', 404
 
     def initialize app=nil
       @app = app

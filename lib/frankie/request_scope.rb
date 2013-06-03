@@ -8,7 +8,7 @@ module Frankie
 
     def initialize app, req
       @app = app
-      @headers = app.class.defaults[:headers].dup
+      @headers = {}
       @status = 200
       @request = req
     end
