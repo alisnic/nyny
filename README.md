@@ -9,15 +9,15 @@ Sinatra is a wonderul gem (in both senses), but it fails at one thing: to be an 
 I wanted to understand how sinatra works, but the code was pretty challenging. So I decided I should re-implement the basic things sinatra has. Thus, __Frankie__ was born.
 
 ## Why you might want to use Frankie instead of Sinatra
-- It's very small (200 LOC), which is just a little overhead on top of __Rack__.
-- __Sinatra__ is a drop-in replacement for __Frankie__. Anytime you feel that you need more, you just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
+- It's very small (200 LOC), which is just a little overhead on top of Rack.
+- Sinatra is a drop-in replacement for Frankie. Anytime you feel that you need more, you just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
 - It's faster than Sinatra (TODO: benchmarks)
 - You want to dig into the source code and change to your needs (Frankie's source code is more welcoming)
-- Each __Frankie__ app is a __Rack__ middleware, so it can be used inside of __Sinatra__, __Rails__, or any other __Rack__-based app.
+- Each Frankie app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.
 
 ## Usage
 
-A __Frankie__ app must _always_ be in a class which inherits from `Frankie::App`.
+A Frankie app must _always_ be in a class which inherits from `Frankie::App`.
 
     #config.ru
     class App < Frankie::App
@@ -36,7 +36,7 @@ Frankie supports the following verbs for defining a route: delete, get, head, op
         end
     end
     
-__Frankie__ also suports basic URL patterns:
+Frankie also suports basic URL patterns:
 
     class App < Frankie::App
         get '/greet/:first_name/:last_name' do
@@ -48,7 +48,7 @@ __Frankie__ also suports basic URL patterns:
 Each block that is passed to a route definition is evaluated in the context of a request scope. See below what methods are available there.
 
 ### Request scope
-As was said above, when you pass a block to a route definition, that block is evaluated in the context of a [RequestScope][2]. This means that you can use several methods/objects available inside that block:
+As was said above, when you pass a block to a route definition, that block is evaluated in the context of a [RequestScope][2]. This means that several methods/objects available inside that block:
 
 - `request` - A `Rack::Request` object which encapsulates the request to that route. (see [Rack::Request documentation][3] for more info)
 - `params` - a hash which contains both POST body params and GET querystring params.
@@ -56,11 +56,9 @@ As was said above, when you pass a block to a route definition, that block is ev
 - `status` - allows you to set the status of the response (ex: `status 403`)
 - `redirect_to` - sets the response to redirect (ex: `redirect_to 'http://google.com'`)
 
-And that's pretty much it. Didn't I tell you that __Frankie__ is very simple?
-
 ### Filters
 
-Unlike __Sinatra__, __Frankie__ supports only "generic" before and after filters. This means that you can't execute a filter depending on a URL pattern.
+Unlike Sinatra, Frankie supports only "generic" before and after filters. This means that you can't execute a filter depending on a URL pattern.
 
     class App < Frankie::App
         before do
@@ -78,13 +76,13 @@ Before and after filters are also evaluated in a RequestScope context. A little 
 
 ### Middleware
 
-A __Fankie__ app is a __Rack__ middleware, which means that it can be used inside of __Sinatra__, __Rails__, or any other __Rack__-based app:
+A Fankie app is a Rack middleware, which means that it can be used inside of Sinatra, Rails, or any other Rack-based app:
 
     class MyApp < Sinatra::Base
         use MyFrankieApp
     end
     
-__Frankie__ also supports middleware itself, and that means you can use __Rack__ middleware (or a Sinatra app) inside a __Frankie__ app:
+Frankie also supports middleware itself, and that means you can use Rack middleware (or a Sinatra app) inside a Frankie app:
 
     class App < Frankie::App
         #this will serve all the files in the "public" folder
@@ -94,7 +92,7 @@ __Frankie__ also supports middleware itself, and that means you can use __Rack__
 
 ### Helpers
 
-__Frankie__ supports helpers as __Sinatra__ does:
+Frankie supports helpers as Sinatra does:
 
     class App < Frankie::App
         helpers MyHelperModule
