@@ -11,7 +11,11 @@ def extended_modules_for kls
 end
 
 def mock_app &blk
-  Rack::MockRequest.new Class.new(App, &blk).new
+  Rack::MockRequest.new frankie_app(&blk).new
+end
+
+def frankie_app &blk
+  Class.new(App, &blk)
 end
 
 def random_url levels=1

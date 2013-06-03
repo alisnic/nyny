@@ -3,8 +3,8 @@ require_relative 'spec_helper'
 describe ClassLevelApi do
   let (:app_class) { Class.new(App) }
   describe 'middlewares' do
-    before do
-      app_class.class_eval do
+    let (:app_class) do
+      frankie_app do
         use NullMiddleware
       end
     end
@@ -14,8 +14,11 @@ describe ClassLevelApi do
     end
 
     it 'should call the middleware when called' do
-      NullMiddleware.any_instance.should_receive :call
-      response = mock_request :get, random_url, app_class
+      app = app_class.new
+      top = app.instance_variable_get '@top'
+      top.class.should == NullMiddleware
+      top.should_receive :call
+      app.call Rack::MockRequest.env_for '/'
     end
   end
 
