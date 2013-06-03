@@ -1,6 +1,6 @@
 module Frankie
   class RequestScope
-    attr_reader :request, :app, :response
+    attr_reader :request, :app, :response, :cookies
 
     def self.add_helper_module m
       include m
@@ -17,12 +17,16 @@ module Frankie
       request.params
     end
 
-    def cookies
-      request.cookies
+    def headers hash={}
+      @headers.merge! hash
     end
 
-    def headers hash
-      @headers.merge! hash
+    def session
+      request.session
+    end
+
+    def cookies
+      request.cookies
     end
 
     def status code
@@ -38,10 +42,12 @@ module Frankie
 
       data = instance_eval(&handler).to_s
       @response = Rack::Response.new data, @status, @headers
+      cookies.each {|k,v| @response.set_cookie k,v }
       @response.redirect(@redirect) if @redirect
 
       app.class.after_hooks.each {|h| instance_eval &h }
-      response
+      @response.finish
+      @response
     end
   end
 end
