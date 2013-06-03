@@ -107,6 +107,8 @@ Frankie also supports middleware itself, and that means you can use Rack middlew
         use Rack::Static :url => ['public']
         use SinatraApp
     end
+    
+I recommend looking at [the list of Rack middlewares][rack-middleware]
 
 ## Helpers
 
@@ -136,3 +138,4 @@ TBD.
 [3]: http://rack.rubyforge.org/doc/classes/Rack/Request.html
 [4]: http://rack.rubyforge.org/doc/classes/Rack/Response.html
 [performance]: https://github.com/alisnic/frankie/blob/master/Performance.md
+[rack-middleware]: https://github.com/rack/rack/wiki/List-of-Middleware
