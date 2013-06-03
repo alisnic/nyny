@@ -73,6 +73,26 @@ describe App do
     end
   end
 
+  it 'acts well as a middleware' do
+    app = lambda do |env|
+      [210, {}, ['Hello from downstream']]
+    end
+
+    app_class = frankie_app do
+      get '/' do
+        'hello'
+      end
+    end
+
+    frankie = app_class.new(app)
+    req = Rack::MockRequest.new frankie
+    res = req.get '/'
+    res.body.should == 'hello'
+
+    res2 = req.get '/ither'
+    res2.body.should == 'Hello from downstream'
+  end
+
   it 'should support adding after filers' do
     app = mock_app do
       after do
