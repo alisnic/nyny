@@ -4,6 +4,7 @@ include Frankie
 
 class Rack::MockRequest
   def trace(uri, opts={})   request("TRACE", uri, opts)   end
+  def options(uri, opts={})   request("TRACE", uri, opts)   end
 end
 
 def extended_modules_for kls
