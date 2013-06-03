@@ -1,7 +1,6 @@
 module Frankie
   class RequestScope
     attr_reader :request, :app, :response
-    attr_accessor :response
 
     def self.add_helper_module m
       include m
