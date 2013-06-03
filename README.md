@@ -11,7 +11,7 @@ I wanted to understand how sinatra works, but the code was pretty challenging. S
 ## Why you might want to use Frankie instead of Sinatra
 - It's very small (<200 LOC), which is just a little overhead on top of Rack.
 - Sinatra is a drop-in replacement for Frankie. Anytime you feel that you need more, you just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
-- It's faster than Sinatra (TODO: benchmarks)
+- It's at least __2 times faster__ than Sinatra (see [Performance][performance] for details)
 - You want to dig into the source code and change to your needs (Frankie's source code is more welcoming)
 - Each Frankie app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.
 
@@ -23,9 +23,9 @@ A Frankie app must _always_ be in a class which inherits from `Frankie::App`.
     class App < Frankie::App
         get '/' { 'Hello, World' }
     end
-    
+
     run App.new
-  
+
 ### Defining routes
 
 Frankie supports the following verbs for defining a route: delete, get, head, options, patch, post, put and trace.
@@ -35,7 +35,7 @@ Frankie supports the following verbs for defining a route: delete, get, head, op
             'You Posted, dude!'
         end
     end
-    
+
 Frankie also suports basic URL patterns:
 
     class App < Frankie::App
@@ -52,10 +52,11 @@ As was said above, when you pass a block to a route definition, that block is ev
 
 - `request` - A `Rack::Request` object which encapsulates the request to that route. (see [Rack::Request documentation][3] for more info)
 - `params` - a hash which contains both POST body params and GET querystring params.
-- `headers` - allows you to add headers to the response (ex: `headers 'Content-Type' => 'text/html'`)
+- `headers` - allows you to read/add headers to the response (ex: `headers 'Content-Type' => 'text/html'`)
 - `status` - allows you to set the status of the response (ex: `status 403`)
 - `redirect_to` - sets the response to redirect (ex: `redirect_to 'http://google.com'`)
-- `cookies` - a hash which allows you to access/modify cookies (ex: `cookies[:foo] = 'bar'`)
+- `cookies` - a hash which allows you to access/modify/remove cookies (ex: `cookies[:foo] = 'bar'`)
+- `session` - a hash which allows you to access/modify/remove session variables (ex: `session[:foo] = 'bar'`)
 
 ### Filters
 
@@ -65,14 +66,14 @@ Unlike Sinatra, Frankie supports only "generic" before and after filters. This m
         before do
             headers 'Content-Type' => 'text/html'
         end
-        
+
         after do
             puts response.inspect
         end
- 
+
         get '/' { 'hello' }
     end
-    
+
 Before and after filters are also evaluated in a RequestScope context. A little exception are the after filters, which can access the __response__ object ([Rack::Response][4]).
 
 ### Middleware
@@ -82,7 +83,8 @@ A Fankie app is a Rack middleware, which means that it can be used inside of Sin
     class MyApp < Sinatra::Base
         use MyFrankieApp
     end
-    
+    TODO: test
+
 Frankie also supports middleware itself, and that means you can use Rack middleware (or a Sinatra app) inside a Frankie app:
 
     class App < Frankie::App
@@ -98,10 +100,10 @@ Frankie supports helpers as Sinatra does:
     class App < Frankie::App
         helpers MyHelperModule
     end
-    
+
 Using a helpers implies that the helpor module is included in the [RequestScope][2], and that all the methods in taht midule will be available inside a route definition block.
 
-## FAQ
+## F. A. Q.
 TBD.
 
 
@@ -118,3 +120,4 @@ TBD.
 [2]: https://github.com/alisnic/frankie/blob/master/lib/frankie/request_scope.rb
 [3]: http://rack.rubyforge.org/doc/classes/Rack/Request.html
 [4]: http://rack.rubyforge.org/doc/classes/Rack/Response.html
+[performance]: https://github.com/alisnic/frankie/blob/master/README.md
