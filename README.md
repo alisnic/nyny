@@ -87,7 +87,6 @@ A Fankie app is a Rack middleware, which means that it can be used inside of Sin
     class MyApp < Sinatra::Base
         use MyFrankieApp
     end
-    TODO: test
 
 Frankie also supports middleware itself, and that means you can use Rack middleware (or a Sinatra app) inside a Frankie app:
 
