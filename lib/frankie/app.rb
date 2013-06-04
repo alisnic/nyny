@@ -12,6 +12,20 @@ module Frankie
       build_middleware_chain
     end
 
+    def build_middleware_chain
+      @top = self.class.middlewares.reverse.reduce (self) do |prev, entry|
+        klass, args, blk = entry
+        klass.new prev, *args, &blk
+      end
+    end
+
+    def self.run! port=9292
+      use Rack::ShowExceptions
+      use Rack::CommonLogger
+      handler = Rack::Handler::Thin rescue Rack::Handler::WEBrick
+      handler.run new, :Port => port
+    end
+
     def handler_for_path method, path
       self.class.routes.fetch(method.downcase.to_sym).each do |sig, h|
         params = sig.match path
@@ -37,13 +51,6 @@ module Frankie
 
     def _call env
       route Rack::Request.new(env)
-    end
-
-    def build_middleware_chain
-      @top = self.class.middlewares.reverse.reduce (self) do |prev, entry|
-        klass, args, blk = entry
-        klass.new prev, *args, &blk
-      end
     end
 
     def call env
