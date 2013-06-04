@@ -3,7 +3,9 @@ require 'frankie'
 require 'sinatra'
 require 'ostruct'
 
-module SinatraSettingsStub
+module Views
+  include ::Sinatra::Templates
+
   def settings
     @settings ||= OpenStruct.new :templates => {}
   end
@@ -15,11 +17,11 @@ end
 
 
 class App < Frankie::App
-  helpers SinatraSettingsStub, ::Sinatra::Templates
+  helpers Views
 
   get '/' do
     haml :index
   end
 end
 
-Rack::Handler::Thin.run App.new, :Port => 9000
+App.run!
