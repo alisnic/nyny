@@ -40,7 +40,7 @@ module Frankie
     def apply_to &handler
       app.class.before_hooks.each {|h| instance_eval &h }
 
-      data = instance_eval(&handler).to_s
+      data = instance_eval(&handler)
       @response = Response.new data, @status, @headers
       cookies.each {|k,v| @response.set_cookie k,v }
       @response.redirect(@redirect) if @redirect
