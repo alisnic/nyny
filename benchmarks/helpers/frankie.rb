@@ -16,4 +16,4 @@ class App < Frankie::App
   end
 end
 
-Rack::Handler::Thin.run App.new, :Port => 9000
+App.run!

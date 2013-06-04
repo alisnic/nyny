@@ -6,5 +6,3 @@ class App < Sinatra::Base
     "Hello #{params[:name]}!"
   end
 end
-
-Rack::Handler::Thin.run App.new, :Port => 9000

@@ -16,4 +16,3 @@ class App < Sinatra::Base
   end
 end
 
-Rack::Handler::Thin.run App.new, :Port => 9000
