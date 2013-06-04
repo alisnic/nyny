@@ -63,6 +63,3 @@ See below the code for each benchmark
       end
     end
 
-
-
-
