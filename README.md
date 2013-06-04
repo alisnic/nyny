@@ -3,7 +3,7 @@ Sinatra's little brother.
 
 - [TOP](#frankie)
 - [Motivation](#motivation)
-- [Why you might want to use Frankie instead of Sinatra](#why-you-might-want-to-use-frankie-instaed-of-sinatra)
+- [Why use Frankie instead of Sinatra](#why-use-frankie-instead-of-sinatra)
 - [Usage](#usage)
     - [Defining routes](#defining-routes)
     - [Request scope](#request-scope)
@@ -20,7 +20,7 @@ Sinatra is a wonderul gem (in both senses), but it fails at one thing: to be an 
 
 I wanted to understand how sinatra works, but the code was pretty challenging. So I decided I should re-implement the basic things sinatra has. Thus, __Frankie__ was born.
 
-# Why you might want to use Frankie instead of Sinatra
+# Why use Frankie instead of Sinatra
 - It's very small (~200 LOC), which is just a little overhead on top of Rack.
 - Sinatra is a drop-in replacement for Frankie. Anytime you feel that you need more, you can just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
 - It's __~2 times faster__ than Sinatra (see [Performance][performance] for details)
