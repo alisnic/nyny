@@ -1,11 +1,9 @@
-require 'rack'
-
 module Frankie
   class App
     extend ClassLevelApi
 
     RouteNotFoundError = Class.new StandardError
-    RES_NOT_FOUND = Rack::Response.new '', 404
+    RES_NOT_FOUND = Response.new '', 404
 
     def initialize app=nil
       @app = app
@@ -50,7 +48,7 @@ module Frankie
     end
 
     def _call env
-      route Rack::Request.new(env)
+      route Request.new(env)
     end
 
     def call env

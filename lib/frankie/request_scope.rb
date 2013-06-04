@@ -41,7 +41,7 @@ module Frankie
       app.class.before_hooks.each {|h| instance_eval &h }
 
       data = instance_eval(&handler).to_s
-      @response = Rack::Response.new data, @status, @headers
+      @response = Response.new data, @status, @headers
       cookies.each {|k,v| @response.set_cookie k,v }
       @response.redirect(@redirect) if @redirect
 
