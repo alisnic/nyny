@@ -21,7 +21,7 @@ Sinatra is a wonderul gem (in both senses), but it fails at one thing: to be an 
 I wanted to understand how sinatra works, but the code was pretty challenging. So I decided I should re-implement the basic things sinatra has. Thus, __Frankie__ was born.
 
 # Why you might want to use Frankie instead of Sinatra
-- It's very small (<200 LOC), which is just a little overhead on top of Rack.
+- It's very small (~200 LOC), which is just a little overhead on top of Rack.
 - Sinatra is a drop-in replacement for Frankie. Anytime you feel that you need more, you can just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
 - It's __~2 times faster__ than Sinatra (see [Performance][performance] for details)
 - You want to dig into the source code and change to your needs (Frankie's source code is more welcoming)
