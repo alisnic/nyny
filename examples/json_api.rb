@@ -6,8 +6,6 @@ require 'json'
 # Every response of this app will be automatically converted to json
 #
 class App < Frankie::App
-  use Rack::Logger
-
   before { headers 'Content-Type' => 'application/json' }
 
   after do
