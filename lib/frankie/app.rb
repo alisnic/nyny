@@ -18,8 +18,8 @@ module Frankie
     end
 
     def self.run! port=9292
-      use Rack::ShowExceptions
-      use Rack::CommonLogger
+      middlewares.unshift Rack::ShowExceptions, Rack::CommonLogger
+
       handler = Rack::Handler::Thin rescue Rack::Handler::WEBrick
       handler.run new, :Port => port
     end
