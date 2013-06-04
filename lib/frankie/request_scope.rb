@@ -1,6 +1,6 @@
 module Frankie
   class RequestScope
-    attr_reader :request, :app, :response, :cookies
+    attr_reader :request, :app, :response
 
     def self.add_helper_module m
       include m
