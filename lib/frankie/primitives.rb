@@ -7,7 +7,7 @@ module Frankie
 
     def initialize body=[], status=200, header={}
       @raw_body = body
-      super
+      super body.to_s, status, header
     end
 
     def body= value
