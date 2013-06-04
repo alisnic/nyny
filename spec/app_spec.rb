@@ -3,6 +3,10 @@ require_relative 'spec_helper'
 describe App do
   let (:app) { mock_app {} }
 
+  describe '.run!' do
+    #
+  end
+
   it 'should have the class methods included' do
     extended_modules_for(App).should include(ClassLevelApi)
   end
