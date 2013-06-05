@@ -9,10 +9,11 @@ require 'faye/websocket'
 
 Faye::WebSocket.load_adapter('thin')
 
-class Sockets
-  def initialize app=nil, opts={}
+class WebSockets
+  def initialize app=nil, opts={}, &blk
     @app = app
     @path = opts.fetch :path, '/'
+    @blk = blk
   end
 
   def call env
@@ -20,7 +21,13 @@ class Sockets
 
     if Faye::WebSocket.websocket?(env)
       ws = Faye::WebSocket.new(env)
-      handle ws
+
+      if @blk
+        Proc.new(&@blk).call ws
+      else
+        handle ws
+      end
+
       ws.rack_response
     else
       @app.call(env)
@@ -28,6 +35,14 @@ class Sockets
   end
 
   def handle ws
+  end
+end
+
+class App < Frankie::App
+  #Serve static assets from public folder
+  use Rack::Static, :urls => ["/public"]
+
+  use WebSockets, :path => '/websocket' do |ws|
     ws.on :message do |event|
       ws.send(event.data)
     end
@@ -37,12 +52,6 @@ class Sockets
       ws = nil
     end
   end
-end
-
-class App < Frankie::App
-  #Serve static assets from public folder
-  use Rack::Static, :urls => ["/public"]
-  use Sockets, :path => '/websocket'
 
   get '/frankie' do
     'yep, you can still use frankie'
