@@ -17,7 +17,7 @@ module Frankie
         require 'rack/protection'
         middlewares.unshift [Rack::Protection, args]
       rescue LoadError
-        puts "WARN: to use protection, you must install 'rack-Protection' gem"
+        puts "WARN: to use protection, you must install 'rack-protection' gem"
       end
     end
 
