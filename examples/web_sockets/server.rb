@@ -1,6 +1,5 @@
 #!ruby -I ../../lib -I lib
 require 'frankie'
-require 'json'
 require 'faye/websocket'
 
 #
