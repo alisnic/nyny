@@ -3,8 +3,8 @@ require 'frankie'
 require 'json'
 require 'faye/websocket'
 
-# Note:
-#   Currently, websocket-rack gem only works with Thin
+#
+# Open localhost:9000/public/index.html in the browser
 #
 
 Faye::WebSocket.load_adapter('thin')
