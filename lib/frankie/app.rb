@@ -3,10 +3,9 @@ module Frankie
     extend ClassLevelApi
 
     RouteNotFoundError = Class.new StandardError
-    RES_NOT_FOUND = Response.new '', 404
 
     def initialize app=nil
-      @app = app
+      @app = app || lambda {|env| Response.new '', 404 }
       build_middleware_chain
     end
 
@@ -19,7 +18,6 @@ module Frankie
 
     def self.run! port=9292
       middlewares.unshift Rack::ShowExceptions, Rack::CommonLogger
-
       handler = Rack::Handler::Thin rescue Rack::Handler::WEBrick
       handler.run new, :Port => port
     end
@@ -36,14 +34,10 @@ module Frankie
     def route req
       begin
         handler, params = handler_for_path req.request_method, req.path
-        req.params.merge! params unless params.empty?
+        req.params.merge! params
         RequestScope.new(self, req).apply_to &handler
       rescue KeyError, RouteNotFoundError
-        if @app
-          @app.call(req.env)
-        else
-          RES_NOT_FOUND
-        end
+        @app.call req.env
       end
     end
 

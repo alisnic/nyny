@@ -27,6 +27,7 @@ module Frankie
     end
 
     def match path
+      return (pattern == path ? {} : nil) if pattern.is_a?(String)
       data = pattern.match path
 
       if data
@@ -36,7 +37,7 @@ module Frankie
           {}
         end
       else
-        false
+        nil
       end
     end
   end
