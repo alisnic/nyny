@@ -7,10 +7,19 @@ module Frankie
       end
     end
 
-    def middlewares;  @middlewares ||= []   end
-    def routes;       @routes ||= {}        end
-    def before_hooks; @before_hooks ||=[]   end
-    def after_hooks;  @after_hooks ||=[]    end
+    def middlewares;  @middlewares  ||= []  end
+    def routes;       @routes       ||= {}  end
+    def before_hooks; @before_hooks ||= []  end
+    def after_hooks;  @after_hooks  ||= []  end
+
+    def use_protection! args={}
+      begin
+        require 'rack/protection'
+        middlewares.unshift [Rack::Protection, args]
+      rescue LoadError
+        puts "WARN: to use protection, you must install 'rack-Protection' gem"
+      end
+    end
 
     def before &blk
       before_hooks << Proc.new(&blk)
