@@ -20,7 +20,7 @@ class App < Frankie::App
   end
 
   post '/shouts' do
-    Shout.create :body => params['body']
+    Shout.create :body => params[:body]
     redirect_to '/'
   end
 end
