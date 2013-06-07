@@ -1,0 +1,14 @@
+source 'http://rubygems.org'
+
+gem 'activerecord', :require => 'active_record'
+gem 'sqlite3'
+gem 'rack'
+gem 'thin'
+
+group :development do
+  #
+end
+
+group :production do
+  #
+end
