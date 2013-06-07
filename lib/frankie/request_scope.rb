@@ -38,6 +38,7 @@ module Frankie
     end
 
     def apply_to &handler
+      params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
       app.class.before_hooks.each {|h| instance_eval &h }
 
       data = instance_eval(&handler)
