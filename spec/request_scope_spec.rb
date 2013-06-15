@@ -40,7 +40,7 @@ describe RequestScope do
       app.get '/?foo=bar'
     end
 
-    it 'halt in a before block should override the request' do
+    it 'halt in a before block should override the response' do
       prc = Proc.new { 'da block' }
 
       app = mock_app do
