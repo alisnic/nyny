@@ -30,6 +30,16 @@ describe RequestScope do
       response.status.should == 403
     end
 
+    it 'params should have insensitive keys' do
+      app = mock_app do
+        get '/' do
+          params[:foo].should == params['foo']
+        end
+      end
+
+      app.get '/?foo=bar'
+    end
+
     it '#redirect_to should redirect' do
       redir = Proc.new { redirect_to 'http://foo.bar' }
       response = subject.apply_to &redir
