@@ -40,6 +40,22 @@ describe RequestScope do
       app.get '/?foo=bar'
     end
 
+    it 'halt in a before block should override the request' do
+      prc = Proc.new { 'da block' }
+
+      app = mock_app do
+        before do
+          halt 302
+        end
+
+        get '/', &prc
+      end
+
+      res = app.get '/'
+      res.status.should == 302
+      prc.should_not_receive(:call)
+    end
+
     it '#redirect_to should redirect' do
       redir = Proc.new { redirect_to 'http://foo.bar' }
       response = subject.apply_to &redir
