@@ -14,7 +14,7 @@ Sinatra's little brother.
 - [Contributing](#contributing)
 
 # Motivation
-Sinatra is a wonderul gem (in both senses), but it fails at one thing: to be an education tool for programmers. This is not bad thing, since it may not be the ultimate goal of such a framework. My efforts to write __Frankie__ started when I wanted to understand how __Sinatra__ works, and stumbled upon the [base.rb][0]. The majority of the classes that are used by sinatra are in one single file, which makes it nearly impossible for a new person to grasp.
+My efforts to write __Frankie__ started when I wanted to understand how __Sinatra__ works, and stumbled upon the [base.rb][0]. The majority of the classes that are used by sinatra are in one single file, which makes it nearly impossible for a new person to grasp.
 
 [I've tried to change the situation][1], but unfortunately, my initiative was premature for the sinatra project (considering their plans).
 
