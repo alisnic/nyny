@@ -25,8 +25,8 @@ I wanted to understand how sinatra works, but the code was pretty challenging. S
 Frankie should have only the bare minimum to write basic web servers comfortably,
 everything else should be in a extension (see frankie extensions). It is also
 trivial to use frankie to build large and complex app, by writing multiple sub
-apps and using Rack to mount them, or by mounting those sub apps in the
-"main" app.
+apps and using Rack to mount them, or by using those sub apps in the "main" app
+as middleware.
 
 # Why use Frankie instead of Sinatra
 - It's very small (~250 LOC), which is just a little overhead on top of Rack.
