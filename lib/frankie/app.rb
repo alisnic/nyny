@@ -18,13 +18,12 @@ module Frankie
 
     def self.run! port=9292
       middlewares.unshift Rack::ShowExceptions, Rack::CommonLogger
-      handler = begin
-                  Rack::Handler::Thin
-                rescue LoadError
-                  Rack::Handler::WEBrick
-                end
 
-      handler.run new, :Port => port
+      begin
+        Rack::Handler::Thin
+      rescue LoadError
+        Rack::Handler::WEBrick
+      end.run new, :Port => port
     end
 
     def handler_for_path method, path
