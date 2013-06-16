@@ -20,8 +20,15 @@ My efforts to write __Frankie__ started when I wanted to understand how __Sinatr
 
 I wanted to understand how sinatra works, but the code was pretty challenging. So I decided I should re-implement the basic things sinatra has. Thus, __Frankie__ was born.
 
+# Philosophy
+Frankie should have only the bare minimum to write basic web servers comfortably,
+Everything else should be in a extension (see frankie extensions). It is also
+trivial to use frankie to build large and complex app, by writing multiple sub
+apps and using Rack to mount them, or by mounting those sub apps in the
+"main" app.
+
 # Why use Frankie instead of Sinatra
-- It's very small (~200 LOC), which is just a little overhead on top of Rack.
+- It's very small (~250 LOC), which is just a little overhead on top of Rack.
 - Sinatra is a drop-in replacement for Frankie. Anytime you feel that you need more, you can just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
 - It's __~2 times faster__ than Sinatra (see [Performance][performance] for details)
 - You want to dig into the source code and change to your needs (Frankie's source code is more welcoming)
