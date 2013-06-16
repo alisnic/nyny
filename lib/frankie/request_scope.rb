@@ -45,8 +45,10 @@ module Frankie
       params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
       app.class.before_hooks.each {|h| instance_eval &h }
 
-      @response = @halt_response || (
-        Response.new instance_eval(&handler), @status, @headers)
+      @response = @halt_response || begin
+        Response.new instance_eval(&handler), @status, @headers
+      end
+
       cookies.each {|k,v| @response.set_cookie k,v }
       @response.redirect(@redirect) if @redirect
 
