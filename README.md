@@ -3,6 +3,7 @@ Sinatra's little brother.
 
 - [TOP](#frankie)
 - [Motivation](#motivation)
+- [Philosophy](#philosophy)
 - [Why use Frankie instead of Sinatra](#why-use-frankie-instead-of-sinatra)
 - [Usage](#usage)
     - [Defining routes](#defining-routes)
@@ -22,7 +23,7 @@ I wanted to understand how sinatra works, but the code was pretty challenging. S
 
 # Philosophy
 Frankie should have only the bare minimum to write basic web servers comfortably,
-Everything else should be in a extension (see frankie extensions). It is also
+everything else should be in a extension (see frankie extensions). It is also
 trivial to use frankie to build large and complex app, by writing multiple sub
 apps and using Rack to mount them, or by mounting those sub apps in the
 "main" app.
