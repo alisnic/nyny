@@ -6,6 +6,7 @@ Sinatra's little brother.
 - [Philosophy](#philosophy)
 - [Why use Frankie instead of Sinatra](#why-use-frankie-instead-of-sinatra)
 - [Usage](#usage)
+    - [Running](#running)
     - [Defining routes](#defining-routes)
     - [Request scope](#request-scope)
     - [Filters](#filters)
