@@ -39,14 +39,31 @@ as middleware.
 
 A Frankie app must _always_ be in a class which inherits from `Frankie::App`.
 
-    #config.ru
     class App < Frankie::App
-        get '/' do 
+        get '/' do
             'Hello, World'
         end
     end
 
-    run App.new
+## Running
+There are two ways to run a Frankie app __directly__ [[?]](#middleware):
+
+- be requiring it in a `config.ru` file, and then passing it as argument to the
+Rack's `run` function:
+
+        #config.ru
+        require 'app'
+        run App.new
+      
+- by using the `run!` method directly on the app class:
+
+        #app.rb
+        #...App class definition...
+      
+        App.run!
+        
+`run!` takes the port number as optional argument (the default port is 9292). Also the `run!` method will include 2 default middlewares to make the development easier: Rack::CommonLogger and Rack::ShowExceptions. This will show all requests in the log, and will provide useful details in the case a error occurs during a request.
+
 
 ## Defining routes
 
