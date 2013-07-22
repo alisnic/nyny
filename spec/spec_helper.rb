@@ -1,6 +1,10 @@
 require 'nyny'
 require 'rack'
 require 'securerandom'
+
+require 'coveralls'
+Coveralls.wear!
+
 include NYNY
 
 class Rack::MockRequest

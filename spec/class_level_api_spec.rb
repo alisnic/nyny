@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+require 'spec_helper'
 
 describe ClassLevelApi do
   let (:app_class) { Class.new(App) }

@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+require 'spec_helper'
 
 describe RequestScope do
   let (:env) { Rack::MockRequest.env_for '/', :params => {:some => 'param'} }
