@@ -1,6 +1,8 @@
 # New York, New York.
 Sinatra's little brother.
 
+![alt text](https://api.travis-ci.org/alisnic/nyny.png "build status")
+
     # myapp.rb
 
     require 'nyny'
