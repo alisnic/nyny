@@ -1,6 +1,27 @@
 # New York, New York.
 Sinatra's little brother.
 
+    # myapp.rb
+
+    require 'nyny'
+    class App < NYNY::App
+      get '/' do
+        'Hello world!'
+      end
+    end
+
+    App.run!
+    
+Install the gem:
+
+    gem install nyny --pre
+    
+Run the file
+    
+    ruby myapp.rb
+    
+Open the browser at [http://localhost:9292]()
+
 - [TOP](#frankie)
 - [Motivation](#motivation)
 - [Philosophy](#philosophy)
