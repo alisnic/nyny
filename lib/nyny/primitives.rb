@@ -1,4 +1,4 @@
-module LittleFrankie
+module NYNY
   class Request < Rack::Request
   end
 

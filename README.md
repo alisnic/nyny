@@ -1,10 +1,10 @@
-# Little Frankie
+# Little NYNY
 Sinatra's little brother.
 
 - [TOP](#frankie)
 - [Motivation](#motivation)
 - [Philosophy](#philosophy)
-- [Why use Frankie instead of Sinatra](#why-use-frankie-instead-of-sinatra)
+- [Why use NYNY instead of Sinatra](#why-use-frankie-instead-of-sinatra)
 - [Usage](#usage)
     - [Running](#running)
     - [Defining routes](#defining-routes)
@@ -16,38 +16,38 @@ Sinatra's little brother.
 - [Contributing](#contributing)
 
 # Motivation
-My efforts to write __Frankie__ started when I wanted to understand how __Sinatra__ works, and stumbled upon the [base.rb][0]. The majority of the classes that are used by sinatra are in one single file, which makes it nearly impossible for a new person to grasp.
+My efforts to write __NYNY__ started when I wanted to understand how __Sinatra__ works, and stumbled upon the [base.rb][0]. The majority of the classes that are used by sinatra are in one single file, which makes it nearly impossible for a new person to grasp.
 
 [I've tried to change the situation][1], but unfortunately, my initiative was premature for the sinatra project (considering their plans).
 
-I wanted to understand how sinatra works, but the code was pretty challenging. So I decided I should re-implement the basic things sinatra has. Thus, __Frankie__ was born.
+I wanted to understand how sinatra works, but the code was pretty challenging. So I decided I should re-implement the basic things sinatra has. Thus, __NYNY__ was born.
 
 # Philosophy
-Frankie should have only the bare minimum to write basic web servers comfortably,
+NYNY should have only the bare minimum to write basic web servers comfortably,
 everything else should be in a extension (see frankie extensions). It is also
 trivial to use frankie to build large and complex app, by writing multiple sub
 apps and using Rack to mount them, or by using those sub apps in the "main" app
 as middleware.
 
-# Why use Frankie instead of Sinatra
+# Why use NYNY instead of Sinatra
 - It's very small (~250 LOC), which is just a little overhead on top of Rack.
-- Sinatra is a drop-in replacement for Frankie. Anytime you feel that you need more, you can just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
+- Sinatra is a drop-in replacement for NYNY. Anytime you feel that you need more, you can just change your app to inherit from `Sinatra::Base`, your code will still work, and you will be able to use any of the Sinatra features.
 - It's __~2 times faster__ than Sinatra (see [Performance][performance] for details)
-- You want to dig into the source code and change to your needs (Frankie's source code is more welcoming)
-- Each Frankie app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.
+- You want to dig into the source code and change to your needs (NYNY's source code is more welcoming)
+- Each NYNY app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.
 
 # Usage
 
-A Frankie app must _always_ be in a class which inherits from `Frankie::App`.
+A NYNY app must _always_ be in a class which inherits from `NYNY::App`.
 
-    class App < LittleFrankie::App
+    class App < NYNY::App
         get '/' do
             'Hello, World'
         end
     end
 
 ## Running
-There are two ways to run a Frankie app __directly__ [[?]](#middleware):
+There are two ways to run a NYNY app __directly__ [[?]](#middleware):
 
 - be requiring it in a `config.ru` file, and then passing it as argument to the
 Rack's `run` function:
@@ -68,17 +68,17 @@ Rack's `run` function:
 
 ## Defining routes
 
-Frankie supports the following verbs for defining a route: delete, get, head, options, patch, post, put and trace.
+NYNY supports the following verbs for defining a route: delete, get, head, options, patch, post, put and trace.
 
-    class App < LittleFrankie::App
+    class App < NYNY::App
         post '/' do
             'You Posted, dude!'
         end
     end
 
-Frankie also suports basic URL patterns:
+NYNY also suports basic URL patterns:
 
-    class App < LittleFrankie::App
+    class App < NYNY::App
         get '/greet/:first_name/:last_name' do
             # The last expression in the block is _always_ considered the response body.
             "Hello #{params[:first_name]} #{params[:last_name]}!"
@@ -100,9 +100,9 @@ As was said above, when you pass a block to a route definition, that block is ev
 
 ## Filters
 
-Unlike Sinatra, Frankie supports only "generic" before and after filters. This means that you can't execute a filter depending on a URL pattern.
+Unlike Sinatra, NYNY supports only "generic" before and after filters. This means that you can't execute a filter depending on a URL pattern.
 
-    class App < LittleFrankie::App
+    class App < NYNY::App
         before do
             headers 'Content-Type' => 'text/html'
         end
@@ -123,12 +123,12 @@ Before and after filters are also evaluated in a RequestScope context. A little 
 A Fankie app is a Rack middleware, which means that it can be used inside of Sinatra, Rails, or any other Rack-based app:
 
     class MyApp < Sinatra::Base
-        use MyFrankieApp
+        use MyNYNYApp
     end
 
-Frankie also supports middleware itself, and that means you can use Rack middleware (or a Sinatra app) inside a Frankie app:
+NYNY also supports middleware itself, and that means you can use Rack middleware (or a Sinatra app) inside a NYNY app:
 
-    class App < LittleFrankie::App
+    class App < NYNY::App
         #this will serve all the files in the "public" folder
         use Rack::Static :url => ['public']
         use SinatraApp
@@ -138,9 +138,9 @@ I recommend looking at [the list of Rack middlewares][rack-middleware]
 
 ## Helpers
 
-Frankie supports helpers as Sinatra does:
+NYNY supports helpers as Sinatra does:
 
-    class App < LittleFrankie::App
+    class App < NYNY::App
         helpers MyHelperModule
     end
 

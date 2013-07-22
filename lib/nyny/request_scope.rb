@@ -1,4 +1,4 @@
-module LittleFrankie
+module NYNY
   class RequestScope
     attr_reader :request, :app, :response
 

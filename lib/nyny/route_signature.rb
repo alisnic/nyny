@@ -1,4 +1,4 @@
-module LittleFrankie
+module NYNY
   class RouteSignature
     NAME_PATTERN = /:(\S+)/
 

@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'little_frankie/version'
+require 'nyny/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "little_frankie"
-  spec.version       = LittleFrankie::VERSION
+  spec.name          = "New York, New York."
+  spec.version       = NYNY::VERSION
   spec.authors       = ["Andrei Lisnic"]
   spec.email         = ["andrei.lisnic@gmail.com"]
   spec.description   = %q{sinatra's little brother}
