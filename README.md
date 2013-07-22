@@ -1,4 +1,4 @@
-# Little NYNY
+# New York, New York.
 Sinatra's little brother.
 
 - [TOP](#frankie)
