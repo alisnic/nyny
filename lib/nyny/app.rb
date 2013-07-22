@@ -1,6 +1,7 @@
 module NYNY
   class App
     extend ClassLevelApi
+    extend Runner
 
     RouteNotFoundError = Class.new StandardError
 
@@ -14,16 +15,6 @@ module NYNY
         klass, args, blk = entry
         klass.new prev, *args, &blk
       end
-    end
-
-    def self.run! port=9292
-      middlewares.unshift Rack::ShowExceptions, Rack::CommonLogger
-
-      begin
-        Rack::Handler::Thin
-      rescue LoadError
-        Rack::Handler::WEBrick
-      end.run new, :Port => port
     end
 
     def handler_for_path method, path
