@@ -9,5 +9,3 @@ rvm:
   - jruby-18mode
   - jruby-19mode
   - jruby-20mode
-  - jruby-head
-  - ruby-head
