@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = NYNY::VERSION
   spec.authors       = ["Andrei Lisnic"]
   spec.email         = ["andrei.lisnic@gmail.com"]
-  spec.description   = %q{New York, New York.}
-  spec.summary       = %q{sinatra's little brother}
+  spec.description   = %q{New York, New York - (very) small Sinatra clone.}
+  spec.summary       = %q{New York, New York.}
   spec.homepage      = "https://github.com/alisnic/nyny"
   spec.license       = "MIT"
 
