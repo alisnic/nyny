@@ -1,4 +1,4 @@
-# Frankie
+# Little Frankie
 Sinatra's little brother.
 
 - [TOP](#frankie)
@@ -40,7 +40,7 @@ as middleware.
 
 A Frankie app must _always_ be in a class which inherits from `Frankie::App`.
 
-    class App < Frankie::App
+    class App < LittleFrankie::App
         get '/' do
             'Hello, World'
         end
@@ -70,7 +70,7 @@ Rack's `run` function:
 
 Frankie supports the following verbs for defining a route: delete, get, head, options, patch, post, put and trace.
 
-    class App < Frankie::App
+    class App < LittleFrankie::App
         post '/' do
             'You Posted, dude!'
         end
@@ -78,7 +78,7 @@ Frankie supports the following verbs for defining a route: delete, get, head, op
 
 Frankie also suports basic URL patterns:
 
-    class App < Frankie::App
+    class App < LittleFrankie::App
         get '/greet/:first_name/:last_name' do
             # The last expression in the block is _always_ considered the response body.
             "Hello #{params[:first_name]} #{params[:last_name]}!"
@@ -102,7 +102,7 @@ As was said above, when you pass a block to a route definition, that block is ev
 
 Unlike Sinatra, Frankie supports only "generic" before and after filters. This means that you can't execute a filter depending on a URL pattern.
 
-    class App < Frankie::App
+    class App < LittleFrankie::App
         before do
             headers 'Content-Type' => 'text/html'
         end
@@ -128,7 +128,7 @@ A Fankie app is a Rack middleware, which means that it can be used inside of Sin
 
 Frankie also supports middleware itself, and that means you can use Rack middleware (or a Sinatra app) inside a Frankie app:
 
-    class App < Frankie::App
+    class App < LittleFrankie::App
         #this will serve all the files in the "public" folder
         use Rack::Static :url => ['public']
         use SinatraApp
@@ -140,7 +140,7 @@ I recommend looking at [the list of Rack middlewares][rack-middleware]
 
 Frankie supports helpers as Sinatra does:
 
-    class App < Frankie::App
+    class App < LittleFrankie::App
         helpers MyHelperModule
     end
 
