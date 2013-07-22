@@ -4,11 +4,11 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'nyny/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "New York, New York."
+  spec.name          = "nyny"
   spec.version       = NYNY::VERSION
   spec.authors       = ["Andrei Lisnic"]
   spec.email         = ["andrei.lisnic@gmail.com"]
-  spec.description   = %q{sinatra's little brother}
+  spec.description   = %q{New York, New York.}
   spec.summary       = %q{sinatra's little brother}
   spec.homepage      = "https://github.com/alisnic/nyny"
   spec.license       = "MIT"
