@@ -2,6 +2,7 @@
 Sinatra's little brother.
 
 ![alt text](https://api.travis-ci.org/alisnic/nyny.png "build status")
+[![Coverage Status](https://coveralls.io/repos/alisnic/nyny/badge.png)](https://coveralls.io/r/alisnic/nyny)
 
     # myapp.rb
 
