@@ -1,6 +1,7 @@
-require 'frankie'
+require 'little_frankie'
 require 'rack'
-include Frankie
+require 'securerandom'
+include LittleFrankie
 
 class Rack::MockRequest
   def trace(uri, opts={})     request("TRACE", uri, opts)     end

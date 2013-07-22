@@ -1,9 +1,0 @@
-require 'uri'
-require 'rack'
-
-require "frankie/version"
-require 'frankie/primitives'
-require 'frankie/request_scope'
-require 'frankie/route_signature'
-require 'frankie/class_level_api'
-require 'frankie/app'

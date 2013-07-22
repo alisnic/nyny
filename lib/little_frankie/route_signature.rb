@@ -1,4 +1,4 @@
-module Frankie
+module LittleFrankie
   class RouteSignature
     NAME_PATTERN = /:(\S+)/
 

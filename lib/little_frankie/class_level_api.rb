@@ -1,4 +1,4 @@
-module Frankie
+module LittleFrankie
   module ClassLevelApi
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
     HTTP_VERBS.each do |method|

@@ -1,4 +1,4 @@
-module Frankie
+module LittleFrankie
   class RequestScope
     attr_reader :request, :app, :response
 

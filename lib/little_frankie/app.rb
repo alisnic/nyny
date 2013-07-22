@@ -1,4 +1,4 @@
-module Frankie
+module LittleFrankie
   class App
     extend ClassLevelApi
 
