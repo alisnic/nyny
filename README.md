@@ -25,10 +25,10 @@ Run the file
     
 Open the browser at [http://localhost:9292]()
 
-- [TOP](#frankie)
+- [TOP](#new-york-new-york)
 - [Motivation](#motivation)
 - [Philosophy](#philosophy)
-- [Why use NYNY instead of Sinatra](#why-use-frankie-instead-of-sinatra)
+- [Why use NYNY instead of Sinatra](#why-use-nyny-instead-of-sinatra)
 - [Usage](#usage)
     - [Running](#running)
     - [Defining routes](#defining-routes)
@@ -48,8 +48,8 @@ I wanted to understand how sinatra works, but the code was pretty challenging. S
 
 # Philosophy
 NYNY should have only the bare minimum to write basic web servers comfortably,
-everything else should be in a extension (see frankie extensions). It is also
-trivial to use frankie to build large and complex app, by writing multiple sub
+everything else should be in a extension (see NYNY extensions). It is also
+trivial to use NYNY to build large and complex app, by writing multiple sub
 apps and using Rack to mount them, or by using those sub apps in the "main" app
 as middleware.
 
@@ -184,8 +184,8 @@ TBD.
 
 [0]: https://github.com/sinatra/sinatra/blob/master/lib/sinatra/base.rb
 [1]: https://github.com/sinatra/sinatra/pull/716
-[2]: https://github.com/alisnic/frankie/blob/master/lib/frankie/request_scope.rb
+[2]: https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb
 [3]: http://rack.rubyforge.org/doc/classes/Rack/Request.html
 [4]: http://rack.rubyforge.org/doc/classes/Rack/Response.html
-[performance]: https://github.com/alisnic/frankie/blob/master/Performance.md
+[performance]: https://github.com/alisnic/nyny/blob/master/Performance.md
 [rack-middleware]: https://github.com/rack/rack/wiki/List-of-Middleware
