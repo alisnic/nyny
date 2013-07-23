@@ -6,3 +6,7 @@ rvm:
   - rbx-19mode
   - jruby-19mode
   - jruby-20mode
+
+branches:
+  only:
+    - master
