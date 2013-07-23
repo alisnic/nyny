@@ -1,5 +1,5 @@
 #!ruby -I ../lib -I lib
-require 'frankie'
+require 'nyny'
 require 'sinatra'
 require 'ostruct'
 
@@ -16,7 +16,7 @@ module Views
 end
 
 
-class App < Frankie::App
+class App < NYNY::App
   helpers Views
 
   get '/' do

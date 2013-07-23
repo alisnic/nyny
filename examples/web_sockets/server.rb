@@ -1,5 +1,5 @@
 #!ruby -I ../../lib -I lib
-require 'frankie'
+require 'nyny'
 require 'faye/websocket'
 
 #
@@ -37,7 +37,7 @@ class WebSockets
   end
 end
 
-class App < Frankie::App
+class App < NYNY::App
   #Serve static assets from public folder
   use Rack::Static, :urls => ["/public"]
 
@@ -52,8 +52,8 @@ class App < Frankie::App
     end
   end
 
-  get '/frankie' do
-    'yep, you can still use frankie'
+  get '/nyny' do
+    'yep, you can still use nyny'
   end
 end
 

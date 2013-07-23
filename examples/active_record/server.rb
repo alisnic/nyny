@@ -6,14 +6,14 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup(:default, ENV['RACK_ENV'].to_sym)
 
-require 'frankie'
+require 'nyny'
 require_relative 'database'
 
 #Require all models
 Dir[File.dirname(__FILE__) + "/models/*.rb"].each {|file| require file }
 TEMPLATE = DATA.read.freeze
 
-class App < Frankie::App
+class App < NYNY::App
   get '/' do
     shouts = Shout.all.reverse
     ERB.new(TEMPLATE).result(binding)
