@@ -1,7 +1,10 @@
 require 'uri'
 require 'rack'
 
-require "nyny/version"
+module NYNY
+  VERSION = "1.0.0.pre1"
+end
+
 require 'nyny/primitives'
 require 'nyny/request_scope'
 require 'nyny/route_signature'
