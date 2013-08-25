@@ -1,4 +1,4 @@
-#!ruby -I ../lib -I lib
+#!ruby -I ../../lib -I lib
 require 'nyny'
 require 'sinatra'
 require 'ostruct'
