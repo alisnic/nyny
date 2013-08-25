@@ -2,8 +2,10 @@ require 'nyny'
 require 'rack'
 require 'securerandom'
 
-require 'coveralls'
-Coveralls.wear!
+if ENV['TRAVIS']
+  require 'coveralls'
+  Coveralls.wear!
+end
 
 include NYNY
 
