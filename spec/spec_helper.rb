@@ -1,12 +1,17 @@
-require 'nyny'
 require 'rack'
 require 'securerandom'
 
 if ENV['TRAVIS']
   require 'coveralls'
   Coveralls.wear!
+else
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter "spec"
+  end
 end
 
+require 'nyny'
 include NYNY
 
 class Rack::MockRequest
