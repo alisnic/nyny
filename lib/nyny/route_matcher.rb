@@ -16,7 +16,7 @@ module NYNY
         return [h, params] if params
       end
 
-      return [NullHandler, {}]
+      [NullHandler, {}]
     end
 
     def call env
