@@ -2,19 +2,13 @@ module NYNY
   class App
     extend ClassLevelApi
     extend Runner
+    include MiddlewareChain
 
     RouteNotFoundError = Class.new StandardError
 
     def initialize app=nil
       @app = app || lambda {|env| Response.new '', 404 }
-      build_middleware_chain
-    end
-
-    def build_middleware_chain
-      @top = self.class.middlewares.reverse.reduce (self) do |prev, entry|
-        klass, args, blk = entry
-        klass.new prev, *args, &blk
-      end
+      build_middleware_chain lambda {|env| _call(env)}
     end
 
     def handler_for_path method, path
@@ -41,17 +35,7 @@ module NYNY
     end
 
     def call env
-      if @top == self
-        _call env
-      else
-        if not @initialized_chain
-          @initialized_chain = true
-          @top.call(env)
-        else
-          @initialized_chain = false
-          _call env
-        end
-      end
+      invoke_middleware_chain env
     end
   end
 end
