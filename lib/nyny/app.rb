@@ -1,41 +1,65 @@
 module NYNY
   class App
-    extend ClassLevelApi
+    HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
     extend Runner
-    include MiddlewareChain
 
-    RouteNotFoundError = Class.new StandardError
-
+    attr_reader :middleware_chain, :route_matcher
     def initialize app=nil
-      @app = app || lambda {|env| Response.new '', 404 }
-      build_middleware_chain lambda {|env| _call(env)}
-    end
-
-    def handler_for_path method, path
-      self.class.routes.fetch(method.downcase.to_sym).each do |sig, h|
-        params = sig.match path
-        return [h, params] if params
-      end
-
-      raise RouteNotFoundError
-    end
-
-    def route req
-      begin
-        handler, params = handler_for_path req.request_method, req.path
-        req.params.merge! params
-        RequestScope.new(self, req).apply_to &handler
-      rescue KeyError, RouteNotFoundError
-        @app.call req.env
-      end
+      @route_matcher = RouteMatcher.new({
+        :routes => self.class.routes,
+        :fallback => (app || lambda {|env| Response.new '', 404 }),
+        :before_hooks => self.class.before_hooks,
+        :after_hooks => self.class.after_hooks
+      })
+      @middleware_chain = MiddlewareChain.new(self.class.middlewares,
+                                              lambda {|env| _call(env)})
     end
 
     def _call env
-      route Request.new(env)
+      route_matcher.call env
     end
 
     def call env
-      invoke_middleware_chain env
+      middleware_chain.call env
     end
+
+    #class methods
+    class << self
+      HTTP_VERBS.each do |method|
+        define_method method do |str, &blk|
+          (routes[method] ||= {})[RouteSignature.new(str)] = Proc.new &blk
+        end
+      end
+
+      def middlewares;  @middlewares  ||= []  end
+      def routes;       @routes       ||= {}  end
+      def before_hooks; @before_hooks ||= []  end
+      def after_hooks;  @after_hooks  ||= []  end
+
+      def use_protection! args={}
+        begin
+          require 'rack/protection'
+          middlewares.unshift [Rack::Protection, args]
+        rescue LoadError
+          puts "WARN: to use protection, you must install 'rack-protection' gem"
+        end
+      end
+
+      def before &blk
+        before_hooks << Proc.new(&blk)
+      end
+
+      def after &blk
+        after_hooks << Proc.new(&blk)
+      end
+
+      def use middleware, *args, &block
+        middlewares << [middleware, args, block]
+      end
+
+      def helpers *args
+        args.each {|m| RequestScope.add_helper_module m }
+      end
+    end #class methods
   end
 end

@@ -3,14 +3,6 @@ require 'spec_helper'
 describe App do
   let (:app) { mock_app {} }
 
-  describe '.run!' do
-    #
-  end
-
-  it 'should have the class methods included' do
-    extended_modules_for(App).should include(ClassLevelApi)
-  end
-
   it 'should return a rack response on call' do
     response = app.get '/'
     response.should be_a(Rack::Response)
@@ -23,7 +15,7 @@ describe App do
 
   it 'should match a route for any supported verbs' do
     url = random_url
-    verb = ClassLevelApi::HTTP_VERBS.sample
+    verb = App::HTTP_VERBS.sample
 
     app = mock_app do
       send verb, url do
@@ -122,23 +114,4 @@ describe App do
     res.headers['Set-Cookie'].should == 'foo=bar'
   end
 
-  describe '.run!' do
-    before do
-      handler = begin
-                  Rack::Handler::Thin
-                rescue LoadError
-                  Rack::Handler::WEBrick
-                end
-      handler.stub :run
-    end
-
-    it 'should include the default middleware on top' do
-      kls = frankie_app do
-      end
-
-      kls.run!
-      kls.middlewares.first.should == Rack::ShowExceptions
-      kls.middlewares[1].should == Rack::CommonLogger
-    end
-  end
 end
