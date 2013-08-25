@@ -4,6 +4,7 @@ require 'sinatra'
 require 'ostruct'
 
 module Views
+  CACHE = Tilt::Cache.new
   include ::Sinatra::Templates
 
   def settings
@@ -11,7 +12,7 @@ module Views
   end
 
   def template_cache
-    @template_cache = Tilt::Cache.new
+    CACHE
   end
 end
 
