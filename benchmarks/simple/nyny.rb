@@ -1,7 +1,7 @@
 #!ruby -I ../../lib -I lib
-require 'frankie'
+require 'nyny'
 
-class App < Frankie::App
+class App < NYNY::App
   get '/' do
     'Hello World!'
   end
