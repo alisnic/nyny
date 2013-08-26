@@ -106,18 +106,26 @@ NYNY supports the following verbs for defining a route: delete, get, head,
 options, patch, post, put and trace.
 
     class App < NYNY::App
-        post '/' do
-            'You Posted, dude!'
-        end
+      post '/' do
+        'You Posted, dude!'
+      end
     end
 
 NYNY also suports basic URL patterns:
 
     class App < NYNY::App
-        get '/greet/:first_name/:last_name' do
-            # The last expression in the block is _always_ considered the response body.
-            "Hello #{params[:first_name]} #{params[:last_name]}!"
-        end
+      get '/greet/:first_name/:last_name' do
+        # The last expression in the block is _always_ considered the response body.
+        "Hello #{params[:first_name]} #{params[:last_name]}!"
+      end
+    end
+
+you can also tell NYNY to match a regex for a path:
+
+    class App < NYNY::App
+      get /html/ do
+        'Your URL contains html!'
+      end
     end
 
 Each block that is passed to a route definition is evaluated in the context of
