@@ -3,27 +3,27 @@ module NYNY
     NAME_PATTERN = /:(\S+)/
 
     attr_reader :pattern
-    def initialize route
-      @pattern = if route.is_a? Regexp
-                   route
-                 else
-                   pattern_for route.dup
-                 end
+    def initialize signature
+      @pattern = pattern_for signature
     end
 
     def pattern_for string
+      return string if string.is_a? Regexp
       return string unless string.include? ':'
-      string = "/#{string}" unless string.start_with? '/'
-      parts = string.split '/'
 
-      groups = parts.map do |part|
+      signature = string.start_with?('/') ? string : "/#{string}"
+      build_regex signature
+    end
+
+    def build_regex signature
+      groups = signature.split('/').map do |part|
         next part if part.empty?
         next part unless part.start_with? ':'
         name = NAME_PATTERN.match(part)[1]
         %Q{(?<#{name}>\\S+)}
-      end.select {|s| !s.empty? }
+      end.select {|s| !s.empty? }.join('\/')
 
-      %r(\/#{groups.join('\/')})
+      %r(\/#{groups})
     end
 
     def match path
