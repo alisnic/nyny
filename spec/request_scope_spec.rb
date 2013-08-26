@@ -3,7 +3,7 @@ require 'spec_helper'
 describe RequestScope do
   let (:env) { Rack::MockRequest.env_for '/', :params => {:some => 'param'} }
   let (:dummy_request) { Rack::Request.new(env) }
-  let (:subject) { RequestScope.new App.new, dummy_request }
+  let (:subject) { RequestScope.new dummy_request }
   let (:handler) {
     Proc.new {"hello"}
   }
@@ -17,6 +17,16 @@ describe RequestScope do
     its (:params) { should == dummy_request.params }
     its (:cookies) { should == dummy_request.cookies }
     its (:session) { should == dummy_request.session }
+
+    it 'params should have insensitive keys' do
+      app = mock_app do
+        get '/' do
+          params[:foo].should == params['foo']
+        end
+      end
+
+      app.get '/?foo=bar'
+    end
 
     it '#headers should set the header values' do
       subject.headers 'Head' => 'Tail'

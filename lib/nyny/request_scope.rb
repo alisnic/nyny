@@ -1,16 +1,15 @@
 module NYNY
   class RequestScope
-    attr_reader :request, :app, :response
+    attr_reader :request, :response
 
     def self.add_helper_module m
       include m
     end
 
-    def initialize app, req
-      @app = app
+    def initialize request
       @headers = {'Content-Type' => 'text/html'}
       @status = 200
-      @request = req
+      @request = request
     end
 
     def params
@@ -42,17 +41,12 @@ module NYNY
     end
 
     def apply_to &handler
-      params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
-      app.class.before_hooks.each {|h| instance_eval &h }
-
       @response = @halt_response || begin
         Response.new instance_eval(&handler), @status, @headers
       end
 
       cookies.each {|k,v| @response.set_cookie k,v }
       @response.redirect(@redirect) if @redirect
-
-      app.class.after_hooks.each {|h| instance_eval &h }
       @response.finish
       @response
     end
