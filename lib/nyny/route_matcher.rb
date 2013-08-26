@@ -24,17 +24,21 @@ module NYNY
       handler, params = find_handler req
 
       if handler != NullHandler
-        req.params.merge! params
-        req.params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
-
-        scope = RequestScope.new(req)
-        before_hooks.each {|h| scope.instance_eval &h }
-        response = scope.apply_to &handler
-        after_hooks.each {|h| scope.instance_eval &h }
-        response
+        process req, handler, params
       else
         fallback.call env
       end
+    end
+
+    def process request, handler, url_params
+      request.params.merge! url_params
+      request.params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
+
+      scope = RequestScope.new(request)
+      before_hooks.each {|h| scope.instance_eval &h }
+      response = scope.apply_to &handler
+      after_hooks.each {|h| scope.instance_eval &h }
+      response
     end
   end
 end
