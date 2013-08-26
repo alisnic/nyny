@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Nyny by alisnic</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Nyny</h1>
+          <h2>New York, New York - (very) small Sinatra clone.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/alisnic/nyny/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/alisnic/nyny/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/alisnic/nyny" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="new-york-new-york" class="anchor" href="#new-york-new-york"><span class="octicon octicon-link"></span></a>New York, New York.</h1>
+
+<p>(very) small Sinatra clone.</p>
+
+<p><img src="https://api.travis-ci.org/alisnic/nyny.png" alt="alt text" title="build status"><a href="https://coveralls.io/r/alisnic/nyny"><img src="https://coveralls.io/repos/alisnic/nyny/badge.png" alt="Coverage Status"></a>
+<a href="https://codeclimate.com/repos/521b7ee513d637348712864a/feed"><img src="https://codeclimate.com/repos/521b7ee513d637348712864a/badges/60e3637788bbac94f1cb/gpa.png" alt="Code Climate"></a></p>
+
+<pre><code># myapp.rb
+
+require 'nyny'
+class App &lt; NYNY::App
+  get '/' do
+    'Hello world!'
+  end
+end
+
+App.run!
+</code></pre>
+
+<p>Install the gem:</p>
+
+<pre><code>gem install nyny
+</code></pre>
+
+<p>Run the file</p>
+
+<pre><code>ruby myapp.rb
+</code></pre>
+
+<p>Open the browser at <a href="">http://localhost:9292</a></p>
+
+<ul>
+<li><a href="#new-york-new-york">TOP</a></li>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#philosophy">Philosophy</a></li>
+<li><a href="#why-use-nyny-instead-of-sinatra">Why use NYNY instead of Sinatra</a></li>
+<li>
+<a href="#usage">Usage</a>
+
+<ul>
+<li><a href="#running">Running</a></li>
+<li><a href="#defining-routes">Defining routes</a></li>
+<li><a href="#request-scope">Request scope</a></li>
+<li><a href="#filters">Filters</a></li>
+<li><a href="#middleware">Middleware</a></li>
+<li><a href="#helpers">Helpers</a></li>
+</ul>
+</li>
+<li><a href="#f-a-q">FAQ</a></li>
+<li><a href="#contributing">Contributing</a></li>
+</ul><h1>
+<a name="motivation" class="anchor" href="#motivation"><span class="octicon octicon-link"></span></a>Motivation</h1>
+
+<p>My efforts to write <strong>NYNY</strong> started when I wanted to understand how <strong>Sinatra</strong>
+works, and stumbled upon the <a href="https://github.com/sinatra/sinatra/blob/master/lib/sinatra/base.rb">base.rb</a>. The majority of the classes that
+are used by sinatra are in one single file, which makes it nearly impossible
+for a new person to grasp.</p>
+
+<p>I wanted to understand how sinatra works, but the code was pretty challenging.
+So I decided I should re-implement the basic things Sinatra has.
+Thus, <strong>NYNY</strong> was born.</p>
+
+<h1>
+<a name="philosophy" class="anchor" href="#philosophy"><span class="octicon octicon-link"></span></a>Philosophy</h1>
+
+<p>NYNY should have only the bare minimum to write basic web servers comfortably,
+everything else should be in a extension. It is also
+trivial to use NYNY to build large and complex apps, by writing multiple sub
+apps and using Rack to mount them, or by using those sub apps in the "main" app
+as middleware.</p>
+
+<h1>
+<a name="why-use-nyny-instead-of-sinatra" class="anchor" href="#why-use-nyny-instead-of-sinatra"><span class="octicon octicon-link"></span></a>Why use NYNY instead of Sinatra</h1>
+
+<ul>
+<li>It's very small (&lt;300 LOC), which is just a little overhead on top of Rack.</li>
+<li>Sinatra is a drop-in replacement for NYNY. Anytime you feel that you need more,
+you can just change your app to inherit from <code>Sinatra::Base</code>, your code will
+still work, and you will be able to use any of the Sinatra features.</li>
+<li>It's <strong>~2 times faster</strong> than Sinatra (see <a href="https://github.com/alisnic/nyny/blob/master/Performance.md">Performance</a> for details)</li>
+<li>You want to dig into the source code and change to your needs (NYNY's source code is more welcoming)</li>
+<li>Each NYNY app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.</li>
+</ul><h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>A NYNY app must <em>always</em> be in a class which inherits from <code>NYNY::App</code>.</p>
+
+<pre><code>class App &lt; NYNY::App
+    get '/' do
+        'Hello, World'
+    end
+end
+</code></pre>
+
+<h2>
+<a name="running" class="anchor" href="#running"><span class="octicon octicon-link"></span></a>Running</h2>
+
+<p>There are two ways to run a NYNY app <strong>directly</strong> <a href="#middleware">[?]</a>:</p>
+
+<ul>
+<li>
+<p>by requiring it in a <code>config.ru</code> file, and then passing it as argument to the
+Rack's <code>run</code> function:</p>
+
+<pre><code>#config.ru
+require 'app'
+run App.new
+</code></pre>
+</li>
+<li>
+<p>by using the <code>run!</code> method directly on the app class:</p>
+
+<pre><code>#app.rb
+#...App class definition...
+
+App.run!
+</code></pre>
+</li>
+</ul><p><code>run!</code> takes the port number as optional argument (the default port is 9292).
+Also the <code>run!</code> method will include 2 default middlewares to make the
+development easier: Rack::CommonLogger and Rack::ShowExceptions.
+This will show all requests in the log, and will provide useful details
+in the case a error occurs during a request.</p>
+
+<h2>
+<a name="defining-routes" class="anchor" href="#defining-routes"><span class="octicon octicon-link"></span></a>Defining routes</h2>
+
+<p>NYNY supports the following verbs for defining a route: delete, get, head,
+options, patch, post, put and trace.</p>
+
+<pre><code>class App &lt; NYNY::App
+  post '/' do
+    'You Posted, dude!'
+  end
+end
+</code></pre>
+
+<p>NYNY also suports basic URL patterns:</p>
+
+<pre><code>class App &lt; NYNY::App
+  get '/greet/:first_name/:last_name' do
+    # The last expression in the block is _always_ considered the response body.
+    "Hello #{params[:first_name]} #{params[:last_name]}!"
+  end
+end
+</code></pre>
+
+<p>you can also tell NYNY to match a regex for a path:</p>
+
+<pre><code>class App &lt; NYNY::App
+  get /html/ do
+    'Your URL contains html!'
+  end
+end
+</code></pre>
+
+<p>Each block that is passed to a route definition is evaluated in the context of
+a request scope. See below what methods are available there.</p>
+
+<h2>
+<a name="request-scope" class="anchor" href="#request-scope"><span class="octicon octicon-link"></span></a>Request scope</h2>
+
+<p>As was said above, when you pass a block to a route definition,
+that block is evaluated in the context of a <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb">RequestScope</a>.
+This means that several methods/objects available inside that block:</p>
+
+<ul>
+<li>
+<code>request</code> - A <code>Rack::Request</code> object which encapsulates the request 
+to that route. (see <a href="http://rack.rubyforge.org/doc/classes/Rack/Request.html">Rack::Request documentation</a> for more info)</li>
+<li>
+<code>params</code> - a hash which contains both POST body params and GET querystring params.</li>
+<li>
+<code>headers</code> - allows you to read/add headers to the response
+(ex: <code>headers 'Content-Type' =&gt; 'text/html'</code>)</li>
+<li>
+<code>status</code> - allows you to set the status of the response (ex: <code>status 403</code>)</li>
+<li>
+<code>redirect_to</code> - sets the response to redirect
+(ex: <code>redirect_to 'http://google.com'</code>)</li>
+<li>
+<code>cookies</code> - a hash which allows you to access/modify/remove cookies
+(ex: <code>cookies[:foo] = 'bar'</code>)</li>
+<li>
+<code>session</code> - a hash which allows you to access/modify/remove session variables
+(ex: <code>session[:foo] = 'bar'</code>)</li>
+</ul><h2>
+<a name="filters" class="anchor" href="#filters"><span class="octicon octicon-link"></span></a>Filters</h2>
+
+<p>Unlike Sinatra, NYNY supports only "generic" before and after filters.
+This means that you can't declare a filter to execute depending on a URL pattern.
+However, you can obtain the same effect by calling next in a before block
+if the request.path matches a pattern.</p>
+
+<pre><code>class App &lt; NYNY::App
+  before do
+    next unless /html/ =~ request.path
+    headers 'Content-Type' =&gt; 'text/html'
+  end
+
+  after do
+    puts response.inspect
+  end
+
+  get '/' do
+    'hello'
+  end
+end
+</code></pre>
+
+<p>Before and after filters are also evaluated in a RequestScope context.
+A little exception are the after filters, which can access
+the <strong>response</strong> object (<a href="http://rack.rubyforge.org/doc/classes/Rack/Response.html">Rack::Response</a>).</p>
+
+<h2>
+<a name="middleware" class="anchor" href="#middleware"><span class="octicon octicon-link"></span></a>Middleware</h2>
+
+<p>A NYNY app is a Rack middleware, which means that it can be used inside 
+Sinatra, Rails, or any other Rack-based app:</p>
+
+<pre><code>class MyApp &lt; Sinatra::Base
+  use MyNYNYApp
+end
+</code></pre>
+
+<p>NYNY also supports middleware itself, and that means you can use Rack middleware
+(or a Sinatra app) inside a NYNY app:</p>
+
+<pre><code>class App &lt; NYNY::App
+  #this will serve all the files in the "public" folder
+  use Rack::Static :url =&gt; ['public']
+  use SinatraApp
+end
+</code></pre>
+
+<p>I recommend looking at <a href="https://github.com/rack/rack/wiki/List-of-Middleware">the list of Rack middlewares</a></p>
+
+<h2>
+<a name="helpers" class="anchor" href="#helpers"><span class="octicon octicon-link"></span></a>Helpers</h2>
+
+<p>NYNY supports helpers as Sinatra does:</p>
+
+<pre><code>class App &lt; NYNY::App
+  helpers MyHelperModule
+end
+</code></pre>
+
+<p>Using a helper implies that the helper module is included in the <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb">RequestScope</a>,
+and that all the methods in that module will be available inside a route
+definition block.</p>
+
+<h1>
+<a name="f-a-q" class="anchor" href="#f-a-q"><span class="octicon octicon-link"></span></a>F. A. Q.</h1>
+
+<p>TBD.</p>
+
+<h1>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h1>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+        </section>
+
+        <footer>
+          Nyny is maintained by <a href="https://github.com/alisnic">alisnic</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-43503501-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+      </div>
+    </div>
+  </body>
+</html>
