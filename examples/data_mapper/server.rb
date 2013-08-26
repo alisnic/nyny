@@ -9,8 +9,6 @@ Bundler.setup(:default, ENV['RACK_ENV'].to_sym)
 require 'nyny'
 require_relative 'database'
 
-#Require all models
-Dir[File.dirname(__FILE__) + "/models/*.rb"].each {|file| require file }
 TEMPLATE = DATA.read.freeze
 
 class App < NYNY::App

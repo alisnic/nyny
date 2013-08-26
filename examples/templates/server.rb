@@ -1,9 +1,10 @@
-#!ruby -I ../lib -I lib
-require 'frankie'
+#!ruby -I ../../lib -I lib
+require 'nyny'
 require 'sinatra'
 require 'ostruct'
 
 module Views
+  CACHE = Tilt::Cache.new
   include ::Sinatra::Templates
 
   def settings
@@ -11,12 +12,12 @@ module Views
   end
 
   def template_cache
-    @template_cache = Tilt::Cache.new
+    CACHE
   end
 end
 
 
-class App < Frankie::App
+class App < NYNY::App
   helpers Views
 
   get '/' do

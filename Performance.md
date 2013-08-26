@@ -1,4 +1,4 @@
-# Frankie vs Sinatra performance test
+# NYNY vs Sinatra performance test
 
 Note: all the tests below were made using Thin as a webserver. Httperf was
 choosen as the tool to do that. Bench settings: `--num-conns 10000`
@@ -9,7 +9,7 @@ If you have a clue how to make proper benchmarks (because, frankly, I don't), I 
 
 ## Results
 
-| Benchmark | Frankie (req/s) | Sinatra (req/s) |
+| Benchmark | NYNY (req/s) | Sinatra (req/s) |
 |-----------|:---------------:|:---------------:|
 | Simple    |__5012__         |2534             |
 | UrlPattern|__4564__         |2338             |
@@ -21,21 +21,21 @@ See below the code for each benchmark
 ## Code
 ### Simple
 
-    class App < Frankie::App #(or Sinatra::Base)
+    class App < NYNY::App #(or Sinatra::Base)
       get '/' do
         'Hello World!'
       end
     end
     
 ### UrlPattern
-    class App < Frankie::App #(or Sinatra::Base)
+    class App < NYNY::App #(or Sinatra::Base)
       get '/hello/:name' do
         "Hello #{params[:name]}!"
       end
     end
 
 ### Filters
-    class App < Frankie::App #(or Sinatra::Base)
+    class App < NYNY::App #(or Sinatra::Base)
       before do
         request
       end
@@ -56,7 +56,7 @@ See below the code for each benchmark
       end
     end
     
-    class App < Frankie::App #(or Sinatra::Base)
+    class App < NYNY::App #(or Sinatra::Base)
       helpers Dude
     
       get '/' do

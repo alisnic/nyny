@@ -1,10 +1,17 @@
-require 'nyny'
 require 'rack'
 require 'securerandom'
 
-require 'coveralls'
-Coveralls.wear!
+if ENV['TRAVIS']
+  require 'coveralls'
+  Coveralls.wear!
+else
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter "spec"
+  end
+end
 
+require 'nyny'
 include NYNY
 
 class Rack::MockRequest
@@ -17,10 +24,10 @@ def extended_modules_for kls
 end
 
 def mock_app &blk
-  Rack::MockRequest.new frankie_app(&blk).new
+  Rack::MockRequest.new mock_app_class(&blk).new
 end
 
-def frankie_app &blk
+def mock_app_class &blk
   Class.new(App, &blk)
 end
 

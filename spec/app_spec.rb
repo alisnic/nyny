@@ -3,14 +3,6 @@ require 'spec_helper'
 describe App do
   let (:app) { mock_app {} }
 
-  describe '.run!' do
-    #
-  end
-
-  it 'should have the class methods included' do
-    extended_modules_for(App).should include(ClassLevelApi)
-  end
-
   it 'should return a rack response on call' do
     response = app.get '/'
     response.should be_a(Rack::Response)
@@ -21,9 +13,17 @@ describe App do
     response.status.should == 404
   end
 
+  it '.use_protection! should add protection middleware on top' do
+    app_class = mock_app_class do
+      use_protection!
+    end
+
+    app_class.middlewares.first.should == [Rack::Protection, {}]
+  end
+
   it 'should match a route for any supported verbs' do
     url = random_url
-    verb = ClassLevelApi::HTTP_VERBS.sample
+    verb = App::HTTP_VERBS.sample
 
     app = mock_app do
       send verb, url do
@@ -82,7 +82,7 @@ describe App do
       [210, {}, ['Hello from downstream']]
     end
 
-    app_class = frankie_app do
+    app_class = mock_app_class do
       get '/' do
         'hello'
       end
@@ -122,23 +122,33 @@ describe App do
     res.headers['Set-Cookie'].should == 'foo=bar'
   end
 
-  describe '.run!' do
-    before do
-      handler = begin
-                  Rack::Handler::Thin
-                rescue LoadError
-                  Rack::Handler::WEBrick
-                end
-      handler.stub :run
-    end
-
-    it 'should include the default middleware on top' do
-      kls = frankie_app do
+  describe 'Class level api' do
+    let (:app_class) { Class.new(App) }
+    describe 'middlewares' do
+      let (:app_class) do
+        mock_app_class do
+          use NullMiddleware
+        end
       end
 
-      kls.run!
-      kls.middlewares.first.should == Rack::ShowExceptions
-      kls.middlewares[1].should == Rack::CommonLogger
+      it 'should allow to add a middleware' do
+        app_class.middlewares.last.first.should == NullMiddleware
+      end
+    end
+
+    describe 'helpers' do
+      it 'should allow to include a helper in request scope' do
+        app_class.helpers NullHelper
+        RequestScope.ancestors.should include(NullHelper)
+      end
+
+      it 'should allow to include multiple helpers modules' do
+        module NullHelper2
+        end
+
+        app_class.helpers NullHelper, NullHelper2
+        RequestScope.ancestors.should include(NullHelper, NullHelper2)
+      end
     end
   end
 end

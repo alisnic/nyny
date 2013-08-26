@@ -1,0 +1,7 @@
+source 'http://rubygems.org'
+gem 'sqlite3'
+gem 'rack'
+gem 'thin'
+
+gem 'data_mapper', '~> 1.2.0'
+gem 'dm-sqlite-adapter', '~> 1.2.0'

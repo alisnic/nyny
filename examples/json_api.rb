@@ -1,11 +1,11 @@
 #!ruby -I ../lib -I lib
-require 'frankie'
+require 'nyny'
 require 'json'
 
 #
 # Every response of this app will be automatically converted to json
 #
-class App < Frankie::App
+class App < NYNY::App
   before { headers 'Content-Type' => 'application/json' }
 
   after do

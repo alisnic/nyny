@@ -1,5 +1,5 @@
 #!ruby -I ../../lib -I lib
-require 'frankie'
+require 'nyny'
 
 module Dude
   def da_request_man
@@ -7,7 +7,7 @@ module Dude
   end
 end
 
-class App < Frankie::App
+class App < NYNY::App
   helpers Dude
 
   get '/' do
