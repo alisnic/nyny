@@ -69,6 +69,10 @@ header {
   text-align: center;
 }
 
+p.build-status {
+  text-align: center;
+}
+
 header h1 {
   font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif; font-weight: 900;
   letter-spacing: -1px;
