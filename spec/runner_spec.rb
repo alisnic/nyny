@@ -12,7 +12,7 @@ describe Runner do
     end
 
     it 'should include the default middleware on top' do
-      kls = frankie_app do
+      kls = mock_app_class do
       end
 
       kls.run!

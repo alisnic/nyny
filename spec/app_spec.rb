@@ -14,7 +14,7 @@ describe App do
   end
 
   it '.use_protection! should add protection middleware on top' do
-    app_class = frankie_app do
+    app_class = mock_app_class do
       use_protection!
     end
 
@@ -82,7 +82,7 @@ describe App do
       [210, {}, ['Hello from downstream']]
     end
 
-    app_class = frankie_app do
+    app_class = mock_app_class do
       get '/' do
         'hello'
       end
@@ -126,7 +126,7 @@ describe App do
     let (:app_class) { Class.new(App) }
     describe 'middlewares' do
       let (:app_class) do
-        frankie_app do
+        mock_app_class do
           use NullMiddleware
         end
       end
