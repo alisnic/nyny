@@ -3,9 +3,9 @@ module NYNY
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
     extend Runner
 
-    attr_reader :middleware_chain, :route_matcher
+    attr_reader :middleware_chain, :router
     def initialize app=nil
-      @route_matcher = RouteMatcher.new({
+      @router = Router.new({
         :routes => self.class.routes,
         :fallback => (app || lambda {|env| Response.new '', 404 }),
         :before_hooks => self.class.before_hooks,
@@ -16,7 +16,7 @@ module NYNY
     end
 
     def _call env
-      route_matcher.call env
+      router.call env
     end
 
     def call env

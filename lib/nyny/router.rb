@@ -1,5 +1,5 @@
 module NYNY
-  class RouteMatcher
+  class Router
     NullHandler = Class.new
 
     attr_reader :fallback, :routes, :before_hooks, :after_hooks
