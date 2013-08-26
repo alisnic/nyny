@@ -13,6 +13,14 @@ describe App do
     response.status.should == 404
   end
 
+  it '.use_protection! should add protection middleware on top' do
+    app_class = frankie_app do
+      use_protection!
+    end
+
+    app_class.middlewares.first.should == [Rack::Protection, {}]
+  end
+
   it 'should match a route for any supported verbs' do
     url = random_url
     verb = App::HTTP_VERBS.sample

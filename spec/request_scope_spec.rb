@@ -18,6 +18,16 @@ describe RequestScope do
     its (:cookies) { should == dummy_request.cookies }
     its (:session) { should == dummy_request.session }
 
+    it 'params should have insensitive keys' do
+      app = mock_app do
+        get '/' do
+          params[:foo].should == params['foo']
+        end
+      end
+
+      app.get '/?foo=bar'
+    end
+
     it '#headers should set the header values' do
       subject.headers 'Head' => 'Tail'
       response = subject.apply_to &handler

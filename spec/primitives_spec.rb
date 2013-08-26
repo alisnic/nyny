@@ -22,5 +22,12 @@ describe Response do
       res.body = raw_body
       res.raw_body.should == raw_body
     end
+
+    it 'should set the iterable as the raw body as well' do
+      res = Response.new
+      raw_body = ['one', 'two']
+      res.body = raw_body
+      res.raw_body.should == raw_body
+    end
   end
 end
