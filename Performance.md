@@ -5,6 +5,8 @@ choosen as the tool to do that. Bench settings: `--num-conns 10000`
 
 Hardware: Intel(R) Core(TM) i7-2620M CPU @ 2.70GHz, 6 GB DDR3
 
+If you have a clue how to make proper benchmarks (because, frankly, I don't), I am open to suggestions.
+
 ## Results
 
 | Benchmark | Frankie (req/s) | Sinatra (req/s) |
