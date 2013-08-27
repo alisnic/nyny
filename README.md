@@ -148,6 +148,8 @@ This means that several methods/objects available inside that block:
   (ex: `cookies[:foo] = 'bar'`)
 - `session` - a hash which allows you to access/modify/remove session variables
   (ex: `session[:foo] = 'bar'`)
+- `halt` - allows you to instantly return a response, interrupting current
+  handler execution (see [halt][halt-definition])
 
 ## Filters
 
@@ -226,3 +228,4 @@ TBD.
 [4]: http://rack.rubyforge.org/doc/classes/Rack/Response.html
 [performance]: https://github.com/alisnic/nyny/blob/master/Performance.md
 [rack-middleware]: https://github.com/rack/rack/wiki/List-of-Middleware
+[halt-definition]: https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb#L36
