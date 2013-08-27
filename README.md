@@ -18,7 +18,7 @@
     
 Install the gem:
 
-    gem install nyny --pre
+    gem install nyny
     
 Run the file
     
