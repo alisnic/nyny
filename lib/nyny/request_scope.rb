@@ -36,9 +36,10 @@ module NYNY
       @halt_response = Response.new body, status, @headers.merge(headers)
     end
 
-    def redirect_to path
-      @redirect = path
+    def redirect_to uri, status=302
+      @redirect = [uri, status]
     end
+    alias_method :redirect, :redirect_to
 
     def apply_to &handler
       @response = @halt_response || begin
@@ -46,7 +47,7 @@ module NYNY
       end
 
       cookies.each {|k,v| @response.set_cookie k,v }
-      @response.redirect(@redirect) if @redirect
+      @response.redirect(*@redirect) if @redirect
       @response.finish
       @response
     end
