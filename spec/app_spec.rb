@@ -37,6 +37,10 @@ describe App do
 
   it 'should support route patterns' do
     app = mock_app do
+      get '/some/:name' do
+        'foo'
+      end
+
       get '/:name' do
         "hello #{params[:name]}"
       end
