@@ -20,11 +20,11 @@ Install the gem:
 
     gem install nyny
     
-Run the file
+Run the file:
     
     ruby myapp.rb
     
-Open the browser at [http://localhost:9292]()
+Open the browser at [http://localhost:9292](http://localhost:9292)
 
 - [TOP](#new-york-new-york)
 - [Motivation](#motivation)
@@ -68,12 +68,12 @@ as middleware.
 
 # Usage
 
-A NYNY app must _always_ be in a class which inherits from `NYNY::App`.
+A NYNY app must _always_ be in a class which inherits from `NYNY::App`:
 
     class App < NYNY::App
-        get '/' do
-            'Hello, World'
-        end
+      get '/' do
+        'Hello, World'
+      end
     end
 
 ## Running
@@ -82,14 +82,16 @@ There are two ways to run a NYNY app __directly__ [[?]](#middleware):
 - by requiring it in a `config.ru` file, and then passing it as argument to the
 Rack's `run` function:
 
-        #config.ru
+        # config.ru
+        
         require 'app'
         run App.new
 
 - by using the `run!` method directly on the app class:
 
-        #app.rb
-        #...App class definition...
+        # app.rb
+        
+        # ...app class definition...
 
         App.run!
 
@@ -115,7 +117,7 @@ NYNY also suports basic URL patterns:
 
     class App < NYNY::App
       get '/greet/:first_name/:last_name' do
-        # The last expression in the block is _always_ considered the response body.
+        # the last expression in the block is _always_ considered the response body.
         "Hello #{params[:first_name]} #{params[:last_name]}!"
       end
     end
@@ -190,7 +192,7 @@ NYNY also supports middleware itself, and that means you can use Rack middleware
 (or a Sinatra app) inside a NYNY app:
 
     class App < NYNY::App
-      #this will serve all the files in the "public" folder
+      # this will serve all the files in the "public" folder
       use Rack::Static :url => ['public']
       use SinatraApp
     end
@@ -211,7 +213,6 @@ definition block.
 
 # F. A. Q.
 TBD.
-
 
 # Contributing
 
