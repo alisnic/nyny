@@ -66,9 +66,33 @@ describe RequestScope do
       prc.should_not_receive(:call)
     end
 
+    it 'should halt if the statement is in the route definition' do
+      app = mock_app do
+        get '/' do
+          halt 200, {}, 'Halted'
+          'shouldnt be returned'
+        end
+      end
+      res = app.get '/'
+      res.status.should == 200
+      res.body.should == 'Halted'
+    end
+
+    it 'return prematurely with pass' do
+      app = mock_app do
+        get '/' do
+          next 'hui'
+          'shouldnt be returned'
+        end
+      end
+      res = app.get '/'
+      res.status.should == 200
+      res.body.should == 'hui'
+    end
+
     it '#redirect_to should redirect' do
       redir = Proc.new { redirect_to 'http://foo.bar' }
-      response = subject.apply_to &redir
+      response = catch(:halt) { subject.apply_to &redir }
       response.status.should == 302
       response.headers['Location'].should == 'http://foo.bar'
     end

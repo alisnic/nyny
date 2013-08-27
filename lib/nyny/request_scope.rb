@@ -1,6 +1,7 @@
 module NYNY
   class RequestScope
     attr_reader :request, :response
+    HaltError = Class.new(StandardError)
 
     def self.add_helper_module m
       include m
@@ -33,22 +34,17 @@ module NYNY
     end
 
     def halt status, headers={}, body=''
-      @halt_response = Response.new body, status, @headers.merge(headers)
+      throw :halt, Response.new(body, status, @headers.merge(headers))
     end
 
     def redirect_to uri, status=302
-      @redirect = [uri, status]
+      halt status, {'Location' => uri}
     end
     alias_method :redirect, :redirect_to
 
     def apply_to &handler
-      @response = @halt_response || begin
-        Response.new instance_eval(&handler), @status, @headers
-      end
-
+      @response = Response.new instance_eval(&handler), @status, @headers
       cookies.each {|k,v| @response.set_cookie k,v }
-      @response.redirect(*@redirect) if @redirect
-      @response.finish
       @response
     end
   end

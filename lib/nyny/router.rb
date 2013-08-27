@@ -35,10 +35,12 @@ module NYNY
       request.params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
 
       scope = RequestScope.new(request)
-      before_hooks.each {|h| scope.instance_eval &h }
-      response = scope.apply_to &handler
-      after_hooks.each {|h| scope.instance_eval &h }
-      response
+      catch (:halt) do
+        before_hooks.each {|h| scope.instance_eval &h }
+        response = scope.apply_to &handler
+        after_hooks.each {|h| scope.instance_eval &h }
+        response
+      end
     end
   end
 end
