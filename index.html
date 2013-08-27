@@ -232,6 +232,9 @@ to that route. (see <a href="http://rack.rubyforge.org/doc/classes/Rack/Request.
 <li>
 <code>session</code> - a hash which allows you to access/modify/remove session variables
 (ex: <code>session[:foo] = 'bar'</code>)</li>
+<li>
+<code>halt</code> - allows you to instantly return a response, interrupting current
+handler execution (see <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb#L36">halt</a>)</li>
 </ul><h2>
 <a name="filters" class="anchor" href="#filters"><span class="octicon octicon-link"></span></a>Filters</h2>
 
