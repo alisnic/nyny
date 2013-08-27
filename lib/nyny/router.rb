@@ -24,16 +24,19 @@ module NYNY
       handler, params = find_handler req
 
       if handler != NullHandler
-        process req, handler, params
+        prepare_params request, url_params
+        process req, handler
       else
         fallback.call env
       end
     end
 
-    def process request, handler, url_params
+    def prepare_params request, url_params
       request.params.merge! url_params
       request.params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
+    end
 
+    def process request, handler
       scope = RequestScope.new(request)
       catch (:halt) do
         before_hooks.each {|h| scope.instance_eval &h }
