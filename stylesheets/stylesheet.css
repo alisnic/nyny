@@ -171,6 +171,10 @@ a.button span {
   margin-right: 0;
 }
 
+.social {
+  text-align: right;
+}
+
 code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
   color: #222;
