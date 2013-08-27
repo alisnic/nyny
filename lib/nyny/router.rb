@@ -24,7 +24,7 @@ module NYNY
       handler, params = find_handler req
 
       if handler != NullHandler
-        prepare_params request, url_params
+        prepare_params req, params
         process req, handler
       else
         fallback.call env
