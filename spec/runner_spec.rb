@@ -4,12 +4,7 @@ describe Runner do
   let (:kls) { mock_app_class {} }
 
   before do
-    handler = begin
-                Rack::Handler::Thin
-              rescue LoadError
-                Rack::Handler::WEBrick
-              end
-    handler.stub :run
+    kls.optimal_runner.stub :run
   end
 
   it 'should include the default middleware on top' do
