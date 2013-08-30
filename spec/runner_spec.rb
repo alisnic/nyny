@@ -1,23 +1,27 @@
 require 'spec_helper'
 
 describe Runner do
-  describe '.run!' do
-    before do
-      handler = begin
-                  Rack::Handler::Thin
-                rescue LoadError
-                  Rack::Handler::WEBrick
-                end
-      handler.stub :run
-    end
+  let (:kls) { mock_app_class {} }
 
-    it 'should include the default middleware on top' do
-      kls = mock_app_class do
-      end
+  before do
+    handler = begin
+                Rack::Handler::Thin
+              rescue LoadError
+                Rack::Handler::WEBrick
+              end
+    handler.stub :run
+  end
 
-      kls.run!
-      kls.middlewares.first.should == Rack::ShowExceptions
-      kls.middlewares[1].should == Rack::CommonLogger
-    end
+  it 'should include the default middleware on top' do
+    kls.run!
+    kls.middlewares.first.should == Rack::ShowExceptions
+    kls.middlewares[1].should == Rack::CommonLogger
+  end
+
+  it 'should support before run hooks' do
+    prc = Proc.new { 'foo' }
+    kls.before_run &prc
+    kls.should_receive(:instance_eval).with(&prc)
+    kls.run!
   end
 end
