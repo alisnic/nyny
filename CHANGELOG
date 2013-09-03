@@ -1,5 +1,6 @@
 1.1.0
   - Simplified and improved RouteSignature implementation
+  - Simplified and improved RequestScope implementation
   - Made response object available in RequestScope
 
 1.0.0 Initial release
