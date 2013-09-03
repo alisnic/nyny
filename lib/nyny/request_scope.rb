@@ -8,9 +8,8 @@ module NYNY
     end
 
     def initialize request
-      @headers = {'Content-Type' => 'text/html'}
-      @status = 200
       @request = request
+      @response = Response.new '', 200, {'Content-Type' => 'text/html'}
     end
 
     def params
@@ -18,7 +17,7 @@ module NYNY
     end
 
     def headers hash={}
-      @headers.merge! hash
+      response.headers.merge! hash
     end
 
     def session
@@ -30,11 +29,14 @@ module NYNY
     end
 
     def status code
-      @status = code
+      response.status = code
     end
 
     def halt status, headers={}, body=''
-      throw :halt, Response.new(body, status, @headers.merge(headers))
+      response.status = status
+      response.headers.merge! headers
+      response.body = body
+      throw :halt, response
     end
 
     def redirect_to uri, status=302
@@ -43,9 +45,9 @@ module NYNY
     alias_method :redirect, :redirect_to
 
     def apply_to &handler
-      @response = Response.new instance_eval(&handler), @status, @headers
-      cookies.each {|k,v| @response.set_cookie k,v }
-      @response
+      response.body = instance_eval(&handler)
+      cookies.each {|k,v| response.set_cookie k,v }
+      response
     end
   end
 end
