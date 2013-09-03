@@ -20,48 +20,54 @@ See below the code for each benchmark
 
 ## Code
 ### Simple
+```ruby
+class App < NYNY::App #(or Sinatra::Base)
+  get '/' do
+    'Hello World!'
+  end
+end
+```
 
-    class App < NYNY::App #(or Sinatra::Base)
-      get '/' do
-        'Hello World!'
-      end
-    end
-    
 ### UrlPattern
-    class App < NYNY::App #(or Sinatra::Base)
-      get '/hello/:name' do
-        "Hello #{params[:name]}!"
-      end
-    end
+```ruby
+class App < NYNY::App #(or Sinatra::Base)
+  get '/hello/:name' do
+    "Hello #{params[:name]}!"
+  end
+end
+```
 
 ### Filters
-    class App < NYNY::App #(or Sinatra::Base)
-      before do
-        request
-      end
-    
-      after do
-        response
-      end
-    
-      get '/' do
-        'Hello World!'
-      end
-    end
-    
-### Helpers
-    module Dude
-      def da_request_man
-        request
-      end
-    end
-    
-    class App < NYNY::App #(or Sinatra::Base)
-      helpers Dude
-    
-      get '/' do
-        da_request_man
-        'Hello World!'
-      end
-    end
+```ruby
+class App < NYNY::App #(or Sinatra::Base)
+  before do
+    request
+  end
 
+  after do
+    response
+  end
+
+  get '/' do
+    'Hello World!'
+  end
+end
+```
+
+### Helpers
+```ruby
+module Dude
+  def da_request_man
+    request
+  end
+end
+
+class App < NYNY::App #(or Sinatra::Base)
+  helpers Dude
+
+  get '/' do
+    da_request_man
+    'Hello World!'
+  end
+end
+```
