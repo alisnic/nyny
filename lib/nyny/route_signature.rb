@@ -7,10 +7,9 @@ module NYNY
       @pattern = pattern_for signature
     end
 
-    def pattern_for string
-      return string if string.is_a? Regexp
-      signature = string.start_with?('/') ? string : "/#{string}"
-      build_regex signature
+    def pattern_for signature
+      return signature if signature.is_a? Regexp
+      build_regex(signature.start_with?('/') ? signature : "/#{signature}")
     end
 
     def build_regex signature
