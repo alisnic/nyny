@@ -1,7 +1,6 @@
 module NYNY
   class RequestScope
     attr_reader :request, :response
-    HaltError = Class.new(StandardError)
 
     def self.add_helper_module m
       include m
