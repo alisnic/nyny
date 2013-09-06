@@ -13,10 +13,4 @@ describe Runner do
     kls.middlewares[1].should == Rack::CommonLogger
   end
 
-  it 'should support before run hooks' do
-    prc = Proc.new { 'foo' }
-    kls.before_run &prc
-    kls.should_receive(:instance_eval).with(&prc)
-    kls.run!
-  end
 end
