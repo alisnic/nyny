@@ -36,12 +36,10 @@ module NYNY
       def before_hooks; @before_hooks ||= []  end
       def after_hooks;  @after_hooks  ||= []  end
 
-      def use_protection! args={}
-        begin
-          require 'rack/protection'
-          middlewares.unshift [Rack::Protection, args]
-        rescue LoadError
-          puts "WARN: to use protection, you must install 'rack-protection' gem"
+      def register *extensions
+        extensions.each do |ext|
+          extend ext
+          ext.registered(self) if ext.respond_to?(:registered)
         end
       end
 

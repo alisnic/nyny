@@ -2,5 +2,7 @@
   - Simplified and improved RouteSignature implementation
   - Simplified and improved RequestScope implementation
   - Made response object available in RequestScope
+  - removed .use_protection! and moved it to extensions
+  - add .register, which registers an extension (works the same way as in sinatra)
 
 1.0.0 Initial release
