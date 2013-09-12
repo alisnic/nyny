@@ -4,6 +4,7 @@
 ![alt text](https://api.travis-ci.org/alisnic/nyny.png "build status")
 [![Coverage Status](https://coveralls.io/repos/alisnic/nyny/badge.png)](https://coveralls.io/r/alisnic/nyny)
 [![Code Climate](https://codeclimate.com/repos/521b7ee513d637348712864a/badges/60e3637788bbac94f1cb/gpa.png)](https://codeclimate.com/repos/521b7ee513d637348712864a/feed)
+[![Dependency Status](https://gemnasium.com/alisnic/nyny.png)](https://gemnasium.com/alisnic/nyny)
 
     # myapp.rb
 
