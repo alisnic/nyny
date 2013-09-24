@@ -215,7 +215,7 @@ definition block.
 
 Since version 2.0.0, NYNY added support for extensions.
 This makes possible to include helpers, middlewares and custom app class
-methods inside a single extension:
+methods inside a single module:
 
     module MyKewlExtension
       class Middleware
