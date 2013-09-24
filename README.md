@@ -1,7 +1,7 @@
 # New York, New York.
 (very) small Sinatra clone.
 
-![alt text](https://api.travis-ci.org/alisnic/nyny.png "build status")
+[![Build Status](https://api.travis-ci.org/alisnic/nyny.png)](https://travis-ci.org/alisnic/nyny)
 [![Coverage Status](https://coveralls.io/repos/alisnic/nyny/badge.png)](https://coveralls.io/r/alisnic/nyny)
 [![Code Climate](https://codeclimate.com/repos/521b7ee513d637348712864a/badges/60e3637788bbac94f1cb/gpa.png)](https://codeclimate.com/repos/521b7ee513d637348712864a/feed)
 [![Dependency Status](https://gemnasium.com/alisnic/nyny.png)](https://gemnasium.com/alisnic/nyny)
@@ -22,11 +22,11 @@ Install the gem:
 
     gem install nyny
     
-Run the file
+Run the file:
     
     ruby myapp.rb
     
-Open the browser at [http://localhost:9292]()
+Open the browser at [http://localhost:9292](http://localhost:9292)
 
 - [TOP](#new-york-new-york)
 - [Motivation](#motivation)
@@ -71,12 +71,12 @@ as middleware.
 
 # Usage
 
-A NYNY app must _always_ be in a class which inherits from `NYNY::App`.
+A NYNY app must _always_ be in a class which inherits from `NYNY::App`:
 
     class App < NYNY::App
-        get '/' do
-            'Hello, World'
-        end
+      get '/' do
+        'Hello, World'
+      end
     end
 
 ## Running
@@ -85,14 +85,16 @@ There are two ways to run a NYNY app __directly__ [[?]](#middleware):
 - by requiring it in a `config.ru` file, and then passing it as argument to the
 Rack's `run` function:
 
-        #config.ru
+        # config.ru
+        
         require 'app'
         run App.new
 
 - by using the `run!` method directly on the app class:
 
-        #app.rb
-        #...App class definition...
+        # app.rb
+        
+        # ...app class definition...
 
         App.run!
 
@@ -118,7 +120,7 @@ NYNY also suports basic URL patterns:
 
     class App < NYNY::App
       get '/greet/:first_name/:last_name' do
-        # The last expression in the block is _always_ considered the response body.
+        # the last expression in the block is _always_ considered the response body.
         "Hello #{params[:first_name]} #{params[:last_name]}!"
       end
     end
@@ -190,7 +192,7 @@ NYNY also supports middleware itself, and that means you can use Rack middleware
 (or a Sinatra app) inside a NYNY app:
 
     class App < NYNY::App
-      #this will serve all the files in the "public" folder
+      # this will serve all the files in the "public" folder
       use Rack::Static :url => ['public']
       use SinatraApp
     end
@@ -263,7 +265,6 @@ written for NYNY will always work with Sinatra. (Forward compatible)
 
 # F. A. Q.
 TBD.
-
 
 # Contributing
 
