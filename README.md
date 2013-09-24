@@ -217,42 +217,42 @@ Since version 2.0.0, NYNY added support for extensions.
 This makes possible to include helpers, middlewares and custom app class
 methods inside a single extension:
 
-  module MyKewlExtension
-    class Middleware
-      def initialize app
-        @app = app
+    module MyKewlExtension
+      class Middleware
+        def initialize app
+          @app = app
+        end
+
+        def call env
+          env['KEWL'] = true
+          @app.call(env) if @app
+        end
       end
 
-      def call env
-        env['KEWL'] = true
-        @app.call(env) if @app
+      module Helpers
+        def the_ultimate_answer
+          42
+        end
+      end
+
+      def get_or_post route, &block
+        get route, &block
+        post route, &block
+      end
+
+      def self.registered app
+        app.use Middleware
+        app.helpers Helpers
+
+        app.get_or_post '/' do
+          "After many years of hard computation, the answer is #{the_ultimate_answer}"
+        end
       end
     end
 
-    module Helpers
-      def the_ultimate_answer
-        42
-      end
+    class App < NYNY::App
+      register MyKewlExtension
     end
-
-    def get_or_post route, &block
-      get route, &block
-      post route, &block
-    end
-
-    def self.registered app
-      app.use Middleware
-      app.helpers Helpers
-
-      app.get_or_post '/' do
-        "After many years of hard computation, the answer is #{the_ultimate_answer}"
-      end
-    end
-  end
-
-  class App < NYNY::App
-    register MyKewlExtension
-  end
 
 By default, the App class will `extend` the provided extension module.
 Optionally, an extension can add a `registered` method, which will be invoked
