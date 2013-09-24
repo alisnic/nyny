@@ -143,7 +143,7 @@ This means that several methods/objects available inside that block:
 
 - `request` - A `Rack::Request` object which encapsulates the request
   to that route. (see [Rack::Request documentation][3] for more info)
-- `respons` - A `Rack::Response` object which encapsulates the response
+- `response` - A `Rack::Response` object which encapsulates the response
 - `params` - a hash which contains both POST body params and GET querystring params.
 - `headers` - allows you to read/add headers to the response
   (ex: `headers 'Content-Type' => 'text/html'`)
