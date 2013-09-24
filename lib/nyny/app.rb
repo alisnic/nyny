@@ -1,7 +1,6 @@
 module NYNY
   class App
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
-    extend Runner
 
     attr_reader :middleware_chain, :router
     def initialize app=nil
@@ -36,6 +35,7 @@ module NYNY
       def before_hooks; @before_hooks ||= []  end
       def after_hooks;  @after_hooks  ||= []  end
 
+      # move middleware chain and runner to core-ext
       def register *extensions
         extensions.each do |ext|
           extend ext
