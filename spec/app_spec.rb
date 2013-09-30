@@ -13,12 +13,29 @@ describe App do
     response.status.should == 404
   end
 
-  it '.use_protection! should add protection middleware on top' do
-    app_class = mock_app_class do
-      use_protection!
+  it 'should able to register a extension' do
+    module Foo
+      def foo
+      end
     end
 
-    app_class.middlewares.first.should == [Rack::Protection, {}]
+    kls = mock_app_class {}
+    kls.register(Foo)
+    kls.should respond_to(:foo)
+  end
+
+  it 'should call registered method on extension' do
+    module Foo
+      def self.registered app
+        #
+      end
+    end
+
+    class SomeApp < NYNY::App
+    end
+
+    Foo.should_receive(:registered).with(SomeApp)
+    SomeApp.register(Foo)
   end
 
   it 'should match a route for any supported verbs' do
@@ -37,6 +54,10 @@ describe App do
 
   it 'should support route patterns' do
     app = mock_app do
+      get '/some/:name' do
+        'foo'
+      end
+
       get '/:name' do
         "hello #{params[:name]}"
       end
