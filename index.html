@@ -53,6 +53,8 @@
   <a href="https://codeclimate.com/repos/521b7ee513d637348712864a/feed">
     <img src="https://codeclimate.com/repos/521b7ee513d637348712864a/badges/60e3637788bbac94f1cb/gpa.png" alt="Code Climate">
   </a>
+  <a href="https://gemnasium.com/alisnic/nyny"><img src="https://gemnasium.com/alisnic/nyny.png" alt="Dependency Status" style="max-width:100%;"></a>
+  <a href="http://badge.fury.io/rb/nyny"><img src="https://badge.fury.io/rb/nyny.png" alt="Gem Version" style="max-width:100%;"></a>
 </p>
 
 <pre><code># myapp.rb
@@ -94,6 +96,7 @@ App.run!
 <li><a href="#filters">Filters</a></li>
 <li><a href="#middleware">Middleware</a></li>
 <li><a href="#helpers">Helpers</a></li>
+<li><a href="#extensions">Extensions</a></li>
 </ul>
 </li>
 <li><a href="#f-a-q">FAQ</a></li>
@@ -301,6 +304,62 @@ end
 <p>Using a helper implies that the helper module is included in the <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb">RequestScope</a>,
 and that all the methods in that module will be available inside a route
 definition block.</p>
+
+
+<h2>
+  <a name="extensions" class="anchor" href="#extensions"><span class="octicon octicon-link"></span></a>Extensions</h2>
+<p>Since version 2.0.0, NYNY added support for extensions.
+This makes possible to include helpers, middlewares and custom app class
+methods inside a single module:</p>
+
+<pre><code>module MyKewlExtension
+  class Middleware
+    def initialize app
+      @app = app
+    end
+
+    def call env
+      env['KEWL'] = true
+      @app.call(env) if @app
+    end
+  end
+
+  module Helpers
+    def the_ultimate_answer
+      42
+    end
+  end
+
+  def get_or_post route, &amp;block
+    get route, &amp;block
+    post route, &amp;block
+  end
+
+  def self.registered app
+    app.use Middleware
+    app.helpers Helpers
+
+    app.get_or_post '/' do
+      "After many years of hard computation, the answer is #{the_ultimate_answer}"
+    end
+  end
+end
+
+class App &lt; NYNY::App
+  register MyKewlExtension
+end
+
+App.run!
+</code></pre>
+
+<p>By default, the App class will <code>extend</code> the provided extension module.
+Optionally, an extension can add a <code>registered</code> method, which will be invoked
+once the extension is registered. That method will be called with the app class
+as a parameter.</p>
+
+<p>Since NYNY has the same extension interface as Sinatra, some Sinatra extensions
+might work with NYNY, although that is not guaranteed. However, an extension
+written for NYNY will always work with Sinatra. (Forward compatible)</p>
 
 <h1>
 <a name="f-a-q" class="anchor" href="#f-a-q"><span class="octicon octicon-link"></span></a>F. A. Q.</h1>
