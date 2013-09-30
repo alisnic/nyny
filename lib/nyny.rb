@@ -5,7 +5,14 @@ require 'nyny/version'
 require 'nyny/primitives'
 require 'nyny/request_scope'
 require 'nyny/route_signature'
-require 'nyny/runner'
 require 'nyny/middleware_chain'
-require 'nyny/router'
 require 'nyny/app'
+require 'nyny/router'
+
+
+# Register core extensions
+require 'nyny/core-ext/runner'
+
+module NYNY
+  App.register NYNY::Runner
+end

@@ -4,6 +4,8 @@
 [![Build Status](https://api.travis-ci.org/alisnic/nyny.png)](https://travis-ci.org/alisnic/nyny)
 [![Coverage Status](https://coveralls.io/repos/alisnic/nyny/badge.png)](https://coveralls.io/r/alisnic/nyny)
 [![Code Climate](https://codeclimate.com/repos/521b7ee513d637348712864a/badges/60e3637788bbac94f1cb/gpa.png)](https://codeclimate.com/repos/521b7ee513d637348712864a/feed)
+[![Dependency Status](https://gemnasium.com/alisnic/nyny.png)](https://gemnasium.com/alisnic/nyny)
+[![Gem Version](https://badge.fury.io/rb/nyny.png)](http://badge.fury.io/rb/nyny)
 
     # myapp.rb
 
@@ -37,6 +39,7 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
     - [Filters](#filters)
     - [Middleware](#middleware)
     - [Helpers](#helpers)
+    - [Extensions](#extensions)
 - [FAQ](#f-a-q)
 - [Contributing](#contributing)
 
@@ -138,8 +141,9 @@ As was said above, when you pass a block to a route definition,
 that block is evaluated in the context of a [RequestScope][2].
 This means that several methods/objects available inside that block:
 
-- `request` - A `Rack::Request` object which encapsulates the request 
+- `request` - A `Rack::Request` object which encapsulates the request
   to that route. (see [Rack::Request documentation][3] for more info)
+- `response` - A `Rack::Response` object which encapsulates the response
 - `params` - a hash which contains both POST body params and GET querystring params.
 - `headers` - allows you to read/add headers to the response
   (ex: `headers 'Content-Type' => 'text/html'`)
@@ -175,10 +179,6 @@ if the request.path matches a pattern.
       end
     end
 
-Before and after filters are also evaluated in a RequestScope context.
-A little exception are the after filters, which can access
-the __response__ object ([Rack::Response][4]).
-
 ## Middleware
 
 A NYNY app is a Rack middleware, which means that it can be used inside 
@@ -210,6 +210,60 @@ NYNY supports helpers as Sinatra does:
 Using a helper implies that the helper module is included in the [RequestScope][2],
 and that all the methods in that module will be available inside a route
 definition block.
+
+## Extensions
+
+Since version 2.0.0, NYNY added support for extensions.
+This makes possible to include helpers, middlewares and custom app class
+methods inside a single module:
+
+    module MyKewlExtension
+      class Middleware
+        def initialize app
+          @app = app
+        end
+
+        def call env
+          env['KEWL'] = true
+          @app.call(env) if @app
+        end
+      end
+
+      module Helpers
+        def the_ultimate_answer
+          42
+        end
+      end
+
+      def get_or_post route, &block
+        get route, &block
+        post route, &block
+      end
+
+      def self.registered app
+        app.use Middleware
+        app.helpers Helpers
+
+        app.get_or_post '/' do
+          "After many years of hard computation, the answer is #{the_ultimate_answer}"
+        end
+      end
+    end
+
+    class App < NYNY::App
+      register MyKewlExtension
+    end
+
+    App.run!
+
+By default, the App class will `extend` the provided extension module.
+Optionally, an extension can add a `registered` method, which will be invoked
+once the extension is registered. That method will be called with the app class
+as a parameter.
+
+Since NYNY has the same extension interface as Sinatra, some Sinatra extensions
+might work with NYNY, although that is not guaranteed. However, an extension
+written for NYNY will always work with Sinatra. (Forward compatible)
 
 # F. A. Q.
 TBD.

@@ -7,15 +7,14 @@ module NYNY
       @pattern = pattern_for signature
     end
 
-    def pattern_for string
-      return string if string.is_a? Regexp
-      return string unless string.include? ':'
-
-      signature = string.start_with?('/') ? string : "/#{string}"
-      build_regex signature
+    def pattern_for signature
+      return signature if signature.is_a? Regexp
+      build_regex(signature.start_with?('/') ? signature : "/#{signature}")
     end
 
     def build_regex signature
+      return %r(^#{signature}$) unless signature.include?(':')
+
       groups = signature.split('/').map do |part|
         next part if part.empty?
         next part unless part.start_with? ':'
@@ -23,21 +22,13 @@ module NYNY
         %Q{(?<#{name}>\\S+)}
       end.select {|s| !s.empty? }.join('\/')
 
-      %r(\/#{groups})
+      %r(^\/#{groups}$)
     end
 
     def match path
-      return (pattern == path ? {} : nil) if pattern.is_a?(String)
       data = pattern.match path
-
       if data
-        if pattern.respond_to? :names
-          Hash[data.names.map {|n| [n.to_sym, URI.unescape(data[n])]}]
-        else
-          {}
-        end
-      else
-        nil
+        Hash[data.names.map {|n| [n.to_sym, URI.unescape(data[n])]}]
       end
     end
   end
