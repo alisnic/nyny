@@ -5,5 +5,8 @@
   - removed .use_protection! (the rack-protection) middleware can be easily
     used manually
   - add .register, which registers an extension (works the same way as in sinatra)
+  
+1.0.2
+  - Add rack to runtime deps (@etehtsea)
 
 1.0.0 Initial release
