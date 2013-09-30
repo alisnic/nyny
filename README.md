@@ -254,6 +254,8 @@ methods inside a single module:
       register MyKewlExtension
     end
 
+    App.run!
+
 By default, the App class will `extend` the provided extension module.
 Optionally, an extension can add a `registered` method, which will be invoked
 once the extension is registered. That method will be called with the app class
