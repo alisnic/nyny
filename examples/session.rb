@@ -10,7 +10,8 @@ class App < NYNY::App
 
   get '/' do
     session.merge! params
-    "Use ? in URL to write to session
+    "
+     Use ? in URL to write to session
      Eg: /?foo=bar
 
      Session: #{session.inspect}"
