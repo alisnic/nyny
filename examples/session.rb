@@ -2,7 +2,7 @@
 require 'nyny'
 
 class App < NYNY::App
-  use Rack::Session::Cookie #store session in cookies
+  use Rack::Session::Cookie, :secret => 'my_secret' #store session in cookies
 
   before do
     headers 'Content-Type' => 'text/plain'
