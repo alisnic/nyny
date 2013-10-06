@@ -1,0 +1,255 @@
+Started GET "/" for 127.0.0.1 at 2013-09-10 13:04:45 +0300
+Started GET "/" for 127.0.0.1 at 2013-09-10 13:05:17 +0300
+Started GET "/" for 127.0.0.1 at 2013-09-10 13:06:36 +0300
+Started GET "/" for 127.0.0.1 at 2013-09-10 13:07:53 +0300
+Started GET "/" for 127.0.0.1 at 2013-09-10 13:08:30 +0300
+Started GET "/" for 127.0.0.1 at 2013-09-10 13:28:15 +0300
+Started GET "/" for 127.0.0.1 at 2013-09-10 13:52:08 +0300
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (89.8ms)
+Completed 200 OK in 96ms (Views: 95.1ms)
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+  Parameters: {"name"=>"model_spec"}
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (2.0ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (3.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.1ms)
+  Rendered konacha/specs/iframe.html.haml (365.6ms)
+Completed 500 Internal Server Error in 371ms
+  Rendered konacha/specs/iframe.html.haml (456.7ms)
+Completed 500 Internal Server Error in 462ms
+  Rendered konacha/specs/iframe.html.haml (452.5ms)
+Completed 500 Internal Server Error in 475ms
+  Rendered konacha/specs/iframe.html.haml (483.2ms)
+Completed 500 Internal Server Error in 484ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.8ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.1ms)
+Completed 404 Not Found in 4ms (Views: 0.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (11.4ms)
+Completed 200 OK in 18ms (Views: 16.7ms)
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+  Parameters: {"name"=>"item_view_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (1.9ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (3.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (5.2ms)
+  Rendered konacha/specs/iframe.html.haml (356.3ms)
+Completed 500 Internal Server Error in 358ms
+  Rendered konacha/specs/iframe.html.haml (420.6ms)
+Completed 500 Internal Server Error in 430ms
+  Rendered konacha/specs/iframe.html.haml (417.6ms)
+Completed 500 Internal Server Error in 419ms
+  Rendered konacha/specs/iframe.html.haml (428.6ms)
+Completed 500 Internal Server Error in 430ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.8ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (11.2ms)
+Completed 200 OK in 18ms (Views: 16.5ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (4.3ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (4.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (4.0ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (5.7ms)
+  Rendered konacha/specs/iframe.html.haml (384.9ms)
+Completed 500 Internal Server Error in 386ms
+  Rendered konacha/specs/iframe.html.haml (393.6ms)
+Completed 500 Internal Server Error in 395ms
+  Rendered konacha/specs/iframe.html.haml (465.2ms)
+Completed 500 Internal Server Error in 467ms
+  Rendered konacha/specs/iframe.html.haml (468.7ms)
+Completed 500 Internal Server Error in 485ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 1.4ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (11.1ms)
+Completed 200 OK in 18ms (Views: 16.5ms)
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+  Parameters: {"name"=>"validations_spec"}
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (1.8ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (6.4ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (5.7ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.1ms)
+  Rendered konacha/specs/iframe.html.haml (330.5ms)
+Completed 500 Internal Server Error in 332ms
+  Rendered konacha/specs/iframe.html.haml (372.9ms)
+Completed 500 Internal Server Error in 378ms
+  Rendered konacha/specs/iframe.html.haml (392.5ms)
+Completed 500 Internal Server Error in 403ms
+  Rendered konacha/specs/iframe.html.haml (401.8ms)
+Completed 500 Internal Server Error in 403ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.8ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 3ms (Views: 0.7ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (11.2ms)
+Completed 200 OK in 18ms (Views: 16.5ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (5.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (7.0ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (7.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (7.2ms)
+  Rendered konacha/specs/iframe.html.haml (379.0ms)
+Completed 500 Internal Server Error in 381ms
+  Rendered konacha/specs/iframe.html.haml (395.5ms)
+Completed 500 Internal Server Error in 414ms
+  Rendered konacha/specs/iframe.html.haml (426.1ms)
+Completed 500 Internal Server Error in 430ms
+  Rendered konacha/specs/iframe.html.haml (420.7ms)
+Completed 500 Internal Server Error in 423ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (11.1ms)
+Completed 200 OK in 17ms (Views: 16.4ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (4.9ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (6.7ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (5.0ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (7.5ms)
+  Rendered konacha/specs/iframe.html.haml (279.9ms)
+Completed 500 Internal Server Error in 281ms
+  Rendered konacha/specs/iframe.html.haml (456.0ms)
+Completed 500 Internal Server Error in 467ms
+  Rendered konacha/specs/iframe.html.haml (470.7ms)
+Completed 500 Internal Server Error in 478ms
+  Rendered konacha/specs/iframe.html.haml (491.7ms)
+Completed 500 Internal Server Error in 500ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.2ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (11.2ms)
+Completed 200 OK in 18ms (Views: 16.5ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (5.6ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (1.8ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (3.4ms)
+  Rendered konacha/specs/iframe.html.haml (305.4ms)
+Completed 500 Internal Server Error in 307ms
+  Rendered konacha/specs/iframe.html.haml (352.5ms)
+  Rendered konacha/specs/iframe.html.haml (352.6ms)
+Completed 500 Internal Server Error in 367ms
+Completed 500 Internal Server Error in 358ms
+  Rendered konacha/specs/iframe.html.haml (334.5ms)
+Completed 500 Internal Server Error in 337ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.1ms)
+Completed 404 Not Found in 6ms (Views: 2.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.7ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (11.1ms)
+Completed 200 OK in 17ms (Views: 16.4ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"validations_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (3.7ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (1.8ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (4.9ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (7.2ms)
+  Rendered konacha/specs/iframe.html.haml (345.3ms)
+Completed 500 Internal Server Error in 347ms
+  Rendered konacha/specs/iframe.html.haml (371.8ms)
+Completed 500 Internal Server Error in 374ms
+  Rendered konacha/specs/iframe.html.haml (412.1ms)
+Completed 500 Internal Server Error in 414ms
+  Rendered konacha/specs/iframe.html.haml (487.3ms)
+Completed 500 Internal Server Error in 500ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 4ms (Views: 1.2ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 3ms (Views: 0.6ms)

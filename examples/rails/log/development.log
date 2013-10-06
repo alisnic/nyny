@@ -1,0 +1,2273 @@
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-10 13:23:55 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/parent.html.erb (50.9ms)
+Completed 200 OK in 57ms (Views: 56.2ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 1.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.2ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/parent.html.erb (40.7ms)
+Completed 200 OK in 47ms (Views: 45.8ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"validations_spec"}
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (576.9ms)
+Completed 500 Internal Server Error in 582ms
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (629.9ms)
+Completed 500 Internal Server Error in 635ms
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (641.0ms)
+Completed 500 Internal Server Error in 644ms
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (745.3ms)
+Completed 500 Internal Server Error in 752ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.8ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.2ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/parent.html.erb (40.5ms)
+Completed 200 OK in 47ms (Views: 46.1ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"model_spec"}
+  Parameters: {"name"=>"validations_spec"}
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (861.5ms)
+Completed 200 OK in 869ms (Views: 868.5ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (848.3ms)
+Completed 200 OK in 855ms (Views: 854.7ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (844.7ms)
+Completed 200 OK in 860ms (Views: 858.7ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (896.7ms)
+Completed 200 OK in 901ms (Views: 900.0ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 1.1ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 4ms (Views: 0.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/parent.html.erb (40.5ms)
+Completed 200 OK in 47ms (Views: 46.0ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (4668.6ms)
+Completed 200 OK in 4685ms (Views: 4682.8ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (4696.7ms)
+Completed 200 OK in 4713ms (Views: 4711.4ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (4665.9ms)
+Completed 200 OK in 4679ms (Views: 4678.4ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (4677.5ms)
+Completed 200 OK in 4696ms (Views: 4694.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.8ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/parent.html.erb (40.6ms)
+Completed 200 OK in 47ms (Views: 46.2ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1315.8ms)
+Completed 200 OK in 1332ms (Views: 1330.1ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1308.1ms)
+Completed 200 OK in 1317ms (Views: 1315.0ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1411.5ms)
+Completed 200 OK in 1417ms (Views: 1416.3ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1414.4ms)
+Completed 200 OK in 1423ms (Views: 1422.1ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 1.1ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/parent.html.erb (40.5ms)
+Completed 200 OK in 47ms (Views: 46.1ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1355.9ms)
+Completed 200 OK in 1392ms (Views: 1391.2ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1333.8ms)
+Completed 200 OK in 1376ms (Views: 1372.7ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1406.6ms)
+Completed 200 OK in 1411ms (Views: 1410.0ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1380.3ms)
+Completed 200 OK in 1396ms (Views: 1393.8ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/parent.html.erb (41.1ms)
+Completed 200 OK in 48ms (Views: 46.7ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+  Parameters: {"name"=>"item_view_spec"}
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1121.7ms)
+Completed 200 OK in 1146ms (Views: 1143.4ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1148.8ms)
+Completed 200 OK in 1171ms (Views: 1168.5ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1184.9ms)
+Completed 200 OK in 1200ms (Views: 1197.0ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1211.5ms)
+Completed 200 OK in 1258ms (Views: 1254.6ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 1.6ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/parent.html.erb (40.7ms)
+Completed 200 OK in 47ms (Views: 46.2ms)
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1025.6ms)
+Completed 200 OK in 1034ms (Views: 1031.5ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1024.3ms)
+Completed 200 OK in 1034ms (Views: 1033.3ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1066.0ms)
+Completed 200 OK in 1079ms (Views: 1076.7ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/konacha-3.0.0/app/views/konacha/specs/iframe.html.erb (1081.2ms)
+Completed 200 OK in 1093ms (Views: 1091.0ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 5ms (Views: 1.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (40.5ms)
+Completed 200 OK in 47ms (Views: 46.0ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+  Parameters: {"name"=>"item_view_spec"}
+  Rendered konacha/specs/iframe.html.haml (45.0ms)
+  Rendered konacha/specs/iframe.html.haml (29.4ms)
+Completed 500 Internal Server Error in 42ms
+  Rendered konacha/specs/iframe.html.haml (24.2ms)
+Completed 500 Internal Server Error in 48ms
+Completed 500 Internal Server Error in 57ms
+  Rendered konacha/specs/iframe.html.haml (15.0ms)
+Completed 500 Internal Server Error in 67ms
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.8ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 4ms (Views: 0.6ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (40.6ms)
+Completed 200 OK in 47ms (Views: 46.0ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (5.9ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered konacha/specs/iframe.html.haml (1197.2ms)
+Completed 200 OK in 1205ms (Views: 1203.6ms)
+  Rendered konacha/specs/iframe.html.haml (1215.0ms)
+Completed 200 OK in 1222ms (Views: 1221.0ms)
+  Rendered konacha/specs/iframe.html.haml (1199.2ms)
+Completed 200 OK in 1204ms (Views: 1203.3ms)
+  Rendered konacha/specs/iframe.html.haml (1215.7ms)
+Completed 200 OK in 1221ms (Views: 1220.0ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (40.9ms)
+Completed 200 OK in 48ms (Views: 46.4ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (7.4ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered konacha/specs/iframe.html.haml (1136.4ms)
+Completed 200 OK in 1167ms (Views: 1164.6ms)
+  Rendered konacha/specs/iframe.html.haml (1122.8ms)
+Completed 200 OK in 1161ms (Views: 1151.7ms)
+  Rendered konacha/specs/iframe.html.haml (1163.0ms)
+Completed 200 OK in 1174ms (Views: 1173.7ms)
+  Rendered konacha/specs/iframe.html.haml (1129.6ms)
+Completed 200 OK in 1159ms (Views: 1156.0ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.8ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (14.0ms)
+Completed 200 OK in 21ms (Views: 19.5ms)
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (7.6ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered konacha/specs/iframe.html.haml (1084.2ms)
+Completed 200 OK in 1160ms (Views: 1158.5ms)
+  Rendered konacha/specs/iframe.html.haml (1086.7ms)
+Completed 200 OK in 1110ms (Views: 1108.8ms)
+  Rendered konacha/specs/iframe.html.haml (1117.9ms)
+Completed 200 OK in 1159ms (Views: 1157.1ms)
+  Rendered konacha/specs/iframe.html.haml (1094.1ms)
+Completed 200 OK in 1116ms (Views: 1114.7ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.8ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (14.0ms)
+Completed 200 OK in 20ms (Views: 19.4ms)
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+  Parameters: {"name"=>"validations_spec"}
+  Parameters: {"name"=>"item_view_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (7.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered konacha/specs/iframe.html.haml (1117.4ms)
+Completed 200 OK in 1170ms (Views: 1169.2ms)
+  Rendered konacha/specs/iframe.html.haml (1117.5ms)
+Completed 200 OK in 1155ms (Views: 1152.5ms)
+  Rendered konacha/specs/iframe.html.haml (1141.7ms)
+Completed 200 OK in 1195ms (Views: 1194.1ms)
+  Rendered konacha/specs/iframe.html.haml (1151.0ms)
+Completed 200 OK in 1205ms (Views: 1204.5ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (13.9ms)
+Completed 200 OK in 20ms (Views: 19.3ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+  Parameters: {"name"=>"item_view_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (6.4ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered konacha/specs/iframe.html.haml (1210.0ms)
+Completed 200 OK in 1254ms (Views: 1250.9ms)
+  Rendered konacha/specs/iframe.html.haml (1247.4ms)
+Completed 200 OK in 1270ms (Views: 1268.7ms)
+  Rendered konacha/specs/iframe.html.haml (1320.7ms)
+Completed 200 OK in 1336ms (Views: 1334.1ms)
+  Rendered konacha/specs/iframe.html.haml (1256.6ms)
+Completed 200 OK in 1274ms (Views: 1273.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.2ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (14.0ms)
+Completed 200 OK in 20ms (Views: 19.4ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+  Parameters: {"name"=>"item_view_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (3.6ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.0ms)
+  Rendered konacha/specs/iframe.html.haml (1206.3ms)
+Completed 200 OK in 1210ms (Views: 1209.0ms)
+  Rendered konacha/specs/iframe.html.haml (1225.4ms)
+Completed 200 OK in 1279ms (Views: 1262.4ms)
+  Rendered konacha/specs/iframe.html.haml (1301.7ms)
+Completed 200 OK in 1320ms (Views: 1317.6ms)
+  Rendered konacha/specs/iframe.html.haml (1377.3ms)
+Completed 200 OK in 1392ms (Views: 1389.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 1.2ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (13.8ms)
+Completed 200 OK in 20ms (Views: 19.3ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+  Parameters: {"name"=>"model_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (4.8ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered konacha/specs/iframe.html.haml (3419.8ms)
+Completed 200 OK in 3432ms (Views: 3430.9ms)
+  Rendered konacha/specs/iframe.html.haml (3436.7ms)
+Completed 200 OK in 3441ms (Views: 3440.2ms)
+  Rendered konacha/specs/iframe.html.haml (3515.2ms)
+Completed 200 OK in 3521ms (Views: 3520.0ms)
+  Rendered konacha/specs/iframe.html.haml (3522.4ms)
+Completed 200 OK in 3532ms (Views: 3531.0ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.9ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Rendered konacha/specs/parent.html.erb (28.3ms)
+Completed 200 OK in 35ms (Views: 33.9ms)
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"collection_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"validations_spec"}
+  Parameters: {"name"=>"model_spec"}
+Processing by Konacha::SpecsController#iframe as HTML
+  Parameters: {"name"=>"item_view_spec"}
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (4.3ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.1ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered /home/andrei/Work/salt/saltjs/app/views/saltjs/_cdn_javascripts.html.haml (0.2ms)
+  Rendered konacha/specs/iframe.html.haml (5124.7ms)
+Completed 200 OK in 5131ms (Views: 5129.9ms)
+  Rendered konacha/specs/iframe.html.haml (5152.0ms)
+Completed 200 OK in 5157ms (Views: 5155.9ms)
+  Rendered konacha/specs/iframe.html.haml (5219.0ms)
+Completed 200 OK in 5225ms (Views: 5223.4ms)
+  Rendered konacha/specs/iframe.html.haml (5253.0ms)
+Completed 200 OK in 5266ms (Views: 5265.2ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 16ms (Views: 14.1ms)
+Processing by Konacha::SpecsController#parent as HTML
+  Parameters: {"path"=>"favicon.ico"}
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 0.3ms)
+Processing by DummyController#index as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by DummyController#index as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by DummyController#index as HTML
+Completed 500 Internal Server Error in 0ms
+  [1m[36m (26.3ms)[0m  [1mCREATE TEMPORARY TABLE "shouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+Processing by DummyController#index as HTML
+Completed 500 Internal Server Error in 0ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (8.4ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (29.5ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+Processing by DummyController#index as HTML
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as HTML
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "dogs"[0m
+Completed 406 Not Acceptable in 1ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "dogs"[0m
+Completed 406 Not Acceptable in 1ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "dogs"[0m
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[36mDog Load (0.2ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0[0m
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "dogs"[0m
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0[0m
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "dogs"[0m
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0[0m
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "dogs"[0m
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0[0m
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "dogs"[0m
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0[0m
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.2ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by #index as JSON
+Completed 500 Internal Server Error in 5ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (1.1ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by #index as JSON
+Completed 500 Internal Server Error in 5ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by #index as JSON
+Completed 500 Internal Server Error in 5ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by #index as JSON
+Completed 500 Internal Server Error in 5ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by #index as JSON
+Completed 500 Internal Server Error in 5ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by DummyController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by #index as JSON
+Completed 500 Internal Server Error in 5ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by #index as JSON
+Completed 500 Internal Server Error in 5ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+Processing by #index as JSON
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 8ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.0ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#create as JSON
+  Parameters: {"dog"=>{"name"=>"SomeDog", "age"=>12}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 12], ["name", "SomeDog"]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 35ms
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#create as JSON
+  Parameters: {"dog"=>{"name"=>"SomeDog", "age"=>12}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 12], ["name", "SomeDog"]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" DESC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.0ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#create as JSON
+  Parameters: {"dog"=>{"name"=>"SomeDog", "age"=>12}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 12], ["name", "SomeDog"]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" DESC LIMIT 1
+Processing by AnonymousController#show as JSON
+  Parameters: {"dog"=>{"name"=>"Foobius"}, "id"=>"1"}
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 204 No Content in 2ms (ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.0ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#create as JSON
+  Parameters: {"dog"=>{"name"=>"SomeDog", "age"=>12}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 12], ["name", "SomeDog"]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" DESC LIMIT 1
+Processing by AnonymousController#update as JSON
+  Parameters: {"dog"=>{"name"=>"Foobius"}, "id"=>"1"}
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "dogs" SET "name" = ? WHERE "dogs"."id" = 1[0m  [["name", "Foobius"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 204 No Content in 4ms (ActiveRecord: 0.3ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT 1[0m
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.0ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#create as JSON
+  Parameters: {"dog"=>{"name"=>"SomeDog", "age"=>12}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 12], ["name", "SomeDog"]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" DESC LIMIT 1
+Processing by AnonymousController#update as JSON
+  Parameters: {"dog"=>{"name"=>"Foobius"}, "id"=>"1"}
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "dogs" SET "name" = ? WHERE "dogs"."id" = 1[0m  [["name", "Foobius"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 204 No Content in 4ms (ActiveRecord: 0.3ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT 1[0m
+Processing by AnonymousController#destroy as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "dogs" WHERE "dogs"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms)
+  [1m[35mDog Load (0.0ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.0ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#create as JSON
+  Parameters: {"dog"=>{"name"=>"SomeDog", "age"=>12}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 12], ["name", "SomeDog"]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" DESC LIMIT 1
+Processing by AnonymousController#update as JSON
+  Parameters: {"dog"=>{"name"=>"Foobius"}, "id"=>"1"}
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "dogs" SET "name" = ? WHERE "dogs"."id" = 1[0m  [["name", "Foobius"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 204 No Content in 4ms (ActiveRecord: 0.3ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT 1[0m
+Processing by AnonymousController#destroy as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "dogs" WHERE "dogs"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#create as JSON
+  Parameters: {"dog"=>{"name"=>"SomeDog", "age"=>12}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 12], ["name", "SomeDog"]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" DESC LIMIT 1
+Processing by AnonymousController#update as JSON
+  Parameters: {"dog"=>{"name"=>"Foobius"}, "id"=>"1"}
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "dogs" SET "name" = ? WHERE "dogs"."id" = 1[0m  [["name", "Foobius"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 204 No Content in 4ms (ActiveRecord: 0.3ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT 1[0m
+Processing by AnonymousController#destroy as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "dogs" WHERE "dogs"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "dogs" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "dogs" ADD "age" integer[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 5], ["name", "Jora"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 7], ["name", "Bora"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "dogs" ("age", "name") VALUES (?, ?)[0m  [["age", 1], ["name", "Alora"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC[0m
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs".age ASC
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs"
+Processing by AnonymousController#index as JSON
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#index as JSON
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "dogs"
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" LIMIT 10 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by AnonymousController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+Processing by AnonymousController#create as JSON
+  Parameters: {"dog"=>{"name"=>"SomeDog", "age"=>12}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "dogs" ("age", "name") VALUES (?, ?)  [["age", 12], ["name", "SomeDog"]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" DESC LIMIT 1
+Processing by AnonymousController#update as JSON
+  Parameters: {"dog"=>{"name"=>"Foobius"}, "id"=>"1"}
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "dogs" SET "name" = ? WHERE "dogs"."id" = 1[0m  [["name", "Foobius"]]
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 204 No Content in 4ms (ActiveRecord: 0.3ms)
+  [1m[36mDog Load (0.1ms)[0m  [1mSELECT "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT 1[0m
+Processing by AnonymousController#destroy as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "dogs" WHERE "dogs"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms)
+  [1m[35mDog Load (0.1ms)[0m  SELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT 1  [["id", 1]]
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:12:40 +0300
+
+Gem::LoadError (Specified 'sqlite3' for database adapter, but the gem is not loaded. Add `gem 'sqlite3'` to your Gemfile.):
+  activerecord (4.0.0) lib/active_record/connection_adapters/connection_specification.rb:58:in `rescue in resolve_hash_connection'
+  activerecord (4.0.0) lib/active_record/connection_adapters/connection_specification.rb:55:in `resolve_hash_connection'
+  activerecord (4.0.0) lib/active_record/connection_adapters/connection_specification.rb:46:in `resolve_string_connection'
+  activerecord (4.0.0) lib/active_record/connection_adapters/connection_specification.rb:30:in `spec'
+  activerecord (4.0.0) lib/active_record/connection_handling.rb:39:in `establish_connection'
+  activerecord (4.0.0) lib/active_record/railtie.rb:175:in `block (2 levels) in <class:Railtie>'
+  activesupport (4.0.0) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+  activesupport (4.0.0) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+  activesupport (4.0.0) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
+  activesupport (4.0.0) lib/active_support/lazy_load_hooks.rb:44:in `each'
+  activesupport (4.0.0) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
+  activerecord (4.0.0) lib/active_record/base.rb:322:in `<module:ActiveRecord>'
+  activerecord (4.0.0) lib/active_record/base.rb:22:in `<top (required)>'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:50:in `restore_query_cache_settings'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:43:in `rescue in call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__811751622__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.9ms)
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:13:04 +0300
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:13:07 +0300
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:14:01 +0300
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:14:05 +0300
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:17:16 +0300
+
+ArgumentError (missing :controller):
+  config/routes.rb:4:in `block in <top (required)>'
+  config/routes.rb:3:in `<top (required)>'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.2ms)
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:17:54 +0300
+
+RuntimeError (A rack application must be specified):
+  config/routes.rb:4:in `block in <top (required)>'
+  config/routes.rb:3:in `<top (required)>'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:17:55 +0300
+
+ActionController::RoutingError (No route matches [GET] "/nyny"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.8ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (37.8ms)
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:17:56 +0300
+
+ActionController::RoutingError (No route matches [GET] "/nyny"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.8ms)
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:18:15 +0300
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:18:16 +0300
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:18:23 +0300
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:22:54 +0300
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__389822689__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (58.0ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (67.7ms)
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:23:26 +0300
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__819296148__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.3ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.6ms)
+
+
+Started GET "/nyny/" for 127.0.0.1 at 2013-10-07 00:23:40 +0300
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__819296148__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/nyny/" for 127.0.0.1 at 2013-10-07 00:23:50 +0300
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__819296148__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/nyny/" for 127.0.0.1 at 2013-10-07 00:23:55 +0300
+
+
+Started GET "/nyny/" for 127.0.0.1 at 2013-10-07 00:24:13 +0300
+
+
+Started GET "/nyny/ars/" for 127.0.0.1 at 2013-10-07 00:24:24 +0300
+
+
+Started GET "/nyny/ars/" for 127.0.0.1 at 2013-10-07 00:25:57 +0300
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:26:04 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-07 00:41:54 +0300
+Processing by ApplicationController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+ActionView::MissingTemplate (Missing template application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
+  * "/home/andrei/Play/nyny/examples/rails/app/views"
+):
+  actionpack (4.0.0) lib/action_view/path_set.rb:46:in `find'
+  actionpack (4.0.0) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.0) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:383:in `_run__897379573__process_action__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__532142568__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/andrei/.rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/andrei/.gem/ruby/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:41:57 +0300
+
+
+Started GET "/nyny" for 127.0.0.1 at 2013-10-07 00:44:43 +0300
