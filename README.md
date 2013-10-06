@@ -205,7 +205,13 @@ NYNY supports helpers as Sinatra does:
 
     class App < NYNY::App
       helpers MyHelperModule
+      helpers do
+        def using_a_block_to_define_helper
+          true
+        end
+      end
     end
+
 
 Using a helper implies that the helper module is included in the [RequestScope][2],
 and that all the methods in that module will be available inside a route

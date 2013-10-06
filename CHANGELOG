@@ -1,3 +1,9 @@
+2.0.1
+  - Add ability to define helpers with a block
+  - Remove benchmark folder, and create a single benchmark file which can be
+    run easily
+  - Simplified and optimized routing logic
+
 2.0.0
   - Simplified and improved RouteSignature implementation
   - Simplified and improved RequestScope implementation
