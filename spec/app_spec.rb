@@ -170,6 +170,20 @@ describe App do
         app_class.helpers NullHelper, NullHelper2
         RequestScope.ancestors.should include(NullHelper, NullHelper2)
       end
+
+      it 'should allow to define helpers with a block' do
+        app_class.helpers do
+          def foo
+            'bar'
+          end
+        end
+
+        app_class.get '/' do
+          foo.should == 'bar'
+        end
+        req = Rack::MockRequest.env_for '/'
+        res = app_class.new.call(req)
+      end
     end
   end
 end

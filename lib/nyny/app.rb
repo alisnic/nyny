@@ -55,7 +55,11 @@ module NYNY
         middlewares << [middleware, args, block]
       end
 
-      def helpers *args
+      def helpers *args, &block
+        if block_given?
+          args << Module.new(&block)
+        end
+
         args.each {|m| RequestScope.add_helper_module m }
       end
     end #class methods
