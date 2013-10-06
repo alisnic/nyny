@@ -1,10 +1,12 @@
 module NYNY
-  class RouteSignature
+  class Route
     NAME_PATTERN = /:(\S+)/
 
-    attr_reader :pattern
-    def initialize signature
+    attr_reader :pattern, :handler, :method
+    def initialize method, signature, &block
       @pattern = pattern_for signature
+      @handler = Proc.new(&block)
+      @method = method.to_s.upcase
     end
 
     def pattern_for signature
@@ -25,11 +27,14 @@ module NYNY
       %r(^\/#{groups}$)
     end
 
-    def match path
-      data = pattern.match path
-      if data
-        Hash[data.names.map {|n| [n.to_sym, URI.unescape(data[n])]}]
-      end
+    def match? env
+      return false unless method == env['REQUEST_METHOD']
+      not pattern.match(env['PATH_INFO']).nil?
+    end
+
+    def url_params env
+      data = pattern.match(env['PATH_INFO'])
+      Hash[data.names.map {|n| [n.to_sym, URI.unescape(data[n])]}]
     end
   end
 end

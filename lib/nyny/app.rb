@@ -26,12 +26,12 @@ module NYNY
     class << self
       HTTP_VERBS.each do |method|
         define_method method do |str, &blk|
-          (routes[method] ||= {})[RouteSignature.new(str)] = Proc.new &blk
+          routes << Route.new(method, str, &blk)
         end
       end
 
       def middlewares;  @middlewares  ||= []  end
-      def routes;       @routes       ||= {}  end
+      def routes;       @routes       ||= []  end
       def before_hooks; @before_hooks ||= []  end
       def after_hooks;  @after_hooks  ||= []  end
 
