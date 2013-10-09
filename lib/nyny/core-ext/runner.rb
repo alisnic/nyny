@@ -11,6 +11,7 @@ module NYNY
     end
 
     def run! port=9292
+      ENV['RACK_ENV'] ||= 'development'
       middlewares.unshift Rack::ShowExceptions, Rack::CommonLogger
       optimal_runner.run new, :Port => port
     end
