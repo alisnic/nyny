@@ -13,4 +13,10 @@ describe Runner do
     kls.middlewares[1].should == Rack::CommonLogger
   end
 
+  it 'should not include show exceptions middleware in production' do
+    NYNY.env.stub :production? => true
+    kls.run!
+    kls.middlewares.should == [Rack::CommonLogger]
+  end
+
 end
