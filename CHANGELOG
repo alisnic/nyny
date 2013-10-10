@@ -7,6 +7,7 @@
   - Added Rails interop example
   - Added session example
   - Added NYNY.root
+  - Added NYNY.env
 
 2.0.0
   - Simplified and improved RouteSignature implementation
