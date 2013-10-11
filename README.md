@@ -33,6 +33,7 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
 - [Philosophy](#philosophy)
 - [Why use NYNY instead of Sinatra](#why-use-nyny-instead-of-sinatra)
 - [Usage](#usage)
+    - [Environment](#environment)
     - [Running](#running)
     - [Defining routes](#defining-routes)
     - [Request scope](#request-scope)
@@ -78,6 +79,34 @@ A NYNY app must _always_ be in a class which inherits from `NYNY::App`:
         'Hello, World'
       end
     end
+
+## Environment
+To get the directory in which your app is running use `NYNY.root`
+
+```ruby
+#/some/folder/server.rb
+require 'nyny'
+puts NYNY.root #=> /some/folder/
+```
+
+To get NYNY's environment, use `NYNY.env`
+
+```ruby
+#env.rb
+require 'nyny'
+puts NYNY.env
+puts NYNY.env.production?
+```
+
+```bash
+$ ruby env.rb
+development
+false
+
+$ ruby env.rb RACK_ENV=production
+production
+true
+```
 
 ## Running
 There are two ways to run a NYNY app __directly__ [[?]](#middleware):
