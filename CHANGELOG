@@ -8,7 +8,7 @@
   - Added session example
   - Added NYNY.root
   - Added NYNY.env
-  - NYNY will now show exceptions only in production env
+  - NYNY will not show exceptions in production env
 
 2.0.0
   - Simplified and improved RouteSignature implementation
