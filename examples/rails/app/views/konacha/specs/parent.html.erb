@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Konacha Tests</title>
+    <%= stylesheet_link_tag "konacha", :debug => false %>
+    <%= javascript_include_tag "mocha", "konacha/parent", :debug => false %>
+    <%= javascript_include_tag("konacha/runner", :debug => false) if @run_mode.runner? %>
+  </head>
+  <body>
+    <style>
+      #mocha { margin: 0; }
+    </style>
+    <% @specs.each do |spec| %>
+      <%= content_tag :iframe, "", :src => iframe_path(spec.asset_name), :class => "test-context", "data-path" => spec.path %>
+    <% end %>
+    <div id="mocha"></div>
+  </body>
+</html>
