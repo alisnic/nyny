@@ -26,12 +26,12 @@ module NYNY
     class << self
       HTTP_VERBS.each do |method|
         define_method method do |str, &blk|
-          (routes[method] ||= {})[RouteSignature.new(str)] = Proc.new &blk
+          routes << Route.new(method, str, &blk)
         end
       end
 
       def middlewares;  @middlewares  ||= []  end
-      def routes;       @routes       ||= {}  end
+      def routes;       @routes       ||= []  end
       def before_hooks; @before_hooks ||= []  end
       def after_hooks;  @after_hooks  ||= []  end
 
@@ -55,7 +55,11 @@ module NYNY
         middlewares << [middleware, args, block]
       end
 
-      def helpers *args
+      def helpers *args, &block
+        if block_given?
+          args << Module.new(&block)
+        end
+
         args.each {|m| RequestScope.add_helper_module m }
       end
     end #class methods

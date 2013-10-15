@@ -1,5 +1,6 @@
 require 'rack'
 require 'securerandom'
+ENV['RACK_ENV'] = 'test'
 
 if ENV['TRAVIS']
   require 'coveralls'

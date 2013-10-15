@@ -1,0 +1,2 @@
+The NYNY app is defined in `lib` and then loaded and mounted in
+`config/routes.rb`

@@ -1,0 +1,10 @@
+%html{"data-path" => @spec.path}
+  %head
+    = render 'saltjs/cdn_javascripts'
+    %meta{:content => "text/html;charset=utf-8", "http-equiv" => "content-type"}/
+    %title Konacha Tests
+    - @stylesheets.each do |file|
+      = stylesheet_link_tag file, :debug => false
+    = javascript_include_tag "chai", "konacha/iframe", :debug => false
+    = javascript_include_tag @spec.asset_name
+  %body

@@ -10,34 +10,26 @@ module NYNY
       @after_hooks  = options[:after_hooks]
     end
 
-    def find_handler request
-      routes.fetch(request.request_method.downcase.to_sym, []).each do |sig, h|
-        params = sig.match request.path
-        return [h, params] if params
-      end
-
-      [NullHandler, {}]
-    end
-
     def call env
-      req = Request.new(env)
-      handler, params = find_handler req
+      env['PATH_INFO'] = '/' if env['PATH_INFO'].empty?
+      route = routes.find {|route| route.match? env }
 
-      if handler != NullHandler
-        prepare_params req, params
-        process req, handler
+      if route
+        process route, env
       else
         fallback.call env
       end
     end
 
-    def prepare_params request, url_params
-      request.params.merge! url_params
+    def process route, env
+      request = Request.new(env)
+      request.params.merge! route.url_params(env)
       request.params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
+
+      eval_response RequestScope.new(request), route.handler
     end
 
-    def process request, handler
-      scope = RequestScope.new(request)
+    def eval_response scope, handler
       catch (:halt) do
         before_hooks.each {|h| scope.instance_eval &h }
         response = scope.apply_to &handler

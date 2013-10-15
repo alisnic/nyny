@@ -132,15 +132,26 @@ describe App do
   end
 
   it 'should be able to set cookies' do
-    app_class = Class.new(App) do
+    app = mock_app do
       post '/write' do
         cookies.merge! params
       end
     end
 
-    req = Rack::MockRequest.env_for '/write?foo=bar', :method => :post
-    res = app_class.new.call(req)
+    res = app.post '/write?foo=bar'
     res.headers['Set-Cookie'].should == 'foo=bar'
+  end
+
+  it 'works with empty path' do
+    kls = mock_app_class do
+      get '/' do
+        'Hello'
+      end
+    end
+
+    env = Rack::MockRequest.env_for '/'
+    env['PATH_INFO'] = ''
+    kls.new.call(env).body.first.should == 'Hello'
   end
 
   describe 'Class level api' do
@@ -169,6 +180,20 @@ describe App do
 
         app_class.helpers NullHelper, NullHelper2
         RequestScope.ancestors.should include(NullHelper, NullHelper2)
+      end
+
+      it 'should allow to define helpers with a block' do
+        app_class.helpers do
+          def foo
+            'bar'
+          end
+        end
+
+        app_class.get '/' do
+          foo.should == 'bar'
+        end
+        req = Rack::MockRequest.env_for '/'
+        res = app_class.new.call(req)
       end
     end
   end

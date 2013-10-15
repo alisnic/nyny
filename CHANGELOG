@@ -1,3 +1,15 @@
+2.1.0
+  - Add ability to define helpers with a block
+  - Remove benchmark folder, and create a single benchmark file which can be
+    executed easily
+  - Simplified and optimized routing logic
+  - Fixed root path processing when a NYNY app is mounted
+  - Added Rails interop example
+  - Added session example
+  - Added NYNY.root
+  - Added NYNY.env
+  - NYNY will not show exceptions in production env
+
 2.0.0
   - Simplified and improved RouteSignature implementation
   - Simplified and improved RequestScope implementation
@@ -5,7 +17,7 @@
   - removed .use_protection! (the rack-protection middleware can be easily
     used manually)
   - added support for extensions (using .register, which works the same way as in sinatra)
-  
+
 1.0.2
   - Add rack to runtime deps (@etehtsea)
 
