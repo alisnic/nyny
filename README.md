@@ -7,25 +7,31 @@
 [![Dependency Status](https://gemnasium.com/alisnic/nyny.png)](https://gemnasium.com/alisnic/nyny)
 [![Gem Version](https://badge.fury.io/rb/nyny.png)](http://badge.fury.io/rb/nyny)
 
-    # myapp.rb
+```ruby
+# myapp.rb
 
-    require 'nyny'
-    class App < NYNY::App
-      get '/' do
-        'Hello world!'
-      end
-    end
+require 'nyny'
+class App < NYNY::App
+  get '/' do
+    'Hello world!'
+  end
+end
 
-    App.run!
-    
+App.run!
+```
+
 Install the gem:
 
-    gem install nyny
-    
+```bash
+gem install nyny
+```
+
 Run the file:
-    
-    ruby myapp.rb
-    
+
+```bash
+ruby myapp.rb
+```
+
 Open the browser at [http://localhost:9292](http://localhost:9292)
 
 - [TOP](#new-york-new-york)
@@ -74,11 +80,13 @@ as middleware.
 
 A NYNY app must _always_ be in a class which inherits from `NYNY::App`:
 
-    class App < NYNY::App
-      get '/' do
-        'Hello, World'
-      end
-    end
+```ruby
+class App < NYNY::App
+  get '/' do
+    'Hello, World'
+  end
+end
+```
 
 ## Environment
 To get the directory in which your app is running use `NYNY.root`
