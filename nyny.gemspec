@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://alisnic.github.io/nyny/"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = `git ls-files`.split($/).select {|f| !f.start_with?('examples')}
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
