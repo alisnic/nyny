@@ -1,3 +1,6 @@
+2.1.1
+  - After blocks will now be evaluated even if the request was halted
+
 2.1.0
   - Add ability to define helpers with a block
   - Remove benchmark folder, and create a single benchmark file which can be
