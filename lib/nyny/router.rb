@@ -30,8 +30,7 @@ module NYNY
     def eval_response scope, handler
       response = catch (:halt) do
         before_hooks.each {|h| scope.instance_eval &h }
-        response = scope.apply_to &handler
-        response
+        scope.apply_to &handler
       end
 
       catch (:halt) do
