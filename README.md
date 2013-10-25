@@ -144,7 +144,6 @@ development easier: Rack::CommonLogger and Rack::ShowExceptions.
 This will show all requests in the log, and will provide useful details
 in the case a error occurs during a request.
 
-
 ## Defining routes
 
 NYNY supports the following verbs for defining a route: delete, get, head,
@@ -189,7 +188,9 @@ This means that several methods/objects available inside that block:
 
 - `request` - A `Rack::Request` object which encapsulates the request
   to that route. (see [Rack::Request documentation][3] for more info)
-- `response` - A `Rack::Response` object which encapsulates the response
+- `response` - A `Rack::Response` object which encapsulates the response.
+  Additionally, NYNY's response exposes 2 more methods in addition to Rack's ones.
+  (see [primitives.rb][primitivesrb])
 - `params` - a hash which contains both POST body params and GET querystring params.
 - `headers` - allows you to read/add headers to the response
   (ex: `headers 'Content-Type' => 'text/html'`)
@@ -346,3 +347,4 @@ TBD.
 [performance]: https://github.com/alisnic/nyny/blob/master/Performance.md
 [rack-middleware]: https://github.com/rack/rack/wiki/List-of-Middleware
 [halt-definition]: https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb#L36
+[primitivesrb]: https://github.com/alisnic/nyny/blob/master/lib/nyny/primitives.rb
