@@ -1,7 +1,5 @@
 module NYNY
   class Router
-    NullHandler = Class.new
-
     attr_reader :fallback, :routes, :before_hooks, :after_hooks
     def initialize options
       @fallback     = options[:fallback]
@@ -30,12 +28,16 @@ module NYNY
     end
 
     def eval_response scope, handler
-      catch (:halt) do
+      response = catch (:halt) do
         before_hooks.each {|h| scope.instance_eval &h }
-        response = scope.apply_to &handler
-        after_hooks.each {|h| scope.instance_eval &h }
-        response
+        scope.apply_to &handler
       end
+
+      catch (:halt) do
+        after_hooks.each {|h| scope.instance_eval &h }
+      end
+
+      response
     end
   end
 end
