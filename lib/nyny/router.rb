@@ -10,7 +10,7 @@ module NYNY
 
     def call env
       env['PATH_INFO'] = '/' if env['PATH_INFO'].empty?
-      route = routes.find {|route| route.match? env }
+      route = routes[env['REQUEST_METHOD']].find {|route| route.match? env }
 
       if route
         process route, env
