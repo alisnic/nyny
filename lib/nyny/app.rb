@@ -22,14 +22,8 @@ module NYNY
       middleware_chain.call env
     end
 
-    def prepare_routes(routes)
-      route_container = HTTP_VERBS.each_with_object({}) do |method, obj|
-        obj[method.to_s.upcase.freeze] = []
-      end
-
-      routes.each { |v| route_container[v.method] << v }
-
-      route_container.freeze
+    def prepare_routes routes
+      routes.group_by(&:method).freeze
     end
 
     #class methods
