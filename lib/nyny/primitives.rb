@@ -21,5 +21,12 @@ module NYNY
         value.each {|part| write part.to_s }
       end
     end
+
+    def initialize_clone(other)
+      @body   = other.body.clone
+      @header = other.headers.clone
+      @writer = lambda { |x| @body << x }
+    end
+
   end
 end

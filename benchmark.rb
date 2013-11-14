@@ -19,8 +19,8 @@ def run_test name, apps, &block
 
   puts "\nTest: #{name}"
   Benchmark.benchmark(CAPTION, 7, FORMAT, "> NYNY/Sinatra:") do |x|
-    nyny_time     = x.report("nyny:   ")  { 1000.times { prc.call(nyny) } }
-    sinatra_time  = x.report("sinatra:")  { 1000.times { prc.call(sinatra) } }
+    nyny_time     = x.report("nyny:   ")  { 10000.times { prc.call(nyny) } }
+    sinatra_time  = x.report("sinatra:")  { 10000.times { prc.call(sinatra) } }
     puts "NYNY is #{"%.2f" % [sinatra_time.real/nyny_time.real]}x faster than Sinatra in this test"
   end
 end
@@ -92,4 +92,34 @@ apps = build_apps do
 end
 run_test 'Url patterns', apps do |app|
   app.get '/foo'
+end
+
+#
+# Plain routes
+apps = build_apps do
+  [:get, :post, :put].each do |method|
+    10.times do |i|
+      send(method, "/foo/#{i}") do
+        i
+      end
+    end
+  end
+end
+run_test 'Plain routes', apps do |app|
+  app.get '/foo/5'
+end
+
+#
+# Pattern routes
+apps = build_apps do
+  [:get, :post, :put].each do |method|
+    10.times do |i|
+      send(method, "/foo/#{i}/:action") do
+        params[:action]
+      end
+    end
+  end
+end
+run_test 'Pattern routes', apps do |app|
+  app.get '/foo/5/edit'
 end
