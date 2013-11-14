@@ -16,6 +16,9 @@ require 'nyny/core-ext/runner'
 module NYNY
   App.register NYNY::Runner
 
+  REQUEST_METHOD = 'REQUEST_METHOD'.freeze
+  PATH_INFO      = 'PATH_INFO'.freeze
+
   class EnvString < String
     [:production, :development, :test].each do |env|
       define_method "#{env}?" do

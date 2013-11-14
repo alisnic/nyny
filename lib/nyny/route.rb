@@ -28,12 +28,12 @@ module NYNY
     end
 
     def match? env
-      return false unless method == env['REQUEST_METHOD']
-      not pattern.match(env['PATH_INFO']).nil?
+      return false unless method == env[NYNY::REQUEST_METHOD]
+      not pattern.match(env[NYNY::PATH_INFO]).nil?
     end
 
     def url_params env
-      data = pattern.match(env['PATH_INFO'])
+      data = pattern.match(env[NYNY::PATH_INFO])
       Hash[data.names.map {|n| [n.to_sym, URI.unescape(data[n])]}]
     end
   end
