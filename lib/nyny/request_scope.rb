@@ -6,9 +6,11 @@ module NYNY
       include m
     end
 
+    DEFAULT_RESPONSE = NYNY::Response.new '', 200, {'Content-Type' => 'text/html'}
+
     def initialize request
       @request = request
-      @response = Response.new '', 200, {'Content-Type' => 'text/html'}
+      @response = DEFAULT_RESPONSE.clone
     end
 
     def params

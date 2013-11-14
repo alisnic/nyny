@@ -5,7 +5,7 @@ module NYNY
     attr_reader :middleware_chain, :router
     def initialize app=nil
       @router = Router.new({
-        :routes => self.class.routes,
+        :routes => prepare_routes(self.class.routes),
         :fallback => (app || lambda {|env| Response.new '', 404 }),
         :before_hooks => self.class.before_hooks,
         :after_hooks => self.class.after_hooks
@@ -20,6 +20,10 @@ module NYNY
 
     def call env
       middleware_chain.call env
+    end
+
+    def prepare_routes routes
+      routes.group_by(&:method).freeze
     end
 
     #class methods
