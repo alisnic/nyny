@@ -1,21 +1,30 @@
 module NYNY
   class Router
-    attr_reader :fallback, :routes, :before_hooks, :after_hooks
+    attr_reader :fallback, :before_hooks, :after_hooks, :journey
     def initialize options
       @fallback     = options[:fallback]
-      @routes       = options[:routes]
       @before_hooks = options[:before_hooks]
       @after_hooks  = options[:after_hooks]
+      build_journey options[:routes]
+    end
+
+    def build_journey routes
+      @journey = Journey::Router.new(Journey::Routes.new, {})
+      routes.each do |route|
+        exp   = Journey::Router::Strexp.new route.signature, {}, ['/.?']
+        path  = Journey::Path::Pattern.new exp
+        app   = Proc.new {|env| process(route, env)}
+        @journey.routes.add_route(app, path,
+          {:request_method => route.method}, {})
+      end
     end
 
     def call env
-      env['PATH_INFO'] = '/' if env['PATH_INFO'].empty?
-      route = routes.find {|route| route.match? env }
-
-      if route
-        process route, env
+      response = journey.call(env)
+      if response[0] != 404
+        response
       else
-        fallback.call env
+        fallback.call(env)
       end
     end
 
@@ -37,7 +46,7 @@ module NYNY
         after_hooks.each {|h| scope.instance_eval &h }
       end
 
-      response
+      response.to_a
     end
   end
 end

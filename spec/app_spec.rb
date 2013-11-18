@@ -151,7 +151,8 @@ describe App do
 
     env = Rack::MockRequest.env_for '/'
     env['PATH_INFO'] = ''
-    kls.new.call(env).body.first.should == 'Hello'
+    response = kls.new.call(env)
+    response[2].body.first.should == 'Hello'
   end
 
   describe 'Class level api' do

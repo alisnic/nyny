@@ -2,11 +2,12 @@ module NYNY
   class Route
     NAME_PATTERN = /:(\S+)/
 
-    attr_reader :pattern, :handler, :method
+    attr_reader :pattern, :handler, :method, :signature
     def initialize method, signature, &block
       @pattern = pattern_for signature
       @handler = Proc.new(&block)
       @method = method.to_s.upcase
+      @signature = signature
     end
 
     def pattern_for signature

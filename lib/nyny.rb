@@ -1,5 +1,6 @@
 require 'uri'
 require 'rack'
+require 'journey'
 
 require 'nyny/version'
 require 'nyny/primitives'
