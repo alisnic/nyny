@@ -211,6 +211,7 @@ class App < NYNY::App
   end
 end
 ```
+NYNY uses [Tilt][tilt] for templating, so the list of supported engines is pretty complete.
 
 ## Request scope
 As was said above, when you pass a block to a route definition,
@@ -379,3 +380,4 @@ TBD.
 [rack-middleware]: https://github.com/rack/rack/wiki/List-of-Middleware
 [halt-definition]: https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb#L36
 [primitivesrb]: https://github.com/alisnic/nyny/blob/master/lib/nyny/primitives.rb
+[tilt]: https://github.com/rtomayko/tilt
