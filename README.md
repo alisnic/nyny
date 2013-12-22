@@ -209,6 +209,7 @@ class App < NYNY::App
     render 'index.erb', :foo => 'bar' #access it as foo in template
   end
 end
+```
 
 ## Request scope
 As was said above, when you pass a block to a route definition,
