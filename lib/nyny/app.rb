@@ -56,10 +56,7 @@ module NYNY
       end
 
       def helpers *args, &block
-        if block_given?
-          args << Module.new(&block)
-        end
-
+        args << Module.new(&block) if block_given?
         args.each {|m| RequestScope.add_helper_module m }
       end
     end #class methods
