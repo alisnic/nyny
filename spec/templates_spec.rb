@@ -12,12 +12,31 @@ describe Templates do
           render template('index.erb')
         end
       end
+
+      get '/instance_var' do
+        @foo = 'bar'
+        render template('instance.erb')
+      end
+
+      get '/local_var' do
+        render template('local.erb'), :foo => 'bar'
+      end
     end
   end
 
   it 'renders correctly without layout' do
     response = app.get('/without_layout')
     response.body.should == '<p>Hello!</p>'
+  end
+
+  it 'passes a instance variable to template' do
+    response = app.get('/instance_var')
+    response.body.should == 'bar'
+  end
+
+  it 'passes a local variable to template' do
+    response = app.get('/local_var')
+    response.body.should == 'bar'
   end
 
   it 'renders correctly with layout' do

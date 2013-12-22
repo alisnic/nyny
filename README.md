@@ -191,6 +191,24 @@ class App < NYNY::App
   end
 end
 ```
+There are 2 ways to pass data to the template:
+
+Via a instance variable:
+```ruby
+class App < NYNY::App
+  get '/' do
+    @foo = 'bar' #access it as @foo in template
+    render 'index.erb'
+  end
+end
+
+Or via a local variable:
+```ruby
+class App < NYNY::App
+  get '/' do
+    render 'index.erb', :foo => 'bar' #access it as foo in template
+  end
+end
 
 ## Request scope
 As was said above, when you pass a block to a route definition,
