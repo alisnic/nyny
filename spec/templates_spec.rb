@@ -15,12 +15,12 @@ describe Templates do
     end
   end
 
-  it 'render correctly without layout' do
+  it 'renders correctly without layout' do
     response = app.get('/without_layout')
     response.body.should == '<p>Hello!</p>'
   end
 
-  it 'render correctly with layout' do
+  it 'renders correctly with layout' do
     response = app.get('/with_layout')
 
     rendered = Tilt.new(template('layout.erb')).render do

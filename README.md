@@ -42,6 +42,7 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
     - [Environment](#environment)
     - [Running](#running)
     - [Defining routes](#defining-routes)
+    - [Templates](#templates)
     - [Request scope](#request-scope)
     - [Filters](#filters)
     - [Middleware](#middleware)
@@ -181,6 +182,16 @@ end
 Each block that is passed to a route definition is evaluated in the context of
 a request scope. See below what methods are available there.
 
+## Templates
+NYNY can render templates, all you need is to call the `render` function:
+```ruby
+class App < NYNY::App
+  get '/' do
+    render 'index.erb'
+  end
+end
+```
+
 ## Request scope
 As was said above, when you pass a block to a route definition,
 that block is evaluated in the context of a [RequestScope][2].
@@ -230,7 +241,7 @@ end
 
 ## Middleware
 
-A NYNY app is a Rack middleware, which means that it can be used inside 
+A NYNY app is a Rack middleware, which means that it can be used inside
 Sinatra, Rails, or any other Rack-based app:
 
 ```ruby
