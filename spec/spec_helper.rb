@@ -20,6 +20,10 @@ class Rack::MockRequest
   def options(uri, opts={})   request("OPTIONS", uri, opts)   end
 end
 
+def template name
+  File.join(File.dirname(__FILE__), 'views', name)
+end
+
 def extended_modules_for kls
   (class << kls; self end).included_modules
 end

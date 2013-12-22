@@ -1,14 +1,14 @@
 module NYNY
   module Templates
     module Helpers
-      def render(template, locals = {}, options = {}, &block)
-        templates_cache.fetch(template) {
+      def render template, locals = {}, options = {}, &block
+        template_cache.fetch(template) do
           Tilt.new(template, options)
-        }.render(self, locals, &block)
+        end.render(self, locals, &block)
       end
 
-      def templates_cache
-        Thread.current[:templates_cache] ||= Tilt::Cache.new
+      def template_cache
+        Thread.current[:template_cache] ||= Tilt::Cache.new
       end
     end
 
