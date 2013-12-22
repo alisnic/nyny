@@ -92,6 +92,7 @@ App.run!
 <ul>
 <li><a href="#running">Running</a></li>
 <li><a href="#defining-routes">Defining routes</a></li>
+<li><a href="#templates">Templates</a></li>
 <li><a href="#request-scope">Request scope</a></li>
 <li><a href="#filters">Filters</a></li>
 <li><a href="#middleware">Middleware</a></li>
@@ -211,6 +212,32 @@ end
 a request scope. See below what methods are available there.</p>
 
 <h2>
+<a name="templates" class="anchor" href="#templates"><span class="octicon octicon-link"></span></a>Templates</h2>
+
+<p>NYNY can render templates, all you need is to call the <code>render</code> function:</p>
+<pre><code>class App &lt; NYNY::App
+  get '/' do
+    render 'index.erb'
+  end
+end</code></pre>
+
+<p>There are 2 ways to pass data to the template:</p>
+<p>Via a instance variable:</p>
+<pre><code>class App &lt; NYNY::App
+  get '/' do
+    @foo = 'bar' #access it as @foo in template
+    render 'index.erb'
+  end
+end</code></pre>
+
+<p>Or via a local variable:</p>
+<pre><code>class App &lt; NYNY::App
+  get '/' do
+    render 'index.erb', :foo => 'bar' #access it as foo in template
+  end
+end</code></pre>
+
+<h2>
 <a name="request-scope" class="anchor" href="#request-scope"><span class="octicon octicon-link"></span></a>Request scope</h2>
 
 <p>As was said above, when you pass a block to a route definition,
@@ -219,7 +246,7 @@ This means that several methods/objects available inside that block:</p>
 
 <ul>
 <li>
-<code>request</code> - A <code>Rack::Request</code> object which encapsulates the request 
+<code>request</code> - A <code>Rack::Request</code> object which encapsulates the request
 to that route. (see <a href="http://rack.rubyforge.org/doc/classes/Rack/Request.html">Rack::Request documentation</a> for more info)</li>
 <li>
 <code>params</code> - a hash which contains both POST body params and GET querystring params.</li>
@@ -271,7 +298,7 @@ the <strong>response</strong> object (<a href="http://rack.rubyforge.org/doc/cla
 <h2>
 <a name="middleware" class="anchor" href="#middleware"><span class="octicon octicon-link"></span></a>Middleware</h2>
 
-<p>A NYNY app is a Rack middleware, which means that it can be used inside 
+<p>A NYNY app is a Rack middleware, which means that it can be used inside
 Sinatra, Rails, or any other Rack-based app:</p>
 
 <pre><code>class MyApp &lt; Sinatra::Base
