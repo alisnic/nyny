@@ -69,7 +69,7 @@ apps and using Rack to mount them, or by using those sub apps in the "main" app
 as middleware.
 
 # Why use NYNY instead of Sinatra
-- It's very small (<300 LOC), which is just a little overhead on top of Rack.
+- It's very small (~300 LOC), which is just a little overhead on top of Rack.
 - Sinatra is a drop-in replacement for NYNY. Anytime you feel that you need more,
   you can just change your app to inherit from `Sinatra::Base`, your code will
   still work, and you will be able to use any of the Sinatra features.
