@@ -201,6 +201,7 @@ class App < NYNY::App
     render 'index.erb'
   end
 end
+```
 
 Or via a local variable:
 ```ruby
