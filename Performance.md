@@ -37,9 +37,10 @@ Test: A lot o Plain routes
 nyny:     0.110000   0.000000   0.110000 (  0.109565)
 sinatra:  0.250000   0.020000   0.270000 (  0.265283)
 NYNY is 2.42x faster than Sinatra in this test
-```
+
 Test: A lot of Pattern routes
               user     system      total        real
 nyny:     0.130000   0.000000   0.130000 (  0.125386)
 sinatra:  0.280000   0.010000   0.290000 (  0.291068)
 NYNY is 2.32x faster than Sinatra in this test
+```
