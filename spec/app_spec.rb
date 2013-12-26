@@ -156,15 +156,13 @@ describe App do
 
   describe 'Class level api' do
     let (:app_class) { Class.new(App) }
-    describe 'middlewares' do
-      let (:app_class) do
-        mock_app_class do
-          use NullMiddleware
-        end
-      end
 
-      it 'should allow to add a middleware' do
-        app_class.middlewares.last.first.should == NullMiddleware
+    describe 'middlewares' do
+
+      it 'delegates to builder' do
+        kls = mock_app_class
+        kls.builder.should_receive(:use).with(NullMiddleware)
+        kls.use(NullMiddleware)
       end
     end
 
