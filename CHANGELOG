@@ -1,3 +1,7 @@
+2.3.1
+  - Use Rack builder to shorten and simplify the code
+  - Add ruby-prof as a development dependency
+
 2.2.1
   - Added support for templates
 
