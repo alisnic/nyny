@@ -2,24 +2,17 @@ module NYNY
   class App
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
 
-    attr_reader :middleware_chain, :router
     def initialize app=nil
-      @router = Router.new({
-        :routes => self.class.routes,
-        :fallback => (app || lambda {|env| Response.new '', 404 }),
+      self.class.builder.run Router.new({
+        :routes       => self.class.routes,
+        :fallback     => (app || lambda {|env| Response.new '', 404 }),
         :before_hooks => self.class.before_hooks,
-        :after_hooks => self.class.after_hooks
+        :after_hooks  => self.class.after_hooks
       })
-      @middleware_chain = MiddlewareChain.new(self.class.middlewares,
-                                              lambda {|env| _call(env)})
-    end
-
-    def _call env
-      router.call env
     end
 
     def call env
-      middleware_chain.call env
+      self.class.builder.call env
     end
 
     #class methods
@@ -30,12 +23,14 @@ module NYNY
         end
       end
 
-      def middlewares;  @middlewares  ||= []  end
       def routes;       @routes       ||= []  end
       def before_hooks; @before_hooks ||= []  end
       def after_hooks;  @after_hooks  ||= []  end
 
-      # move middleware chain and runner to core-ext
+      def builder
+        @builder ||= Rack::Builder.new
+      end
+
       def register *extensions
         extensions.each do |ext|
           extend ext
@@ -52,7 +47,7 @@ module NYNY
       end
 
       def use middleware, *args, &block
-        middlewares << [middleware, args, block]
+        builder.use middleware, *args, &block
       end
 
       def helpers *args, &block

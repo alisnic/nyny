@@ -6,7 +6,6 @@ require 'nyny/version'
 require 'nyny/primitives'
 require 'nyny/request_scope'
 require 'nyny/route'
-require 'nyny/middleware_chain'
 require 'nyny/app'
 require 'nyny/router'
 
