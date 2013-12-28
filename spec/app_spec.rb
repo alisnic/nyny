@@ -24,6 +24,19 @@ describe App do
     kls.should respond_to(:foo)
   end
 
+  it 'should allow to specify stuff in namespaces' do
+    app = mock_app do
+      namespace '/foo' do
+        get '/' do
+          'bar'
+        end
+      end
+    end
+
+    response = app.get('/foo')
+    response.body.should == 'bar'
+  end
+
   it 'should call registered method on extension' do
     module Foo
       def self.registered app

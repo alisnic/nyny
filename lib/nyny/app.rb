@@ -38,6 +38,12 @@ module NYNY
         end
       end
 
+      def namespace url, &block
+        builder.map url do
+          use Class.new(NYNY::App, &block)
+        end
+      end
+
       def before &blk
         before_hooks << Proc.new(&blk)
       end
