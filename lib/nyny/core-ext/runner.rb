@@ -11,6 +11,7 @@ module NYNY
     end
 
     def run! port=9292
+      use Rack::CommonLogger
       use Rack::ShowExceptions unless NYNY.env.production?
       optimal_runner.run new, :Port => port
     end
