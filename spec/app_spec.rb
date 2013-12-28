@@ -24,17 +24,41 @@ describe App do
     kls.should respond_to(:foo)
   end
 
-  it 'should allow to specify stuff in namespaces' do
-    app = mock_app do
-      namespace '/foo' do
+
+  describe 'namespace' do
+    let (:app) do
+      mock_app do
+        namespace '/foo' do
+          get '/' do
+            'bar'
+          end
+        end
+
+        namespace '/nested' do
+          namespace '/space' do
+            get '/' do
+              'caramba'
+            end
+          end
+        end
+
         get '/' do
-          'bar'
+          'no namespace here'
         end
       end
     end
 
-    response = app.get('/foo')
-    response.body.should == 'bar'
+    it 'allows to specify stuff in namespaces' do
+      app.get('/foo').body.should == 'bar'
+    end
+
+    it 'does not break the main app' do
+      app.get('/').body.should == 'no namespace here'
+    end
+
+    it 'can be nested as well' do
+      app.get('/nested/space/').body.should == 'caramba'
+    end
   end
 
   it 'should call registered method on extension' do
