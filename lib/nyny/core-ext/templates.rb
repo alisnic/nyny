@@ -1,3 +1,5 @@
+require 'tilt'
+
 module NYNY
   module Templates
     module Helpers

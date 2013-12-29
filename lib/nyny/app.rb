@@ -1,6 +1,7 @@
 module NYNY
   class App
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
+    BUILDER    = Rack::Builder.new
 
     def initialize app=nil
       self.class.builder.run Router.new({
@@ -28,7 +29,7 @@ module NYNY
       def after_hooks;  @after_hooks  ||= []  end
 
       def builder
-        @builder ||= Rack::Builder.new
+        @builder ||= BUILDER.dup
       end
 
       def register *extensions
