@@ -4,7 +4,7 @@ module NYNY
   module Assets
     def assets
       @assets ||= Sprockets::Environment.new(NYNY.root) do |env|
-        env.logger = Logger.new(STDOUT)
+        env.logger = NYNY.logger
       end
     end
 
