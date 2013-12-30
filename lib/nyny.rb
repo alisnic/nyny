@@ -7,8 +7,6 @@ require 'nyny/request_scope'
 require 'nyny/route'
 require 'nyny/app'
 require 'nyny/router'
-
-# Register core extensions
 require 'nyny/core-ext/runner'
 require 'nyny/core-ext/templates'
 require 'nyny/core-ext/assets'
@@ -34,4 +32,3 @@ end
 NYNY::App.register NYNY::Runner
 NYNY::App.register NYNY::Templates
 NYNY::App.register NYNY::Assets
-
