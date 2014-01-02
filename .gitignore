@@ -4,6 +4,8 @@
 .config
 .yardoc
 *.sqlite3
+*.sublime-project
+*.sublime-workspace
 Gemfile.lock
 InstalledFiles
 _yardoc

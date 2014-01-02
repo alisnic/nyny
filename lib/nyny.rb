@@ -1,6 +1,7 @@
 require 'uri'
 require 'rack'
 require 'journey'
+require 'tilt'
 
 require 'nyny/version'
 require 'nyny/primitives'
@@ -10,12 +11,13 @@ require 'nyny/middleware_chain'
 require 'nyny/app'
 require 'nyny/router'
 
-
 # Register core extensions
 require 'nyny/core-ext/runner'
+require 'nyny/core-ext/templates'
 
 module NYNY
   App.register NYNY::Runner
+  App.register NYNY::Templates
 
   class EnvString < String
     [:production, :development, :test].each do |env|

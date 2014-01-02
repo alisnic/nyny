@@ -93,3 +93,33 @@ end
 run_test 'Url patterns', apps do |app|
   app.get '/foo'
 end
+
+# Plain routes
+apps = build_apps do
+  [:get, :post, :put].each do |method|
+    10.times do |i|
+      send(method, "/foo/#{i}") do
+        i
+      end
+    end
+  end
+end
+run_test 'A lot o Plain routes', apps do |app|
+  app.get '/foo/5'
+end
+
+#
+# Pattern routes
+apps = build_apps do
+  [:get, :post, :put].each do |method|
+    10.times do |i|
+      send(method, "/foo/#{i}/:action") do
+        params[:action]
+      end
+    end
+  end
+end
+run_test 'A lot of Pattern routes', apps do |app|
+  app.get '/foo/5/edit'
+end
+
