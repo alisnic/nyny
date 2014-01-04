@@ -1,7 +1,27 @@
 module NYNY
   class App
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
-    BUILDER    = Rack::Builder.new
+
+    def self.attribute name, value
+      @attributes ||= []
+      @attributes << name
+      self.class.send :attr_accessor, name
+      self.send "#{name}=", value
+    end
+
+    def self.inherited subclass
+      @attributes.each do |attr|
+        subclass.send "#{attr}=", self.send(attr).clone
+        subclass.instance_variable_set "@attributes", @attributes.dup
+      end
+
+      super
+    end
+
+    attribute :builder,       Rack::Builder.new
+    attribute :routes,        []
+    attribute :before_hooks,  []
+    attribute :after_hooks,   []
 
     def initialize app=nil
       self.class.builder.run Router.new({
@@ -22,14 +42,6 @@ module NYNY
         define_method method do |str, &blk|
           routes << Route.new(method, str, &blk)
         end
-      end
-
-      def routes;       @routes       ||= []  end
-      def before_hooks; @before_hooks ||= []  end
-      def after_hooks;  @after_hooks  ||= []  end
-
-      def builder
-        @builder ||= BUILDER.dup
       end
 
       def register *extensions
