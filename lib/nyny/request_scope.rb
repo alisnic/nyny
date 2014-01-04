@@ -1,3 +1,5 @@
+require 'forwardable'
+
 module NYNY
   class RequestScope
     extend Forwardable
@@ -7,10 +9,15 @@ module NYNY
     end
 
     attr_reader :request, :response
-    def_delegators :request, :params, :session, :cookies
+    def_delegators :request, :params, :session
+
     def initialize request
       @request = request
       @response = Response.new '', 200, {'Content-Type' => 'text/html'}
+    end
+
+    def cookies
+      @cookies ||= Rack::Cookies::CookieJar.new(request.cookies)
     end
 
     def headers hash={}
@@ -35,8 +42,8 @@ module NYNY
 
     def apply_to &handler
       response.body = instance_eval(&handler)
-      cookies.each {|k,v| response.set_cookie k,v }
-      response
+      cookies.finish!(response)
+      response.finish
     end
   end
 end
