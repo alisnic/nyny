@@ -1,6 +1,6 @@
-2.3.1
+3.0.0
   - Use Rack builder to shorten and simplify the code
-  - Add support for namespaces bu using the builder
+  - Add support for namespaces by using the builder
   - Add ruby-prof as a development dependency
 
 2.2.1
