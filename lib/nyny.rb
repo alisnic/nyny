@@ -27,14 +27,6 @@ module NYNY
   def self.env
     @env ||= EnvString.new(ENV['RACK_ENV'] || 'development')
   end
-
-  def self.logger
-    @logger ||= Logger.new(STDOUT)
-  end
-
-  def self.logger= new_logger
-    @logger = new_logger
-  end
 end
 
 NYNY::App.register NYNY::Runner
