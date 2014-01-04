@@ -1,30 +1,20 @@
 module NYNY
   class RequestScope
-    attr_reader :request, :response
+    extend Forwardable
 
     def self.add_helper_module m
       include m
     end
 
+    attr_reader :request, :response
+    def_delegators :request, :params, :session, :cookies
     def initialize request
       @request = request
       @response = Response.new '', 200, {'Content-Type' => 'text/html'}
     end
 
-    def params
-      request.params
-    end
-
     def headers hash={}
       response.headers.merge! hash
-    end
-
-    def session
-      request.session
-    end
-
-    def cookies
-      request.cookies
     end
 
     def status code
