@@ -21,10 +21,6 @@ describe NYNY::Assets do
     ]
   end
 
-  it 'uses the NYNYs logger' do
-    app_kls.assets.logger.should == NYNY.logger
-  end
-
   it 'delegates to the environment on /assets' do
     kls = mock_app_class do
       assets.prepend_path File.join(__dir__, 'assets')
