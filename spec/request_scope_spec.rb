@@ -29,7 +29,7 @@ describe RequestScope do
     end
 
     it '#headers should set the header values' do
-      subject.headers 'Head' => 'Tail'
+      subject.headers['Head'] = 'Tail'
       response = subject.apply_to &handler
       response[1]['Head'].should == 'Tail'
     end

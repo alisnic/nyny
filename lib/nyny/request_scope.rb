@@ -10,6 +10,7 @@ module NYNY
 
     attr_reader :request, :response
     def_delegators :request, :params, :session
+    def_delegators :response, :headers
 
     def initialize request
       @request = request
@@ -18,10 +19,6 @@ module NYNY
 
     def cookies
       @cookies ||= Rack::Cookies::CookieJar.new(request.cookies)
-    end
-
-    def headers hash={}
-      response.headers.merge! hash
     end
 
     def status code
