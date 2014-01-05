@@ -94,7 +94,7 @@ describe RequestScope do
       redir = Proc.new { redirect_to 'http://foo.bar' }
       response = catch(:halt) { subject.apply_to &redir }
       response[0] == 302
-      response.headers['Location'].should == 'http://foo.bar'
+      response[1]['Location'].should == 'http://foo.bar'
     end
 
     it '#apply_to should return a Rack response' do
