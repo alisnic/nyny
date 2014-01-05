@@ -1,5 +1,13 @@
 require 'sprockets'
 
+class Sprockets::Environment
+  def clone
+    copy = super
+    copy.instance_variable_set "@trail", copy.instance_variable_get("@trail").clone
+    copy
+  end
+end
+
 module NYNY
   module Assets
     def self.registered app
