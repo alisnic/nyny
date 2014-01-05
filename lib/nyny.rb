@@ -28,8 +28,9 @@ module NYNY
   def self.env
     @env ||= EnvString.new(ENV['RACK_ENV'] || 'development')
   end
+
+  App.register NYNY::Runner
+  App.register NYNY::Templates
+  App.register NYNY::Assets
 end
 
-NYNY::App.register NYNY::Runner
-NYNY::App.register NYNY::Templates
-NYNY::App.register NYNY::Assets
