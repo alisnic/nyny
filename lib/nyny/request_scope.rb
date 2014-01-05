@@ -32,7 +32,7 @@ module NYNY
       response.status = status
       response.headers.merge! headers
       response.body = body
-      throw :halt, response
+      throw :halt, response.finish
     end
 
     def redirect_to uri, status=302
