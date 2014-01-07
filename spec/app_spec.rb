@@ -13,6 +13,30 @@ describe App do
     response.status.should == 404
   end
 
+  describe 'inheritance' do
+    class Parent < NYNY::App
+      get '/parent' do
+        'parent'
+      end
+    end
+
+    class Child < Parent
+      get '/child' do
+        'child'
+      end
+    end
+
+    it 'works correctly for routes' do
+      parent = Rack::MockRequest.new Parent.new
+      child = Rack::MockRequest.new Child.new
+
+      parent.get('/parent').body.should == 'parent'
+      parent.get('/child').status.should == 404
+      child.get('/parent').body.should == 'parent'
+      child.get('/child').body.should == 'child'
+    end
+  end
+
   it 'should able to register a extension' do
     module Foo
       def foo
