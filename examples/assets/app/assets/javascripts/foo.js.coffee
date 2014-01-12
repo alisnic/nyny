@@ -1,2 +1,2 @@
-#= require jquery
+#= require ext
 console.log 'fooo loaded !'
