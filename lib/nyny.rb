@@ -10,7 +10,6 @@ require 'nyny/app'
 require 'nyny/router'
 require 'nyny/core-ext/runner'
 require 'nyny/core-ext/templates'
-require 'nyny/core-ext/assets'
 
 module NYNY
   class EnvString < String
@@ -31,6 +30,5 @@ module NYNY
 
   App.register NYNY::Runner
   App.register NYNY::Templates
-  #App.register NYNY::Assets
 end
 
