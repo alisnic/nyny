@@ -72,7 +72,7 @@ module NYNY
 
       def helpers *args, &block
         args << Module.new(&block) if block_given?
-        args.each {|m| scope_class.add_helper_module m }
+        args.each {|m| scope_class.send :include, m }
       end
     end #class methods
   end

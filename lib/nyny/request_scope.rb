@@ -5,10 +5,6 @@ module NYNY
   class RequestScope
     extend Forwardable
 
-    def self.add_helper_module m
-      include m
-    end
-
     attr_reader :request, :response
     def_delegators :request, :params, :session
     def_delegators :response, :headers

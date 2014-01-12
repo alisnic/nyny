@@ -8,11 +8,6 @@ describe RequestScope do
     Proc.new {"hello"}
   }
 
-  it 'should be able to add a helper module' do
-    RequestScope.add_helper_module NullHelper
-    RequestScope.ancestors.should include(NullHelper)
-  end
-
   describe 'exposed methods' do
     its (:params) { should == dummy_request.params }
     its (:cookies) { should == dummy_request.cookies }
