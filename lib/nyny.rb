@@ -1,6 +1,5 @@
 require 'uri'
 require 'rack'
-require 'rack/contrib/cookies'
 
 require 'nyny/version'
 require 'nyny/primitives'

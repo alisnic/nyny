@@ -1,4 +1,5 @@
 require 'forwardable'
+require 'rack/contrib/cookies'
 
 module NYNY
   class RequestScope
