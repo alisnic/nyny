@@ -22,13 +22,15 @@ module NYNY
     attribute :routes,        []
     attribute :before_hooks,  []
     attribute :after_hooks,   []
+    attribute :scope_class,   Class.new(RequestScope)
 
     def initialize app=nil
       self.class.builder.run Router.new({
         :routes       => self.class.routes,
         :fallback     => (app || lambda {|env| Response.new '', 404 }),
         :before_hooks => self.class.before_hooks,
-        :after_hooks  => self.class.after_hooks
+        :after_hooks  => self.class.after_hooks,
+        :scope_class  => self.class.scope_class
       })
     end
 
@@ -70,7 +72,7 @@ module NYNY
 
       def helpers *args, &block
         args << Module.new(&block) if block_given?
-        args.each {|m| RequestScope.add_helper_module m }
+        args.each {|m| scope_class.add_helper_module m }
       end
     end #class methods
   end

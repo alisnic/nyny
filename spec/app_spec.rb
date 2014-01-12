@@ -15,6 +15,10 @@ describe App do
 
   describe 'inheritance' do
     class Parent < NYNY::App
+      helpers do
+        def parent_helper; :parent; end
+      end
+
       before do
         headers['parent before'] = 'true'
       end
@@ -23,18 +27,30 @@ describe App do
         headers['parent after'] = 'true'
       end
 
+      get '/helpers' do
+        parent_helper.should == :parent
+      end
+
       get '/parent' do
         'parent'
       end
     end
 
     class Child < Parent
+      helpers do
+        def child_helper; :child; end
+      end
+
       before do
         headers['child before'] = 'true'
       end
 
       after do
         headers['child after'] = 'true'
+      end
+
+      get '/helpers' do
+        child_helper.should == :child
       end
 
       get '/child' do
@@ -62,6 +78,11 @@ describe App do
       parent.get('/parent').headers['child after'].should be_nil
       child.get('/parent').headers['child after'].should_not be_nil
       child.get('/parent').headers['parent after'].should_not be_nil
+    end
+
+    it 'works correctly for helpers' do
+      parent.get('/helpers')
+      child.get('/helpers')
     end
   end
 
@@ -271,7 +292,7 @@ describe App do
     describe 'helpers' do
       it 'should allow to include a helper in request scope' do
         app_class.helpers NullHelper
-        RequestScope.ancestors.should include(NullHelper)
+        app_class.scope_class.ancestors.should include(NullHelper)
       end
 
       it 'should allow to include multiple helpers modules' do
@@ -279,7 +300,7 @@ describe App do
         end
 
         app_class.helpers NullHelper, NullHelper2
-        RequestScope.ancestors.should include(NullHelper, NullHelper2)
+        app_class.scope_class.ancestors.should include(NullHelper, NullHelper2)
       end
 
       it 'should allow to define helpers with a block' do
