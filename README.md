@@ -211,6 +211,24 @@ class App < NYNY::App
   end
 end
 ```
+
+To render a template with a layout, you need to render both files. It's best
+to create a helper for that:
+```ruby
+class App < NYNY::App
+  helpers do
+    def render_with_layout *args
+      render 'layout.erb' do
+        render *args
+      end
+    end
+  end
+
+  get '/' do
+    render_with_layout 'index.erb'
+  end
+end
+```
 NYNY uses [Tilt][tilt] for templating, so the list of supported engines is pretty complete.
 
 ## Request scope
@@ -224,13 +242,13 @@ This means that several methods/objects available inside that block:
   Additionally, NYNY's response exposes 2 more methods in addition to Rack's ones.
   (see [primitives.rb][primitivesrb])
 - `params` - a hash which contains both POST body params and GET querystring params.
-- `headers` - allows you to read/add headers to the response
-  (ex: `headers 'Content-Type' => 'text/html'`)
+- `headers` - a hash with the response headers
+  (ex: `headers['Content-Type'] = 'text/html'`)
 - `status` - allows you to set the status of the response (ex: `status 403`)
 - `redirect_to` - sets the response to redirect
   (ex: `redirect_to 'http://google.com'`)
 - `cookies` - a hash which allows you to access/modify/remove cookies
-  (ex: `cookies[:foo] = 'bar'`)
+  (ex: `cookies[:foo] = 'bar'` or `cookies.delete[:foo]`)
 - `session` - a hash which allows you to access/modify/remove session variables
   (ex: `session[:foo] = 'bar'`)
 - `halt` - allows you to instantly return a response, interrupting current
