@@ -15,12 +15,28 @@ describe App do
 
   describe 'inheritance' do
     class Parent < NYNY::App
+      before do
+        headers['parent before'] = 'true'
+      end
+
+      after do
+        headers['parent after'] = 'true'
+      end
+
       get '/parent' do
         'parent'
       end
     end
 
     class Child < Parent
+      before do
+        headers['child before'] = 'true'
+      end
+
+      after do
+        headers['child after'] = 'true'
+      end
+
       get '/child' do
         'child'
       end

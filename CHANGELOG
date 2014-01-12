@@ -4,12 +4,12 @@
   - Add ruby-prof as a development dependency
   - NYNY will return a Rack-like response on each request ([status, headers, body])
   - set cookie, delete_cookie
+  - headers behaves like a hash
 
   - document that u can delete cookies
   - inheritable helpers + spec
   - inheritance spec
   - document cookies
-  - asset pipeline
   - render with layout documentation
 
 2.2.1

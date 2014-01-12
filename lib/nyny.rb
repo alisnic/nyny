@@ -31,6 +31,6 @@ module NYNY
 
   App.register NYNY::Runner
   App.register NYNY::Templates
-  App.register NYNY::Assets
+  #App.register NYNY::Assets
 end
 

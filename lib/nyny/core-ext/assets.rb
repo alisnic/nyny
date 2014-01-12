@@ -1,9 +1,9 @@
 require 'sprockets'
 
-class Sprockets::Environment
+class Hike::Trail
   def clone
     copy = super
-    copy.instance_variable_set "@trail", copy.instance_variable_get("@trail").clone
+    copy.instance_variable_set "@paths", copy.instance_variable_get("@paths").clone
     copy
   end
 end

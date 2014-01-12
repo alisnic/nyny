@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe NYNY::Assets do
+describe NYNY::Assets, :broken => true do
   let! (:app_kls) do
     mock_app_class {}
   end

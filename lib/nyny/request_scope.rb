@@ -13,7 +13,7 @@ module NYNY
     def_delegators :response, :headers
 
     def initialize request
-      @request = request
+      @request  = request
       @response = Response.new '', 200, {'Content-Type' => 'text/html'}
     end
 

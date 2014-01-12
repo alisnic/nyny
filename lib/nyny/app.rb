@@ -3,16 +3,16 @@ module NYNY
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
 
     def self.attribute name, value
-      @attributes ||= []
-      @attributes << name
+      @_attributes ||= []
+      @_attributes << name
       self.class.send :attr_accessor, name
       self.send "#{name}=", value
     end
 
     def self.inherited subclass
-      @attributes.each do |attr|
+      @_attributes.each do |attr|
         subclass.send "#{attr}=", self.send(attr).clone
-        subclass.instance_variable_set "@attributes", @attributes.dup
+        subclass.instance_variable_set "@_attributes", @_attributes.clone
       end
 
       super
