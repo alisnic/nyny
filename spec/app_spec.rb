@@ -42,14 +42,26 @@ describe App do
       end
     end
 
-    it 'works correctly for routes' do
-      parent = Rack::MockRequest.new Parent.new
-      child = Rack::MockRequest.new Child.new
+    let (:parent) { Rack::MockRequest.new Parent.new }
+    let (:child) { Rack::MockRequest.new Child.new }
 
+    it 'works correctly for routes' do
       parent.get('/parent').body.should == 'parent'
       parent.get('/child').status.should == 404
       child.get('/parent').body.should == 'parent'
       child.get('/child').body.should == 'child'
+    end
+
+    it 'works correctly for before filters' do
+      parent.get('/parent').headers['child before'].should be_nil
+      child.get('/parent').headers['child before'].should_not be_nil
+      child.get('/parent').headers['parent before'].should_not be_nil
+    end
+
+    it 'works correctly for after filters' do
+      parent.get('/parent').headers['child after'].should be_nil
+      child.get('/parent').headers['child after'].should_not be_nil
+      child.get('/parent').headers['parent after'].should_not be_nil
     end
   end
 
