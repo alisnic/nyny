@@ -2,27 +2,27 @@ module NYNY
   class App
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
 
-    def self.attribute name, value
-      @_attributes ||= []
-      @_attributes << name
+    def self.inheritable name, value
+      @_inheritables ||= []
+      @_inheritables << name
       self.class.send :attr_accessor, name
       self.send "#{name}=", value
     end
 
     def self.inherited subclass
-      @_attributes.each do |attr|
+      @_inheritables.each do |attr|
         subclass.send "#{attr}=", self.send(attr).clone
-        subclass.instance_variable_set "@_attributes", @_attributes.clone
+        subclass.instance_variable_set "@_inheritables", @_inheritables.clone
       end
 
       super
     end
 
-    attribute :builder,       Rack::Builder.new
-    attribute :routes,        []
-    attribute :before_hooks,  []
-    attribute :after_hooks,   []
-    attribute :scope_class,   Class.new(RequestScope)
+    inheritable :builder,       Rack::Builder.new
+    inheritable :routes,        []
+    inheritable :before_hooks,  []
+    inheritable :after_hooks,   []
+    inheritable :scope_class,   Class.new(RequestScope)
 
     def initialize app=nil
       self.class.builder.run Router.new({
