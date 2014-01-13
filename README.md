@@ -287,7 +287,7 @@ if the request.path matches a pattern.
 class App < NYNY::App
   before do
     next unless /html/ =~ request.path
-    headers 'Content-Type' => 'text/html'
+    headers['Content-Type'] = 'text/html'
   end
 
   after do
