@@ -8,11 +8,6 @@ describe RequestScope do
     Proc.new {"hello"}
   }
 
-  it 'should be able to add a helper module' do
-    RequestScope.add_helper_module NullHelper
-    RequestScope.ancestors.should include(NullHelper)
-  end
-
   describe 'exposed methods' do
     its (:params) { should == dummy_request.params }
     its (:cookies) { should == dummy_request.cookies }
@@ -29,15 +24,15 @@ describe RequestScope do
     end
 
     it '#headers should set the header values' do
-      subject.headers 'Head' => 'Tail'
+      subject.headers['Head'] = 'Tail'
       response = subject.apply_to &handler
-      response.headers['Head'].should == 'Tail'
+      response[1]['Head'].should == 'Tail'
     end
 
     it '#status should set the response status' do
       forbid = Proc.new { status 403 }
       response = subject.apply_to &forbid
-      response.status.should == 403
+      response[0].should == 403
     end
 
     it 'params should have insensitive keys' do
@@ -93,13 +88,16 @@ describe RequestScope do
     it '#redirect_to should redirect' do
       redir = Proc.new { redirect_to 'http://foo.bar' }
       response = catch(:halt) { subject.apply_to &redir }
-      response.status.should == 302
-      response.headers['Location'].should == 'http://foo.bar'
+      response[0] == 302
+      response[1]['Location'].should == 'http://foo.bar'
     end
 
     it '#apply_to should return a Rack response' do
       response = subject.apply_to &handler
-      response.should be_a(Rack::Response)
+      response.length.should == 3
+      response[0].should == 200
+      response[1].should == subject.headers
+      response[2].should be_a(Rack::BodyProxy)
     end
   end
 end

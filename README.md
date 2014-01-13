@@ -42,6 +42,7 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
     - [Environment](#environment)
     - [Running](#running)
     - [Defining routes](#defining-routes)
+    - [Namespaces](#namespaces)
     - [Templates](#templates)
     - [Request scope](#request-scope)
     - [Filters](#filters)
@@ -54,7 +55,7 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
 # Motivation
 My efforts to write __NYNY__ started when I wanted to understand how __Sinatra__
 works, and stumbled upon the [base.rb][0]. The majority of the classes that
-are used by sinatra are in one single file, which makes it nearly impossible
+are used by Sinatra are in one single file, which makes it nearly impossible
 for a new person to grasp.
 
 I wanted to understand how sinatra works, but the code was pretty challenging.
@@ -182,6 +183,27 @@ end
 Each block that is passed to a route definition is evaluated in the context of
 a request scope. See below what methods are available there.
 
+## Namespaces
+You can define namespaces for routes in NYNY. Each namespace is an isolated
+app, which means that you can use the same api that you use in your top app there:
+
+```ruby
+class App < NYNY::App
+  get '/' do
+    'Hello'
+  end
+
+  namespace '/nested' do
+    use SomeMiddleware
+    helpers SomeHelpers
+
+    get '/' do # this will be accessible at '/nested'
+      'Hello from namespace!'
+    end
+  end
+end
+```
+
 ## Templates
 NYNY can render templates, all you need is to call the `render` function:
 ```ruby
@@ -211,6 +233,24 @@ class App < NYNY::App
   end
 end
 ```
+
+To render a template with a layout, you need to render both files. It's best
+to create a helper for that:
+```ruby
+class App < NYNY::App
+  helpers do
+    def render_with_layout *args
+      render 'layout.erb' do
+        render *args
+      end
+    end
+  end
+
+  get '/' do
+    render_with_layout 'index.erb'
+  end
+end
+```
 NYNY uses [Tilt][tilt] for templating, so the list of supported engines is pretty complete.
 
 ## Request scope
@@ -224,13 +264,13 @@ This means that several methods/objects available inside that block:
   Additionally, NYNY's response exposes 2 more methods in addition to Rack's ones.
   (see [primitives.rb][primitivesrb])
 - `params` - a hash which contains both POST body params and GET querystring params.
-- `headers` - allows you to read/add headers to the response
-  (ex: `headers 'Content-Type' => 'text/html'`)
+- `headers` - a hash with the response headers
+  (ex: `headers['Content-Type'] = 'text/html'`)
 - `status` - allows you to set the status of the response (ex: `status 403`)
 - `redirect_to` - sets the response to redirect
   (ex: `redirect_to 'http://google.com'`)
 - `cookies` - a hash which allows you to access/modify/remove cookies
-  (ex: `cookies[:foo] = 'bar'`)
+  (ex: `cookies[:foo] = 'bar'` or `cookies.delete[:foo]`)
 - `session` - a hash which allows you to access/modify/remove session variables
   (ex: `session[:foo] = 'bar'`)
 - `halt` - allows you to instantly return a response, interrupting current
@@ -247,7 +287,7 @@ if the request.path matches a pattern.
 class App < NYNY::App
   before do
     next unless /html/ =~ request.path
-    headers 'Content-Type' => 'text/html'
+    headers['Content-Type'] = 'text/html'
   end
 
   after do

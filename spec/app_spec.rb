@@ -24,6 +24,42 @@ describe App do
     kls.should respond_to(:foo)
   end
 
+  describe 'namespace' do
+    let (:app) do
+      mock_app do
+        namespace '/foo' do
+          get '/' do
+            'bar'
+          end
+        end
+
+        namespace '/nested' do
+          namespace '/space' do
+            get '/' do
+              'caramba'
+            end
+          end
+        end
+
+        get '/' do
+          'no namespace here'
+        end
+      end
+    end
+
+    it 'allows to specify stuff in namespaces' do
+      app.get('/foo').body.should == 'bar'
+    end
+
+    it 'does not break the main app' do
+      app.get('/').body.should == 'no namespace here'
+    end
+
+    it 'can be nested as well' do
+      app.get('/nested/space/').body.should == 'caramba'
+    end
+  end
+
   it 'should call registered method on extension' do
     module Foo
       def self.registered app
@@ -131,15 +167,29 @@ describe App do
     app.get '/'
   end
 
-  it 'should be able to set cookies' do
-    app = mock_app do
-      post '/write' do
-        cookies.merge! params
+  describe 'cookies' do
+    let (:app) do
+      mock_app do
+        post '/cookie' do
+          cookies['foo'] = 'bar'
+        end
+
+        delete '/cookie' do
+          cookies.delete 'foo'
+        end
       end
     end
 
-    res = app.post '/write?foo=bar'
-    res.headers['Set-Cookie'].should == 'foo=bar'
+    it 'sets a cookie' do
+      res = app.post '/cookie'
+      res.headers['Set-Cookie'].should == 'foo=bar; path=/'
+    end
+
+    it 'deletes a cookie' do
+      app.post '/cookie'
+      res = app.delete '/cookie'
+      res.headers['Set-Cookie'].should_not include('foo=bar')
+    end
   end
 
   it 'works with empty path' do
@@ -151,27 +201,25 @@ describe App do
 
     env = Rack::MockRequest.env_for '/'
     env['PATH_INFO'] = ''
-    kls.new.call(env).body.first.should == 'Hello'
+    kls.new.call(env)[2].body.first.should == 'Hello'
   end
 
   describe 'Class level api' do
     let (:app_class) { Class.new(App) }
-    describe 'middlewares' do
-      let (:app_class) do
-        mock_app_class do
-          use NullMiddleware
-        end
-      end
 
-      it 'should allow to add a middleware' do
-        app_class.middlewares.last.first.should == NullMiddleware
+    describe 'middlewares' do
+
+      it 'delegates to builder' do
+        kls = mock_app_class
+        kls.builder.should_receive(:use).with(NullMiddleware)
+        kls.use(NullMiddleware)
       end
     end
 
     describe 'helpers' do
       it 'should allow to include a helper in request scope' do
         app_class.helpers NullHelper
-        RequestScope.ancestors.should include(NullHelper)
+        app_class.scope_class.ancestors.should include(NullHelper)
       end
 
       it 'should allow to include multiple helpers modules' do
@@ -179,7 +227,7 @@ describe App do
         end
 
         app_class.helpers NullHelper, NullHelper2
-        RequestScope.ancestors.should include(NullHelper, NullHelper2)
+        app_class.scope_class.ancestors.should include(NullHelper, NullHelper2)
       end
 
       it 'should allow to define helpers with a block' do

@@ -1,30 +1,21 @@
+require 'forwardable'
+require 'rack/contrib/cookies'
+
 module NYNY
   class RequestScope
-    attr_reader :request, :response
+    extend Forwardable
 
-    def self.add_helper_module m
-      include m
-    end
+    attr_reader :request, :response
+    def_delegators :request, :params, :session
+    def_delegators :response, :headers
 
     def initialize request
-      @request = request
+      @request  = request
       @response = Response.new '', 200, {'Content-Type' => 'text/html'}
     end
 
-    def params
-      request.params
-    end
-
-    def headers hash={}
-      response.headers.merge! hash
-    end
-
-    def session
-      request.session
-    end
-
     def cookies
-      request.cookies
+      @cookies ||= Rack::Cookies::CookieJar.new(request.cookies)
     end
 
     def status code
@@ -35,7 +26,7 @@ module NYNY
       response.status = status
       response.headers.merge! headers
       response.body = body
-      throw :halt, response
+      throw :halt, response.finish
     end
 
     def redirect_to uri, status=302
@@ -45,8 +36,8 @@ module NYNY
 
     def apply_to &handler
       response.body = instance_eval(&handler)
-      cookies.each {|k,v| response.set_cookie k,v }
-      response
+      cookies.finish!(response)
+      response.finish
     end
   end
 end

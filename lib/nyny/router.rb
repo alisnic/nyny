@@ -1,11 +1,12 @@
 module NYNY
   class Router
-    attr_reader :fallback, :routes, :before_hooks, :after_hooks
+    attr_reader :fallback, :routes, :before_hooks, :after_hooks, :scope_class
     def initialize options
       @fallback     = options[:fallback]
       @routes       = options[:routes]
       @before_hooks = options[:before_hooks]
       @after_hooks  = options[:after_hooks]
+      @scope_class  = options[:scope_class]
     end
 
     def call env
@@ -24,7 +25,7 @@ module NYNY
       request.params.merge! route.url_params(env)
       request.params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
 
-      eval_response RequestScope.new(request), route.handler
+      eval_response scope_class.new(request), route.handler
     end
 
     def eval_response scope, handler
