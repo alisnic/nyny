@@ -7,6 +7,8 @@
   - cookies behave like a hash
   - added sprockets integration example
   - improved documentation
+  - Fixed inheritance behaviour for App (routes, filters, helpers will be passed
+    down the inheritance chain)
 
 2.2.1
   - Added support for templates
