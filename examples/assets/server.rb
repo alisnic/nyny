@@ -3,7 +3,7 @@ require 'nyny'
 require 'sprockets'
 
 class App < NYNY::App
-  assets = Sprockets::Environment.new do |env|
+  sprockets = Sprockets::Environment.new do |env|
     env.append_path 'vendor/javascripts'
     env.append_path 'app/assets/javascripts'
     env.append_path 'app/assets/stylesheets'
@@ -11,7 +11,7 @@ class App < NYNY::App
   end
 
   builder.map '/assets' do
-    run assets
+    run sprockets
   end
 
   get '/' do
