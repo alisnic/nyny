@@ -28,15 +28,6 @@ end
 puts "Comparing NYNY #{NYNY::VERSION} with Sinatra #{Sinatra::VERSION}"
 
 #
-# Empty app
-apps = build_apps do
-  #empty app
-end
-run_test 'empty', apps do |app|
-  app.get '/'
-end
-
-#
 # Hello World
 apps = build_apps do
   get '/' do
