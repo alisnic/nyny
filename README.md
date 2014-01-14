@@ -42,6 +42,7 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
     - [Environment](#environment)
     - [Running](#running)
     - [Defining routes](#defining-routes)
+    - [Namespaces](#namespaces)
     - [Templates](#templates)
     - [Request scope](#request-scope)
     - [Filters](#filters)
@@ -54,7 +55,7 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
 # Motivation
 My efforts to write __NYNY__ started when I wanted to understand how __Sinatra__
 works, and stumbled upon the [base.rb][0]. The majority of the classes that
-are used by sinatra are in one single file, which makes it nearly impossible
+are used by Sinatra are in one single file, which makes it nearly impossible
 for a new person to grasp.
 
 I wanted to understand how sinatra works, but the code was pretty challenging.
@@ -182,6 +183,27 @@ end
 Each block that is passed to a route definition is evaluated in the context of
 a request scope. See below what methods are available there.
 
+## Namespaces
+You can define namespaces for routes in NYNY. Each namespace is an isolated
+app, which means that you can use the same api that you use in your top app there:
+
+```ruby
+class App < NYNY::App
+  get '/' do
+    'Hello'
+  end
+
+  namespace '/nested' do
+    use SomeMiddleware
+    helpers SomeHelpers
+
+    get '/' do # this will be accessible at '/nested'
+      'Hello from namespace!'
+    end
+  end
+end
+```
+
 ## Templates
 NYNY can render templates, all you need is to call the `render` function:
 ```ruby
@@ -265,7 +287,7 @@ if the request.path matches a pattern.
 class App < NYNY::App
   before do
     next unless /html/ =~ request.path
-    headers 'Content-Type' => 'text/html'
+    headers['Content-Type'] = 'text/html'
   end
 
   after do
