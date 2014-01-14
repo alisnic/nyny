@@ -38,6 +38,7 @@ describe NYNY::App do
       end
 
       get '/helpers' do
+        parent_helper.should == :parent
         child_helper.should == :child
       end
 
