@@ -23,7 +23,9 @@ module NYNY
     def process route, env
       request = Request.new(env)
       request.params.merge! route.url_params(env)
-      request.params.default_proc = proc {|h,k| h[k.to_s] || h[k.to_sym]}
+      request.params.default_proc = proc { |h, k|
+        h.fetch(k.to_s, nil) || h.fetch(k.to_sym, nil)
+      }
 
       eval_response scope_class.new(request), route.handler
     end
