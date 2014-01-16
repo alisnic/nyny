@@ -4,6 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'nyny/version'
 
 Gem::Specification.new do |spec|
+  spec.required_ruby_version = ">= 1.9.2"
+
   spec.name          = "nyny"
   spec.version       = NYNY::VERSION
   spec.authors       = ["Andrei Lisnic"]
