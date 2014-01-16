@@ -1,3 +1,6 @@
+3.0.1
+  - File SystemStackError when accessing missing param (@holies)
+
 3.0.0
   - Use Rack builder to shorten and simplify the code
   - Add support for namespaces by using the builder
