@@ -25,7 +25,7 @@ module NYNY
     def halt status, headers={}, body=''
       response.status = status
       response.headers.merge! headers
-      response.write body
+      response.rewrite body
       throw :halt, response.finish
     end
 
