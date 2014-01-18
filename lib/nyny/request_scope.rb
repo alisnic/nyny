@@ -25,7 +25,7 @@ module NYNY
     def halt status, headers={}, body=''
       response.status = status
       response.headers.merge! headers
-      response.body = body
+      response.write body
       throw :halt, response.finish
     end
 
@@ -35,7 +35,7 @@ module NYNY
     alias_method :redirect, :redirect_to
 
     def apply_to &handler
-      response.body = instance_eval(&handler)
+      response.write instance_eval(&handler)
       cookies.finish!(response)
       response.finish
     end

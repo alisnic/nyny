@@ -13,7 +13,7 @@ describe Router do
       end
 
       after do
-        response.body = "Zaz"
+        response.rewrite "Zaz"
       end
     end
   end
@@ -24,6 +24,6 @@ describe Router do
   end
 
   it "should not raise SystemStackError if any absent param is accessed" do
-    expect { response = app.post('/') }.not_to raise_error SystemStackError
+    expect { response = app.post('/') }.not_to raise_error
   end
 end

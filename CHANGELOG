@@ -1,3 +1,8 @@
+3.1.0
+  - template helpers TODO: document
+  - use latest Tilt (2.0.0)
+  - get rid of silly Rack::Response hacks, write to body properly instead
+
 3.0.1
   - File SystemStackError when accessing missing param (@holies)
 
