@@ -3,6 +3,12 @@ require 'spec_helper'
 describe Templates do
   let (:app) do
     mock_app do
+      helpers do
+        def template_root
+          File.join(__dir__, "views")
+        end
+      end
+
       get '/without_layout' do
         render template('index.erb')
       end
@@ -16,6 +22,10 @@ describe Templates do
       get '/instance_var' do
         @foo = 'bar'
         render template('instance.erb')
+      end
+
+      get '/via_helper' do
+        erb :index
       end
 
       get '/local_var' do
@@ -49,4 +59,7 @@ describe Templates do
     response.body.should == rendered
   end
 
+  it 'defines helpers for all tilt supported engines' do
+    app.get('/via_helper').status.should == 200
+  end
 end
