@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Templates do
-  let (:app) do
-    mock_app do
+  let (:app_class) do
+    mock_app_class do
       helpers do
         def template_root
           File.join(__dir__, "views")
@@ -34,6 +34,8 @@ describe Templates do
     end
   end
 
+  let (:app) { Rack::MockRequest.new(app_class.new)}
+
   it 'renders correctly without layout' do
     response = app.get('/without_layout')
     response.body.should == '<p>Hello!</p>'
@@ -60,6 +62,8 @@ describe Templates do
   end
 
   it 'defines helpers for all tilt supported engines' do
-    app.get('/via_helper').status.should == 200
+    Tilt.default_mapping.lazy_map.keys.each do |ext|
+      app_class.scope_class.instance_methods.should include(ext.to_sym)
+    end
   end
 end
