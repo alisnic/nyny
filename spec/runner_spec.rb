@@ -4,7 +4,7 @@ describe Runner do
   let (:kls) { mock_app_class {} }
 
   before do
-    kls.optimal_runner.stub :run
+    Rack::Handler.stub :pick => double(:run => nil)
   end
 
   it 'should include the default middleware on top' do
