@@ -10,5 +10,6 @@ module NYNY
       header.delete "Content-Length"
       write str
     end
+    alias_method :body=, :rewrite
   end
 end
