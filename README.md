@@ -214,17 +214,6 @@ class App < NYNY::App
 end
 ```
 
-Or just use a helper:
-```ruby
-class App < NYNY::App
-  get '/' do
-    erb :index
-  end
-end
-```
-Note: these helpers will try to render templates from the "views" folder, to
-use a different one, define the "template_root" [helper method](#helpers).
-
 There are 2 ways to pass data to the template:
 
 Via a instance variable:
@@ -251,7 +240,7 @@ to create a helper for that:
 ```ruby
 class App < NYNY::App
   helpers do
-    def render_with_layout *args
+    def template *args
       render 'layout.erb' do
         render *args
       end
@@ -259,7 +248,7 @@ class App < NYNY::App
   end
 
   get '/' do
-    render_with_layout 'index.erb'
+    template 'index.erb'
   end
 end
 ```

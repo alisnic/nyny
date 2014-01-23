@@ -9,19 +9,8 @@ module NYNY
         end.render(self, locals, &block)
       end
 
-      def template_root
-        File.join(NYNY.root, "views")
-      end
-
       def template_cache
         Thread.current[:template_cache] ||= Tilt::Cache.new
-      end
-
-      Tilt.default_mapping.lazy_map.keys.each do |engine|
-        define_method engine do |*args|
-          args[0] = File.join(template_root, args[0].to_s) + ".#{engine}"
-          render(*args)
-        end
       end
     end
 
