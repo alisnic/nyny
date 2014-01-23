@@ -15,7 +15,6 @@ class App < NYNY::App
   end
 
   get '/' do
-    raise 'chlen'
     json :some => [:json, :mate!]
   end
 end
