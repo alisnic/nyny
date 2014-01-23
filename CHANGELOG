@@ -1,7 +1,10 @@
 3.1.0
-  - template helpers TODO: document
   - use latest Tilt (2.0.0)
-  - get rid of silly Rack::Response hacks, write to body properly instead
+  - get rid of silly Rack::Response hacks, write to body properly
+  - Response#rewrite (body= aliases it for backward compatibility)
+  - Refactor .run! implementation, prefer thin, webrik.
+  - NYNY now ships with better_errors, which is only enabled in development
+  - Fixed builder instanciation logic
 
 3.0.1
   - File SystemStackError when accessing missing param (@holies)

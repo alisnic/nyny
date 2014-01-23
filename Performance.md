@@ -1,5 +1,5 @@
 
-Note: this bench mai be a bit obsolete, I removed the profiling
+Note: this bench may be a bit obsolete, I removed the profiling
 script due to the fact that NYNY's and Sintara's deps are
 incompatible. For a more complete list of of microframework
 benchmarks, see [https://github.com/luislavena/bench-micro]()

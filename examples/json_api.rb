@@ -8,7 +8,6 @@ require 'json'
 class App < NYNY::App
   before { headers['Content-Type'] = 'application/json' }
 
-  use BetterErrors::Middleware
   helpers do
     def json data
       data.to_json

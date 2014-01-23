@@ -27,15 +27,16 @@ module NYNY
     def initialize app=nil
       self.class.builder.run Router.new({
         :routes       => self.class.routes,
-        :fallback     => (app || lambda {|env| Response.new '', 404 }),
+        :fallback     => (app || lambda {|env| Response.new [], 404 }),
         :before_hooks => self.class.before_hooks,
         :after_hooks  => self.class.after_hooks,
         :scope_class  => self.class.scope_class
       })
+      @app = self.class.builder.to_app
     end
 
     def call env
-      self.class.builder.call env
+      @app.call env
     end
 
     #class methods
