@@ -5,6 +5,8 @@
   - Refactor .run! implementation, prefer thin, webrik.
   - NYNY now ships with better_errors, which is only enabled in development
   - Fixed builder instanciation logic
+  - removed benchmark script, since tilt dep version is not cimpatible with
+    Sinatra
 
 3.0.1
   - File SystemStackError when accessing missing param (@holies)

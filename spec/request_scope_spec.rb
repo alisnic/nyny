@@ -43,6 +43,7 @@ describe RequestScope do
           delete '/cookie_halt' do
             cookies.delete 'foo'
             halt 200, {}, 'blah'
+            'blah'
           end
         end
       end
