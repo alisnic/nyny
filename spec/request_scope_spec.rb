@@ -23,6 +23,55 @@ describe RequestScope do
       app.get '/?foo=bar'
     end
 
+    describe 'cookies' do
+      let (:app) do
+        mock_app do
+          post '/cookie' do
+            cookies['foo'] = 'bar'
+          end
+
+          post '/cookie_halt' do
+            cookies['foo'] = 'bar'
+            halt 200, {}, 'blah'
+            cookies['foo'] = 'moo'
+          end
+
+          delete '/cookie' do
+            cookies.delete 'foo'
+          end
+
+          delete '/cookie_halt' do
+            cookies.delete 'foo'
+            halt 200, {}, 'blah'
+          end
+        end
+      end
+
+      it 'sets a cookie' do
+        res = app.post '/cookie'
+        res.headers['Set-Cookie'].should == 'foo=bar; path=/'
+      end
+
+      it 'deletes a cookie' do
+        app.post '/cookie'
+        res = app.delete '/cookie'
+        res.headers['Set-Cookie'].should_not include('foo=bar')
+      end
+
+      describe 'when response was halted' do
+        it 'sets a cookie' do
+          res = app.post '/cookie_halt'
+          res.headers['Set-Cookie'].should == 'foo=bar; path=/'
+        end
+
+        it 'deletes a cookie' do
+          app.post '/cookie'
+          res = app.delete '/cookie_halt'
+          res.headers['Set-Cookie'].should_not include('foo=bar')
+        end
+      end
+    end
+
     it '#headers should set the header values' do
       subject.headers['Head'] = 'Tail'
       response = subject.apply_to &handler
@@ -76,13 +125,13 @@ describe RequestScope do
     it 'return prematurely with pass' do
       app = mock_app do
         get '/' do
-          next 'hui'
+          next 'blah'
           'shouldnt be returned'
         end
       end
       res = app.get '/'
       res.status.should == 200
-      res.body.should == 'hui'
+      res.body.should == 'blah'
     end
 
     it '#redirect_to should redirect' do

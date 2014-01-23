@@ -60,10 +60,4 @@ describe Templates do
 
     response.body.should == rendered
   end
-
-  it 'defines helpers for all tilt supported engines' do
-    Tilt.default_mapping.lazy_map.keys.each do |ext|
-      app_class.scope_class.instance_methods.should include(ext.to_sym)
-    end
-  end
 end
