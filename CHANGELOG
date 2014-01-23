@@ -5,7 +5,7 @@
   - Refactor .run! implementation, prefer thin, webrik.
   - NYNY now ships with better_errors, which is only enabled in development
   - Fixed builder instanciation logic
-  - removed benchmark script, since tilt dep version is not cimpatible with
+  - removed benchmark script, since tilt dep version is not compatible with
     Sinatra
 
 3.0.1
