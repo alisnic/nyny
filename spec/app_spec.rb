@@ -167,31 +167,6 @@ describe App do
     app.get '/'
   end
 
-  describe 'cookies' do
-    let (:app) do
-      mock_app do
-        post '/cookie' do
-          cookies['foo'] = 'bar'
-        end
-
-        delete '/cookie' do
-          cookies.delete 'foo'
-        end
-      end
-    end
-
-    it 'sets a cookie' do
-      res = app.post '/cookie'
-      res.headers['Set-Cookie'].should == 'foo=bar; path=/'
-    end
-
-    it 'deletes a cookie' do
-      app.post '/cookie'
-      res = app.delete '/cookie'
-      res.headers['Set-Cookie'].should_not include('foo=bar')
-    end
-  end
-
   it 'works with empty path' do
     kls = mock_app_class do
       get '/' do
@@ -201,7 +176,7 @@ describe App do
 
     env = Rack::MockRequest.env_for '/'
     env['PATH_INFO'] = ''
-    kls.new.call(env)[2].body.first.should == 'Hello'
+    kls.new.call(env)[2].body.last.should == 'Hello'
   end
 
   describe 'Class level api' do

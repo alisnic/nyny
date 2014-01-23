@@ -11,7 +11,7 @@ module NYNY
 
     def initialize request
       @request  = request
-      @response = Response.new '', 200, {'Content-Type' => 'text/html'}
+      @response = Response.new
     end
 
     def cookies
@@ -25,7 +25,8 @@ module NYNY
     def halt status, headers={}, body=''
       response.status = status
       response.headers.merge! headers
-      response.body = body
+      response.rewrite body
+      cookies.finish!(response) if @cookies
       throw :halt, response.finish
     end
 
@@ -35,8 +36,8 @@ module NYNY
     alias_method :redirect, :redirect_to
 
     def apply_to &handler
-      response.body = instance_eval(&handler)
-      cookies.finish!(response)
+      response.write instance_eval(&handler)
+      cookies.finish!(response) if @cookies
       response.finish
     end
   end

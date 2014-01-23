@@ -213,6 +213,7 @@ class App < NYNY::App
   end
 end
 ```
+
 There are 2 ways to pass data to the template:
 
 Via a instance variable:
@@ -239,7 +240,7 @@ to create a helper for that:
 ```ruby
 class App < NYNY::App
   helpers do
-    def render_with_layout *args
+    def template *args
       render 'layout.erb' do
         render *args
       end
@@ -247,7 +248,7 @@ class App < NYNY::App
   end
 
   get '/' do
-    render_with_layout 'index.erb'
+    template 'index.erb'
   end
 end
 ```

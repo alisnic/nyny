@@ -6,15 +6,16 @@ require 'json'
 # Every response of this app will be automatically converted to json
 #
 class App < NYNY::App
-  before { headers 'Content-Type' => 'application/json' }
+  before { headers['Content-Type'] = 'application/json' }
 
-  after do
-    body = response.raw_body
-    response.body = body.to_json if body.respond_to? :to_json
+  helpers do
+    def json data
+      data.to_json
+    end
   end
 
   get '/' do
-    {:some => [:json, :mate!]}
+    json :some => [:json, :mate!]
   end
 end
 

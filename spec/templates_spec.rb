@@ -1,8 +1,14 @@
 require 'spec_helper'
 
 describe Templates do
-  let (:app) do
-    mock_app do
+  let (:app_class) do
+    mock_app_class do
+      helpers do
+        def template_root
+          File.join(__dir__, "views")
+        end
+      end
+
       get '/without_layout' do
         render template('index.erb')
       end
@@ -18,11 +24,17 @@ describe Templates do
         render template('instance.erb')
       end
 
+      get '/via_helper' do
+        erb :index
+      end
+
       get '/local_var' do
         render template('local.erb'), :foo => 'bar'
       end
     end
   end
+
+  let (:app) { Rack::MockRequest.new(app_class.new)}
 
   it 'renders correctly without layout' do
     response = app.get('/without_layout')
@@ -48,5 +60,4 @@ describe Templates do
 
     response.body.should == rendered
   end
-
 end
