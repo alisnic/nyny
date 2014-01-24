@@ -135,9 +135,7 @@ in the case a error occurs during a request.
 ## Defining routes
 
 NYNY uses [Journey][journey] for routing, that means that NYNY has all the
-awesomeness the Rails' router has.
-
-NYNY supports the following verbs for defining a route: delete, get, head,
+awesomeness the Rails' router has. NYNY supports the following verbs for defining a route: delete, get, head,
 options, patch, post, put and trace.
 
 ```ruby
@@ -161,9 +159,7 @@ end
 ```
 You can use [the same constraints][constraints] you use in Rails.
 
-Besides the constraints, you can specify defaults, which come as the second
-arguments to route definition:
-
+Besides the constraints, you can specify defaults:
 ```ruby
 class App < NYNY::App
   get '/', :defaults => {:format => 'html'} do

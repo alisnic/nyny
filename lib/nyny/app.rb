@@ -49,7 +49,7 @@ module NYNY
       HTTP_VERBS.each do |method|
         define_method method do |path, options={}, &block|
           options[:constraints] ||= {}
-          options[:constraints] = {:request_method => method.to_s.upcase}
+          options[:constraints].merge!(:request_method => method.to_s.upcase)
           define_route path, options, &block
         end
       end
