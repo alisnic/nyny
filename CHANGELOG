@@ -1,3 +1,8 @@
+3.2.1
+  - Fallback to Tilt 1.4.1 since 2.0.0 has conflicts with a lot
+    of gems
+  - Improved and fixed the outdated examples
+
 3.2.0
   - Use Rails' Journey router as router to conquer the world and shorten
     the codebase

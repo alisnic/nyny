@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+
+gem 'sprockets'
+gem 'nyny'
+gem 'haml'
+gem 'coffee-script'
+
