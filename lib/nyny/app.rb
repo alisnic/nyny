@@ -47,14 +47,15 @@ module NYNY
     #class methods
     class << self
       HTTP_VERBS.each do |method|
-        define_method method do |path, constraints={}, defaults={}, &block|
-          method_constraint = {:request_method => method.to_s.upcase}
-          define_route path, constraints.merge(method_constraint), defaults, &block
+        define_method method do |path, options={}, &block|
+          options[:constraints] ||= {}
+          options[:constraints] = {:request_method => method.to_s.upcase}
+          define_route path, options, &block
         end
       end
 
-      def define_route path, constraints, defaults={}, &block
-        self.route_defs << [path, constraints, defaults, Proc.new(&block)]
+      def define_route path, options, &block
+        self.route_defs << [path, options, Proc.new(&block)]
       end
 
       def register *extensions

@@ -29,8 +29,11 @@ module NYNY
         :parameters_key => 'nyny.params'
       })
 
-      route_defs.each do |path, constraints, defaults, handler|
-        pat = Journey::Path::Pattern.new(path)
+      route_defs.each do |path, options, handler|
+        pat         = Journey::Path::Pattern.new(path)
+        constraints = options.fetch(:constraints, {})
+        defaults    = options.fetch(:defaults, {})
+
         @journey.routes.add_route compile(handler), pat, constraints, defaults
       end
     end
