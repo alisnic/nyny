@@ -19,16 +19,24 @@ module NYNY
     end
 
     inheritable :builder,       Rack::Builder.new
-    inheritable :routes,        Journey::Routes.new
+    inheritable :route_defs,    []
     inheritable :before_hooks,  []
     inheritable :after_hooks,   []
     inheritable :scope_class,   Class.new(RequestScope)
 
     def initialize app=nil
-      self.class.builder.run Journey::Router.new(self.class.routes, {
+      routes = Journey::Routes.new
+
+      self.class.route_defs.each do |path, constraints, defaults, handler|
+        pat = Journey::Path::Pattern.new(path)
+        routes.add_route self.class.build_route_app(handler), pat, constraints, defaults
+      end
+
+      self.class.builder.run Journey::Router.new(routes, {
         :parameters_key => 'nyny.params',
         :request_class  => Request
       })
+
       @app = self.class.builder.to_app
     end
 
@@ -46,11 +54,10 @@ module NYNY
       end
 
       def define_route path, constraints, defaults={}, &block
-        pat = Journey::Path::Pattern.new(path)
-        routes.add_route build_route_app(&block), pat, constraints, defaults
+        self.route_defs << [path, constraints, defaults, Proc.new(&block)]
       end
 
-      def build_route_app &handler
+      def build_route_app handler
         Proc.new do |env|
           request = Request.new(env)
           request.params.merge! env["nyny.params"]
