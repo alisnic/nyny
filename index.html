@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/prettify.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygments.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <style>
       code.prettyprint {
@@ -57,29 +57,29 @@
   <a href="http://badge.fury.io/rb/nyny"><img src="https://badge.fury.io/rb/nyny.png" alt="Gem Version" style="max-width:100%;"></a>
 </p>
 
-<pre><code># myapp.rb
+<div class="highlight highlight-ruby"><pre><span class="c1"># myapp.rb</span>
 
-require 'nyny'
-class App &lt; NYNY::App
-  get '/' do
-    'Hello world!'
-  end
-end
+<span class="nb">require</span> <span class="s1">'nyny'</span>
+<span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="s1">'Hello world!'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-App.run!
-</code></pre>
+<span class="no">App</span><span class="o">.</span><span class="n">run!</span>
+</pre></div>
 
 <p>Install the gem:</p>
 
-<pre><code>gem install nyny
-</code></pre>
+<div class="highlight highlight-bash"><pre>gem install nyny
+</pre></div>
 
-<p>Run the file</p>
+<p>Run the file:</p>
 
-<pre><code>ruby myapp.rb
-</code></pre>
+<div class="highlight highlight-bash"><pre>ruby myapp.rb
+</pre></div>
 
-<p>Open the browser at <a href="">http://localhost:9292</a></p>
+<p>Open the browser at <a href="http://localhost:9292">http://localhost:9292</a></p>
 
 <ul>
 <li><a href="#new-york-new-york">TOP</a></li>
@@ -90,10 +90,12 @@ App.run!
 <a href="#usage">Usage</a>
 
 <ul>
+<li><a href="#environment">Environment</a></li>
 <li><a href="#running">Running</a></li>
 <li><a href="#defining-routes">Defining routes</a></li>
-<li><a href="#templates">Templates</a></li>
 <li><a href="#request-scope">Request scope</a></li>
+<li><a href="#namespaces">Namespaces</a></li>
+<li><a href="#templates">Templates</a></li>
 <li><a href="#filters">Filters</a></li>
 <li><a href="#middleware">Middleware</a></li>
 <li><a href="#helpers">Helpers</a></li>
@@ -103,48 +105,61 @@ App.run!
 <li><a href="#f-a-q">FAQ</a></li>
 <li><a href="#contributing">Contributing</a></li>
 </ul><h1>
-<a name="motivation" class="anchor" href="#motivation"><span class="octicon octicon-link"></span></a>Motivation</h1>
-
-<p>My efforts to write <strong>NYNY</strong> started when I wanted to understand how <strong>Sinatra</strong>
-works, and stumbled upon the <a href="https://github.com/sinatra/sinatra/blob/master/lib/sinatra/base.rb">base.rb</a>. The majority of the classes that
-are used by sinatra are in one single file, which makes it nearly impossible
-for a new person to grasp.</p>
-
-<p>I wanted to understand how sinatra works, but the code was pretty challenging.
-So I decided I should re-implement the basic things Sinatra has.
-Thus, <strong>NYNY</strong> was born.</p>
-
-<h1>
 <a name="philosophy" class="anchor" href="#philosophy"><span class="octicon octicon-link"></span></a>Philosophy</h1>
 
-<p>NYNY should have only the bare minimum to write basic web servers comfortably,
-everything else should be in a extension. It is also
-trivial to use NYNY to build large and complex apps, by writing multiple sub
-apps and using Rack to mount them, or by using those sub apps in the "main" app
-as middleware.</p>
+<p>NYNY is unassuming, it has all the core stuff to get running, but nothing else.
+Your app is the framework. However, it's trivial to extend NYNY via its
+<a href="#extensions">extension interface</a>.</p>
 
 <h1>
-<a name="why-use-nyny-instead-of-sinatra" class="anchor" href="#why-use-nyny-instead-of-sinatra"><span class="octicon octicon-link"></span></a>Why use NYNY instead of Sinatra</h1>
+<a name="why-use-nyny-instead-of-any-other-small-web-framework" class="anchor" href="#why-use-nyny-instead-of-any-other-small-web-framework"><span class="octicon octicon-link"></span></a>Why use NYNY instead of any other small web framework</h1>
 
 <ul>
-<li>It's very small (~300 LOC), which is just a little overhead on top of Rack.</li>
-<li>Sinatra is a drop-in replacement for NYNY. Anytime you feel that you need more,
-you can just change your app to inherit from <code>Sinatra::Base</code>, your code will
-still work, and you will be able to use any of the Sinatra features.</li>
-<li>It's <strong>~2 times faster</strong> than Sinatra (see <a href="https://github.com/alisnic/nyny/blob/master/Performance.md">Performance</a> for details)</li>
+<li>It's <strong>very</strong> small (&lt;300 LOC), which is just a little overhead on top of Rack.</li>
 <li>You want to dig into the source code and change to your needs (NYNY's source code is more welcoming)</li>
 <li>Each NYNY app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.</li>
+<li>
+<strong>It uses Journey for routing (Rails' router)</strong>, which makes its routing logic
+a lot more powerful and reliable that in most micro web frameworks.</li>
 </ul><h1>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
 
-<p>A NYNY app must <em>always</em> be in a class which inherits from <code>NYNY::App</code>.</p>
+<p>A NYNY app must <em>always</em> be in a class which inherits from <code>NYNY::App</code>:</p>
 
-<pre><code>class App &lt; NYNY::App
-  get '/' do
-    'Hello, World'
-  end
-end
-</code></pre>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="s1">'Hello, World'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+<h2>
+<a name="environment" class="anchor" href="#environment"><span class="octicon octicon-link"></span></a>Environment</h2>
+
+<p>To get the directory in which your app is running use <code>NYNY.root</code></p>
+
+<div class="highlight highlight-ruby"><pre><span class="c1">#/some/folder/server.rb</span>
+<span class="nb">require</span> <span class="s1">'nyny'</span>
+<span class="nb">puts</span> <span class="no">NYNY</span><span class="o">.</span><span class="n">root</span> <span class="c1">#=&gt; /some/folder/</span>
+<span class="nb">puts</span> <span class="no">NYNY</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">)</span> <span class="c1">#=&gt; /some/folder/foo</span>
+</pre></div>
+
+<p>To get NYNY's environment, use <code>NYNY.env</code></p>
+
+<div class="highlight highlight-ruby"><pre><span class="c1">#env.rb</span>
+<span class="nb">require</span> <span class="s1">'nyny'</span>
+<span class="nb">puts</span> <span class="no">NYNY</span><span class="o">.</span><span class="n">env</span>
+<span class="nb">puts</span> <span class="no">NYNY</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">production?</span>
+</pre></div>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>ruby env.rb
+development
+<span class="nb">false</span>
+
+<span class="nv">$ </span>ruby env.rb <span class="nv">RACK_ENV</span><span class="o">=</span>production
+production
+<span class="nb">true</span>
+</pre></div>
 
 <h2>
 <a name="running" class="anchor" href="#running"><span class="octicon octicon-link"></span></a>Running</h2>
@@ -152,90 +167,68 @@ end
 <p>There are two ways to run a NYNY app <strong>directly</strong> <a href="#middleware">[?]</a>:</p>
 
 <ul>
-<li>
-<p>by requiring it in a <code>config.ru</code> file, and then passing it as argument to the
-Rack's <code>run</code> function:</p>
+<li>by requiring it in a <code>config.ru</code> file, and then passing it as argument to the
+Rack's <code>run</code> function:</li>
+</ul><div class="highlight highlight-ruby"><pre><span class="c1"># config.ru</span>
 
-<pre><code>#config.ru
-require 'app'
-run App.new
-</code></pre>
-</li>
-<li>
-<p>by using the <code>run!</code> method directly on the app class:</p>
+<span class="nb">require</span> <span class="s1">'app'</span>
+<span class="n">run</span> <span class="no">App</span><span class="o">.</span><span class="n">new</span>
+</pre></div>
 
-<pre><code>#app.rb
-#...App class definition...
+<ul>
+<li>by using the <code>run!</code> method directly on the app class:</li>
+</ul><div class="highlight highlight-ruby"><pre><span class="c1"># app.rb</span>
 
-App.run!
-</code></pre>
-</li>
-</ul><p><code>run!</code> takes the port number as optional argument (the default port is 9292).
+<span class="c1"># ...app class definition...</span>
+
+<span class="no">App</span><span class="o">.</span><span class="n">run!</span>
+</pre></div>
+
+<p><code>run!</code> takes the port number as optional argument (the default port is 9292).
 Also the <code>run!</code> method will include 2 default middlewares to make the
-development easier: Rack::CommonLogger and Rack::ShowExceptions.
+development easier: Rack::CommonLogger and BetterErrors::Middleware (only in dev).
 This will show all requests in the log, and will provide useful details
 in the case a error occurs during a request.</p>
 
 <h2>
 <a name="defining-routes" class="anchor" href="#defining-routes"><span class="octicon octicon-link"></span></a>Defining routes</h2>
 
-<p>NYNY supports the following verbs for defining a route: delete, get, head,
+<p>NYNY uses <a href="https://github.com/rails/journey">Journey</a> for routing, that means that NYNY has all the
+awesomeness the Rails' router has. NYNY supports the following verbs for defining a route: delete, get, head,
 options, patch, post, put and trace.</p>
 
-<pre><code>class App &lt; NYNY::App
-  post '/' do
-    'You Posted, dude!'
-  end
-end
-</code></pre>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">post</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="s1">'You Posted, dude!'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
 
-<p>NYNY also suports basic URL patterns:</p>
+<p>You can use any construct or convention <a href="http://guides.rubyonrails.org/routing.html#bound-parameters">supported in Rails</a>
+for the path string.</p>
 
-<pre><code>class App &lt; NYNY::App
-  get '/greet/:first_name/:last_name' do
-    # The last expression in the block is _always_ considered the response body.
-    "Hello #{params[:first_name]} #{params[:last_name]}!"
-  end
-end
-</code></pre>
+<p>Each route definition call optionally accepts constraints:</p>
 
-<p>you can also tell NYNY to match a regex for a path:</p>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">get</span> <span class="s1">'/'</span><span class="p">,</span> <span class="ss">:constraints</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:format</span> <span class="o">=&gt;</span> <span class="ss">:html</span><span class="p">}</span> <span class="k">do</span>
+    <span class="s1">'html'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
 
-<pre><code>class App &lt; NYNY::App
-  get /html/ do
-    'Your URL contains html!'
-  end
-end
-</code></pre>
+<p>You can use <a href="http://guides.rubyonrails.org/routing.html#request-based-constraints">the same constraints</a> you use in Rails.</p>
+
+<p>Besides the constraints, you can specify defaults:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">get</span> <span class="s1">'/'</span><span class="p">,</span> <span class="ss">:defaults</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:format</span> <span class="o">=&gt;</span> <span class="s1">'html'</span><span class="p">}</span> <span class="k">do</span>
+    <span class="s1">'html'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
 
 <p>Each block that is passed to a route definition is evaluated in the context of
 a request scope. See below what methods are available there.</p>
-
-<h2>
-<a name="templates" class="anchor" href="#templates"><span class="octicon octicon-link"></span></a>Templates</h2>
-
-<p>NYNY can render templates, all you need is to call the <code>render</code> function:</p>
-<pre><code>class App &lt; NYNY::App
-  get '/' do
-    render 'index.erb'
-  end
-end</code></pre>
-
-<p>There are 2 ways to pass data to the template:</p>
-<p>Via a instance variable:</p>
-<pre><code>class App &lt; NYNY::App
-  get '/' do
-    @foo = 'bar' #access it as @foo in template
-    render 'index.erb'
-  end
-end</code></pre>
-
-<p>Or via a local variable:</p>
-<pre><code>class App &lt; NYNY::App
-  get '/' do
-    render 'index.erb', :foo => 'bar' #access it as foo in template
-  end
-end</code></pre>
 
 <h2>
 <a name="request-scope" class="anchor" href="#request-scope"><span class="octicon octicon-link"></span></a>Request scope</h2>
@@ -249,10 +242,14 @@ This means that several methods/objects available inside that block:</p>
 <code>request</code> - A <code>Rack::Request</code> object which encapsulates the request
 to that route. (see <a href="http://rack.rubyforge.org/doc/classes/Rack/Request.html">Rack::Request documentation</a> for more info)</li>
 <li>
+<code>response</code> - A <code>Rack::Response</code> object which encapsulates the response.
+Additionally, NYNY's response exposes 2 more methods in addition to Rack's ones.
+(see <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/primitives.rb">primitives.rb</a>)</li>
+<li>
 <code>params</code> - a hash which contains both POST body params and GET querystring params.</li>
 <li>
-<code>headers</code> - allows you to read/add headers to the response
-(ex: <code>headers 'Content-Type' =&gt; 'text/html'</code>)</li>
+<code>headers</code> - a hash with the response headers
+(ex: <code>headers['Content-Type'] = 'text/html'</code>)</li>
 <li>
 <code>status</code> - allows you to set the status of the response (ex: <code>status 403</code>)</li>
 <li>
@@ -260,7 +257,7 @@ to that route. (see <a href="http://rack.rubyforge.org/doc/classes/Rack/Request.
 (ex: <code>redirect_to 'http://google.com'</code>)</li>
 <li>
 <code>cookies</code> - a hash which allows you to access/modify/remove cookies
-(ex: <code>cookies[:foo] = 'bar'</code>)</li>
+(ex: <code>cookies[:foo] = 'bar'</code> or <code>cookies.delete[:foo]</code>)</li>
 <li>
 <code>session</code> - a hash which allows you to access/modify/remove session variables
 (ex: <code>session[:foo] = 'bar'</code>)</li>
@@ -268,6 +265,81 @@ to that route. (see <a href="http://rack.rubyforge.org/doc/classes/Rack/Request.
 <code>halt</code> - allows you to instantly return a response, interrupting current
 handler execution (see <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb#L36">halt</a>)</li>
 </ul><h2>
+<a name="namespaces" class="anchor" href="#namespaces"><span class="octicon octicon-link"></span></a>Namespaces</h2>
+
+<p>You can define namespaces for routes in NYNY. Each namespace is an isolated
+app, which means that you can use the same api that you use in your top app there:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="s1">'Hello'</span>
+  <span class="k">end</span>
+
+  <span class="n">namespace</span> <span class="s1">'/nested'</span> <span class="k">do</span>
+    <span class="n">use</span> <span class="no">SomeMiddleware</span>
+    <span class="n">helpers</span> <span class="no">SomeHelpers</span>
+
+    <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span> <span class="c1"># this will be accessible at '/nested'</span>
+      <span class="s1">'Hello from namespace!'</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+<h2>
+<a name="templates" class="anchor" href="#templates"><span class="octicon octicon-link"></span></a>Templates</h2>
+
+<p>NYNY can render templates, all you need is to call the <code>render</code> function:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="n">render</span> <span class="s1">'index.erb'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>There are 2 ways to pass data to the template:</p>
+
+<p>Via a instance variable:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="vi">@foo</span> <span class="o">=</span> <span class="s1">'bar'</span> <span class="c1">#access it as @foo in template</span>
+    <span class="n">render</span> <span class="s1">'index.erb'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>Or via a local variable:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="n">render</span> <span class="s1">'index.erb'</span><span class="p">,</span> <span class="ss">:foo</span> <span class="o">=&gt;</span> <span class="s1">'bar'</span> <span class="c1">#access it as foo in template</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>To render a template with a layout, you need to render both files. It's best
+to create a helper for that:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">helpers</span> <span class="k">do</span>
+    <span class="k">def</span> <span class="nf">template</span> <span class="o">*</span><span class="n">args</span>
+      <span class="n">render</span> <span class="s1">'layout.erb'</span> <span class="k">do</span>
+        <span class="n">render</span> <span class="o">*</span><span class="n">args</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="n">template</span> <span class="s1">'index.erb'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>NYNY uses <a href="https://github.com/rtomayko/tilt">Tilt</a> for templating, so the list of supported engines is pretty complete.</p>
+
+<h2>
 <a name="filters" class="anchor" href="#filters"><span class="octicon octicon-link"></span></a>Filters</h2>
 
 <p>Unlike Sinatra, NYNY supports only "generic" before and after filters.
@@ -275,25 +347,21 @@ This means that you can't declare a filter to execute depending on a URL pattern
 However, you can obtain the same effect by calling next in a before block
 if the request.path matches a pattern.</p>
 
-<pre><code>class App &lt; NYNY::App
-  before do
-    next unless /html/ =~ request.path
-    headers 'Content-Type' =&gt; 'text/html'
-  end
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">before</span> <span class="k">do</span>
+    <span class="k">next</span> <span class="k">unless</span> <span class="sr">/html/</span> <span class="o">=~</span> <span class="n">request</span><span class="o">.</span><span class="n">path</span>
+    <span class="n">headers</span><span class="o">[</span><span class="s1">'Content-Type'</span><span class="o">]</span> <span class="o">=</span> <span class="s1">'text/html'</span>
+  <span class="k">end</span>
 
-  after do
-    puts response.inspect
-  end
+  <span class="n">after</span> <span class="k">do</span>
+    <span class="nb">puts</span> <span class="n">response</span><span class="o">.</span><span class="n">inspect</span>
+  <span class="k">end</span>
 
-  get '/' do
-    'hello'
-  end
-end
-</code></pre>
-
-<p>Before and after filters are also evaluated in a RequestScope context.
-A little exception are the after filters, which can access
-the <strong>response</strong> object (<a href="http://rack.rubyforge.org/doc/classes/Rack/Response.html">Rack::Response</a>).</p>
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="s1">'hello'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
 
 <h2>
 <a name="middleware" class="anchor" href="#middleware"><span class="octicon octicon-link"></span></a>Middleware</h2>
@@ -301,20 +369,20 @@ the <strong>response</strong> object (<a href="http://rack.rubyforge.org/doc/cla
 <p>A NYNY app is a Rack middleware, which means that it can be used inside
 Sinatra, Rails, or any other Rack-based app:</p>
 
-<pre><code>class MyApp &lt; Sinatra::Base
-  use MyNYNYApp
-end
-</code></pre>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">use</span> <span class="no">MyNYNYApp</span>
+<span class="k">end</span>
+</pre></div>
 
 <p>NYNY also supports middleware itself, and that means you can use Rack middleware
 (or a Sinatra app) inside a NYNY app:</p>
 
-<pre><code>class App &lt; NYNY::App
-  #this will serve all the files in the "public" folder
-  use Rack::Static :url =&gt; ['public']
-  use SinatraApp
-end
-</code></pre>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="c1"># this will serve all the files in the "public" folder</span>
+  <span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Static</span> <span class="ss">:url</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">'public'</span><span class="o">]</span>
+  <span class="n">use</span> <span class="no">SinatraApp</span>
+<span class="k">end</span>
+</pre></div>
 
 <p>I recommend looking at <a href="https://github.com/rack/rack/wiki/List-of-Middleware">the list of Rack middlewares</a></p>
 
@@ -323,61 +391,66 @@ end
 
 <p>NYNY supports helpers as Sinatra does:</p>
 
-<pre><code>class App &lt; NYNY::App
-  helpers MyHelperModule
-end
-</code></pre>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">helpers</span> <span class="no">MyHelperModule</span>
+  <span class="n">helpers</span> <span class="k">do</span>
+    <span class="k">def</span> <span class="nf">using_a_block_to_define_helper</span>
+      <span class="kp">true</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
 
 <p>Using a helper implies that the helper module is included in the <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb">RequestScope</a>,
 and that all the methods in that module will be available inside a route
 definition block.</p>
 
-
 <h2>
-  <a name="extensions" class="anchor" href="#extensions"><span class="octicon octicon-link"></span></a>Extensions</h2>
+<a name="extensions" class="anchor" href="#extensions"><span class="octicon octicon-link"></span></a>Extensions</h2>
+
 <p>Since version 2.0.0, NYNY added support for extensions.
 This makes possible to include helpers, middlewares and custom app class
 methods inside a single module:</p>
 
-<pre><code>module MyKewlExtension
-  class Middleware
-    def initialize app
-      @app = app
-    end
+<div class="highlight highlight-ruby"><pre><span class="k">module</span> <span class="nn">MyKewlExtension</span>
+  <span class="k">class</span> <span class="nc">Middleware</span>
+    <span class="k">def</span> <span class="nf">initialize</span> <span class="n">app</span>
+      <span class="vi">@app</span> <span class="o">=</span> <span class="n">app</span>
+    <span class="k">end</span>
 
-    def call env
-      env['KEWL'] = true
-      @app.call(env) if @app
-    end
-  end
+    <span class="k">def</span> <span class="nf">call</span> <span class="n">env</span>
+      <span class="n">env</span><span class="o">[</span><span class="s1">'KEWL'</span><span class="o">]</span> <span class="o">=</span> <span class="kp">true</span>
+      <span class="vi">@app</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">env</span><span class="p">)</span> <span class="k">if</span> <span class="vi">@app</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
 
-  module Helpers
-    def the_ultimate_answer
-      42
-    end
-  end
+  <span class="k">module</span> <span class="nn">Helpers</span>
+    <span class="k">def</span> <span class="nf">the_ultimate_answer</span>
+      <span class="mi">42</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
 
-  def get_or_post route, &amp;block
-    get route, &amp;block
-    post route, &amp;block
-  end
+  <span class="k">def</span> <span class="nf">get_or_post</span> <span class="n">route</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="n">get</span> <span class="n">route</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="n">post</span> <span class="n">route</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+  <span class="k">end</span>
 
-  def self.registered app
-    app.use Middleware
-    app.helpers Helpers
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">registered</span> <span class="n">app</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">use</span> <span class="no">Middleware</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">helpers</span> <span class="no">Helpers</span>
 
-    app.get_or_post '/' do
-      "After many years of hard computation, the answer is #{the_ultimate_answer}"
-    end
-  end
-end
+    <span class="n">app</span><span class="o">.</span><span class="n">get_or_post</span> <span class="s1">'/'</span> <span class="k">do</span>
+      <span class="s2">"After many years of hard computation, the answer is </span><span class="si">#{</span><span class="n">the_ultimate_answer</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-class App &lt; NYNY::App
-  register MyKewlExtension
-end
+<span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">register</span> <span class="no">MyKewlExtension</span>
+<span class="k">end</span>
 
-App.run!
-</code></pre>
+<span class="no">App</span><span class="o">.</span><span class="n">run!</span>
+</pre></div>
 
 <p>By default, the App class will <code>extend</code> the provided extension module.
 Optionally, an extension can add a <code>registered</code> method, which will be invoked
@@ -410,7 +483,6 @@ written for NYNY will always work with Sinatra. (Forward compatible)</p>
           This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
-          <script src="javascripts/prettify.js"></script>
           <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -420,12 +492,6 @@ written for NYNY will always work with Sinatra. (Forward compatible)</p>
               var pageTracker = _gat._getTracker("UA-43503501-1");
             pageTracker._trackPageview();
             } catch(err) {}
-
-            var pres = document.querySelectorAll('pre code');
-            for (var i=0; i<pres.length; i++) {
-              pres[i].className = "prettyprint"
-            }
-            prettyPrint()
           </script>
 
       </div>
