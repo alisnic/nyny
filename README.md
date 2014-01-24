@@ -57,7 +57,7 @@ NYNY is unassuming, it has all the core stuff to get running, but nothing else.
 Your app is the framework. However, it's trivial to extend NYNY via its
 [extension interface](#extensions).
 
-# Why use NYNY instead of <any other small framework>
+# Why use NYNY instead of any other small web framework
 - It's __very__ small (<300 LOC), which is just a little overhead on top of Rack.
 - You want to dig into the source code and change to your needs (NYNY's source code is more welcoming)
 - Each NYNY app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.
