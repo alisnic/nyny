@@ -1,3 +1,7 @@
+require 'nyny/primitives'
+require 'nyny/request_scope'
+require 'nyny/router'
+
 module NYNY
   class App
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]

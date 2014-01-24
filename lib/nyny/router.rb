@@ -25,17 +25,14 @@ module NYNY
     private
 
     def prepare_for_journey route_defs
-      routes = Journey::Routes.new
+      @journey = Journey::Router.new(Journey::Routes.new, {
+        :parameters_key => 'nyny.params'
+      })
 
       route_defs.each do |path, constraints, defaults, handler|
         pat = Journey::Path::Pattern.new(path)
-        routes.add_route compile(handler), pat, constraints, defaults
+        @journey.routes.add_route compile(handler), pat, constraints, defaults
       end
-
-      @journey = Journey::Router.new(routes, {
-        :parameters_key => 'nyny.params',
-        :request_class  => Request
-      })
     end
 
     def compile handler
