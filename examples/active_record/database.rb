@@ -1,4 +1,4 @@
-require 'protected_attributes'
+#require 'protected_attributes'
 require 'active_record'
 
 ENV['RACK_ENV'] ||= 'development'

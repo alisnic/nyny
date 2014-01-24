@@ -1,6 +1,8 @@
 #!ruby -I ../../lib -I lib
 require 'nyny'
 require 'sprockets'
+require 'haml'
+require 'coffee_script'
 
 class App < NYNY::App
   sprockets = Sprockets::Environment.new do |env|
