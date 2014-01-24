@@ -1,46 +1,64 @@
+require 'journey'
+
 module NYNY
   class Router
-    attr_reader :fallback, :routes, :before_hooks, :after_hooks, :scope_class
+    attr_reader :scope_class, :journey, :before_hooks, :after_hooks, :fallback
     def initialize options
-      @fallback     = options[:fallback]
-      @routes       = options[:routes]
-      @before_hooks = options[:before_hooks]
-      @after_hooks  = options[:after_hooks]
-      @scope_class  = options[:scope_class]
+      @scope_class    = options[:scope_class]
+      @before_hooks   = options[:before_hooks]
+      @after_hooks    = options[:after_hooks]
+      @fallback       = options[:fallback]
+
+      prepare_for_journey(options[:route_defs])
     end
 
     def call env
-      env['PATH_INFO'] = '/' if env['PATH_INFO'].empty?
-      route = routes.find {|route| route.match? env }
+      response = journey.call(env)
 
-      if route
-        process route, env
+      if response[0] == 404 and fallback
+        fallback.call(env)
       else
-        fallback.call env
+        response
       end
     end
 
-    def process route, env
-      request = Request.new(env)
-      request.params.merge! route.url_params(env)
-      request.params.default_proc = lambda do |h, k|
-        h.fetch(k.to_s, nil) || h.fetch(k.to_sym, nil)
-      end
+    private
 
-      eval_response scope_class.new(request), route.handler
+    def prepare_for_journey route_defs
+      @journey = Journey::Router.new(Journey::Routes.new, {
+        :parameters_key => 'nyny.params'
+      })
+
+      route_defs.each do |path, options, handler|
+        pat         = Journey::Path::Pattern.new(path)
+        constraints = options.fetch(:constraints, {})
+        defaults    = options.fetch(:defaults, {})
+
+        @journey.routes.add_route compile(handler), pat, constraints, defaults
+      end
     end
 
-    def eval_response scope, handler
-      response = catch (:halt) do
-        before_hooks.each {|h| scope.instance_eval &h }
-        scope.apply_to &handler
-      end
+    def compile handler
+      Proc.new do |env|
+        request = Request.new(env)
+        request.params.merge! env["nyny.params"]
+        request.params.default_proc = lambda do |h, k|
+          h.fetch(k.to_s, nil) || h.fetch(k.to_sym, nil)
+        end
 
-      catch (:halt) do
-        after_hooks.each {|h| scope.instance_eval &h }
-      end
+        scope = scope_class.new(request)
 
-      response
+        response = catch (:halt) do
+          before_hooks.each {|h| scope.instance_eval &h }
+          scope.apply_to &handler
+        end
+
+        catch (:halt) do
+          after_hooks.each {|h| scope.instance_eval &h }
+        end
+
+        response
+      end
     end
   end
 end

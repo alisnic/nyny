@@ -2,9 +2,6 @@
 require 'nyny'
 require 'json'
 
-#
-# Every response of this app will be automatically converted to json
-#
 class App < NYNY::App
   before { headers['Content-Type'] = 'application/json' }
 
@@ -15,7 +12,7 @@ class App < NYNY::App
   end
 
   get '/' do
-    json :some => [:json, :mate!]
+    json({})
   end
 end
 

@@ -1,3 +1,7 @@
+require 'nyny/primitives'
+require 'nyny/request_scope'
+require 'nyny/router'
+
 module NYNY
   class App
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
@@ -19,19 +23,20 @@ module NYNY
     end
 
     inheritable :builder,       Rack::Builder.new
-    inheritable :routes,        []
+    inheritable :route_defs,    []
     inheritable :before_hooks,  []
     inheritable :after_hooks,   []
     inheritable :scope_class,   Class.new(RequestScope)
 
     def initialize app=nil
       self.class.builder.run Router.new({
-        :routes       => self.class.routes,
-        :fallback     => (app || lambda {|env| Response.new [], 404 }),
-        :before_hooks => self.class.before_hooks,
-        :after_hooks  => self.class.after_hooks,
-        :scope_class  => self.class.scope_class
+        :scope_class    => self.class.scope_class,
+        :route_defs     => self.class.route_defs,
+        :before_hooks   => self.class.before_hooks,
+        :after_hooks    => self.class.after_hooks,
+        :fallback       => app
       })
+
       @app = self.class.builder.to_app
     end
 
@@ -42,9 +47,15 @@ module NYNY
     #class methods
     class << self
       HTTP_VERBS.each do |method|
-        define_method method do |str, &blk|
-          routes << Route.new(method, str, &blk)
+        define_method method do |path, options={}, &block|
+          options[:constraints] ||= {}
+          options[:constraints].merge!(:request_method => method.to_s.upcase)
+          define_route path, options, &block
         end
+      end
+
+      def define_route path, options, &block
+        self.route_defs << [path, options, Proc.new(&block)]
       end
 
       def register *extensions

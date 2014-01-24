@@ -11,7 +11,7 @@ module NYNY
 
     def initialize request
       @request  = request
-      @response = Response.new
+      @response = Response.new [], 200, {'Content-Type' => 'text/html'}
     end
 
     def cookies
