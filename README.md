@@ -83,6 +83,7 @@ To get the directory in which your app is running use `NYNY.root`
 #/some/folder/server.rb
 require 'nyny'
 puts NYNY.root #=> /some/folder/
+puts NYNY.root.join("foo") #=> /some/folder/foo
 ```
 
 To get NYNY's environment, use `NYNY.env`
