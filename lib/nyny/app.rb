@@ -29,7 +29,8 @@ module NYNY
         :scope_class    => self.class.scope_class,
         :route_defs     => self.class.route_defs,
         :before_hooks   => self.class.before_hooks,
-        :after_hooks    => self.class.after_hooks
+        :after_hooks    => self.class.after_hooks,
+        :fallback       => app
       })
 
       @app = self.class.builder.to_app
