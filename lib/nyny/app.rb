@@ -25,16 +25,11 @@ module NYNY
     inheritable :scope_class,   Class.new(RequestScope)
 
     def initialize app=nil
-      routes = Journey::Routes.new
-
-      self.class.route_defs.each do |path, constraints, defaults, handler|
-        pat = Journey::Path::Pattern.new(path)
-        routes.add_route self.class.build_route_app(handler), pat, constraints, defaults
-      end
-
-      self.class.builder.run Journey::Router.new(routes, {
-        :parameters_key => 'nyny.params',
-        :request_class  => Request
+      self.class.builder.run Router.new({
+        :scope_class    => self.class.scope_class,
+        :route_defs     => self.class.route_defs,
+        :before_hooks   => self.class.before_hooks,
+        :after_hooks    => self.class.after_hooks
       })
 
       @app = self.class.builder.to_app
@@ -55,29 +50,6 @@ module NYNY
 
       def define_route path, constraints, defaults={}, &block
         self.route_defs << [path, constraints, defaults, Proc.new(&block)]
-      end
-
-      def build_route_app handler
-        Proc.new do |env|
-          request = Request.new(env)
-          request.params.merge! env["nyny.params"]
-          request.params.default_proc = lambda do |h, k|
-            h.fetch(k.to_s, nil) || h.fetch(k.to_sym, nil)
-          end
-
-          scope = scope_class.new(request)
-
-          response = catch (:halt) do
-            before_hooks.each {|h| scope.instance_eval &h }
-            scope.apply_to &handler
-          end
-
-          catch (:halt) do
-            after_hooks.each {|h| scope.instance_eval &h }
-          end
-
-          response
-        end
       end
 
       def register *extensions
