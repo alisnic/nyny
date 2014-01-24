@@ -1,4 +1,3 @@
-require 'uri'
 require 'rack'
 
 require 'nyny/version'
