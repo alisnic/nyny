@@ -1,5 +1,5 @@
 # New York, New York.
-(ridiculously) small and powerfull micro web framework.
+(ridiculously) small and powerful micro web framework.
 
 [![Build Status](https://api.travis-ci.org/alisnic/nyny.png)](https://travis-ci.org/alisnic/nyny)
 [![Coverage Status](https://coveralls.io/repos/alisnic/nyny/badge.png)](https://coveralls.io/r/alisnic/nyny)
@@ -42,9 +42,9 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
     - [Environment](#environment)
     - [Running](#running)
     - [Defining routes](#defining-routes)
+    - [Request scope](#request-scope)
     - [Namespaces](#namespaces)
     - [Templates](#templates)
-    - [Request scope](#request-scope)
     - [Filters](#filters)
     - [Middleware](#middleware)
     - [Helpers](#helpers)
@@ -52,26 +52,13 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
 - [FAQ](#f-a-q)
 - [Contributing](#contributing)
 
-# Motivation
-My efforts to write __NYNY__ started when I wanted to understand how __Sinatra__
-works, and stumbled upon the [base.rb][0]. The majority of the classes that
-are used by Sinatra are in one single file, which makes it nearly impossible
-for a new person to grasp.
-
-I wanted to understand how sinatra works, but the code was pretty challenging.
-So I decided I should re-implement the basic things Sinatra has.
-Thus, __NYNY__ was born.
-
 # Philosophy
 NYNY is unassuming, it has all the core stuff to get running, but nothing else.
-Your app is the framework.
-
-At the same time, it's trivial to extend NYNY via its
+Your app is the framework. However, it's trivial to extend NYNY via its
 [extension interface](#extensions).
 
-# Why use NYNY instead of Sinatra or anything else of from this camp
-- It's very small (<300 LOC), which is just a little overhead on top of Rack.
-- It's __~30%__ faster than Sinatra (see [Performance][performance] for details)
+# Why use NYNY instead of <any other small framework>
+- It's __very__ small (<300 LOC), which is just a little overhead on top of Rack.
 - You want to dig into the source code and change to your needs (NYNY's source code is more welcoming)
 - Each NYNY app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.
 - __It uses Journey for routing (Rails' router)__, which makes its routing logic
@@ -141,11 +128,14 @@ App.run!
 
 `run!` takes the port number as optional argument (the default port is 9292).
 Also the `run!` method will include 2 default middlewares to make the
-development easier: Rack::CommonLogger and Rack::ShowExceptions.
+development easier: Rack::CommonLogger and BetterErrors::Middleware (only in dev).
 This will show all requests in the log, and will provide useful details
 in the case a error occurs during a request.
 
 ## Defining routes
+
+NYNY uses [Journey][journey] for routing, that means that NYNY has all the
+awesomemeness the Rails' router has.
 
 NYNY supports the following verbs for defining a route: delete, get, head,
 options, patch, post, put and trace.
@@ -157,30 +147,57 @@ class App < NYNY::App
   end
 end
 ```
+You can use any construct or convention [supported in Rails][bound-params]
+for the path string.
 
-NYNY also suports basic URL patterns:
+Each route definition call optionally accepts constraints:
 
 ```ruby
 class App < NYNY::App
-  get '/greet/:first_name/:last_name' do
-    # the last expression in the block is _always_ considered the response body.
-    "Hello #{params[:first_name]} #{params[:last_name]}!"
+  get '/', :constraints => {:format => :html} do
+    'html'
   end
 end
 ```
+You can use [the same constraints][constraints] you use in Rails.
 
-you can also tell NYNY to match a regex for a path:
+Besides the constraints, you can specify defaults, which come as the second
+arguments to route definition:
 
 ```ruby
 class App < NYNY::App
-  get /html/ do
-    'Your URL contains html!'
+  get '/', {}, {:format => 'html'} do
+    'html'
   end
 end
 ```
 
 Each block that is passed to a route definition is evaluated in the context of
 a request scope. See below what methods are available there.
+
+## Request scope
+As was said above, when you pass a block to a route definition,
+that block is evaluated in the context of a [RequestScope][2].
+This means that several methods/objects available inside that block:
+
+- `request` - A `Rack::Request` object which encapsulates the request
+  to that route. (see [Rack::Request documentation][3] for more info)
+- `response` - A `Rack::Response` object which encapsulates the response.
+  Additionally, NYNY's response exposes 2 more methods in addition to Rack's ones.
+  (see [primitives.rb][primitivesrb])
+- `params` - a hash which contains both POST body params and GET querystring params.
+- `headers` - a hash with the response headers
+  (ex: `headers['Content-Type'] = 'text/html'`)
+- `status` - allows you to set the status of the response (ex: `status 403`)
+- `redirect_to` - sets the response to redirect
+  (ex: `redirect_to 'http://google.com'`)
+- `cookies` - a hash which allows you to access/modify/remove cookies
+  (ex: `cookies[:foo] = 'bar'` or `cookies.delete[:foo]`)
+- `session` - a hash which allows you to access/modify/remove session variables
+  (ex: `session[:foo] = 'bar'`)
+- `halt` - allows you to instantly return a response, interrupting current
+  handler execution (see [halt][halt-definition])
+
 
 ## Namespaces
 You can define namespaces for routes in NYNY. Each namespace is an isolated
@@ -252,29 +269,6 @@ class App < NYNY::App
 end
 ```
 NYNY uses [Tilt][tilt] for templating, so the list of supported engines is pretty complete.
-
-## Request scope
-As was said above, when you pass a block to a route definition,
-that block is evaluated in the context of a [RequestScope][2].
-This means that several methods/objects available inside that block:
-
-- `request` - A `Rack::Request` object which encapsulates the request
-  to that route. (see [Rack::Request documentation][3] for more info)
-- `response` - A `Rack::Response` object which encapsulates the response.
-  Additionally, NYNY's response exposes 2 more methods in addition to Rack's ones.
-  (see [primitives.rb][primitivesrb])
-- `params` - a hash which contains both POST body params and GET querystring params.
-- `headers` - a hash with the response headers
-  (ex: `headers['Content-Type'] = 'text/html'`)
-- `status` - allows you to set the status of the response (ex: `status 403`)
-- `redirect_to` - sets the response to redirect
-  (ex: `redirect_to 'http://google.com'`)
-- `cookies` - a hash which allows you to access/modify/remove cookies
-  (ex: `cookies[:foo] = 'bar'` or `cookies.delete[:foo]`)
-- `session` - a hash which allows you to access/modify/remove session variables
-  (ex: `session[:foo] = 'bar'`)
-- `halt` - allows you to instantly return a response, interrupting current
-  handler execution (see [halt][halt-definition])
 
 ## Filters
 
@@ -421,3 +415,6 @@ TBD.
 [halt-definition]: https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb#L36
 [primitivesrb]: https://github.com/alisnic/nyny/blob/master/lib/nyny/primitives.rb
 [tilt]: https://github.com/rtomayko/tilt
+[journey]: https://github.com/rails/journey
+[constraints]: http://guides.rubyonrails.org/routing.html#request-based-constraints
+[bound-params]: http://guides.rubyonrails.org/routing.html#bound-parameters

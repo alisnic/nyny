@@ -1,3 +1,7 @@
+3.2.0
+  - Use Rails' Journey router as router to conquer the world and shorten
+    the codebase
+
 3.1.0
   - use latest Tilt (2.0.0)
   - get rid of silly Rack::Response hacks, write to body properly

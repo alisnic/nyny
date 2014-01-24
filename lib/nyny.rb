@@ -14,8 +14,14 @@ module NYNY
     end
   end
 
+  class PathString < String
+    def join other
+      File.join(self, other)
+    end
+  end
+
   def self.root
-    Dir.pwd
+    @root ||= PathString.new(Dir.pwd)
   end
 
   def self.env
