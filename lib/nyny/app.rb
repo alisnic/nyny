@@ -19,18 +19,15 @@ module NYNY
     end
 
     inheritable :builder,       Rack::Builder.new
-    inheritable :routes,        []
+    inheritable :routes,        Journey::Routes.new
     inheritable :before_hooks,  []
     inheritable :after_hooks,   []
     inheritable :scope_class,   Class.new(RequestScope)
 
     def initialize app=nil
-      self.class.builder.run Router.new({
-        :routes       => self.class.routes,
-        :fallback     => (app || lambda {|env| Response.new [], 404 }),
-        :before_hooks => self.class.before_hooks,
-        :after_hooks  => self.class.after_hooks,
-        :scope_class  => self.class.scope_class
+      self.class.builder.run Journey::Router.new(self.class.routes, {
+        :parameters_key => 'nyny.params',
+        :request_class  => Request
       })
       @app = self.class.builder.to_app
     end
@@ -42,8 +39,37 @@ module NYNY
     #class methods
     class << self
       HTTP_VERBS.each do |method|
-        define_method method do |str, &blk|
-          routes << Route.new(method, str, &blk)
+        define_method method do |path, constraints={}, defaults={}, &block|
+          method_constraint = {:request_method => method.to_s.upcase}
+          define_route path, constraints.merge(method_constraint), defaults, &block
+        end
+      end
+
+      def define_route path, constraints, defaults={}, &block
+        pat = Journey::Path::Pattern.new(path)
+        routes.add_route build_route_app(&block), pat, constraints, defaults
+      end
+
+      def build_route_app &handler
+        Proc.new do |env|
+          request = Request.new(env)
+          request.params.merge! env["nyny.params"]
+          request.params.default_proc = lambda do |h, k|
+            h.fetch(k.to_s, nil) || h.fetch(k.to_sym, nil)
+          end
+
+          scope = scope_class.new(request)
+
+          response = catch (:halt) do
+            before_hooks.each {|h| scope.instance_eval &h }
+            scope.apply_to &handler
+          end
+
+          catch (:halt) do
+            after_hooks.each {|h| scope.instance_eval &h }
+          end
+
+          response
         end
       end
 

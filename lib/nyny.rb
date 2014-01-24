@@ -1,12 +1,11 @@
 require 'uri'
 require 'rack'
+require 'journey'
 
 require 'nyny/version'
 require 'nyny/primitives'
 require 'nyny/request_scope'
-require 'nyny/route'
 require 'nyny/app'
-require 'nyny/router'
 require 'nyny/core-ext/runner'
 require 'nyny/core-ext/templates'
 
