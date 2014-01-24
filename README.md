@@ -1,5 +1,5 @@
 # New York, New York.
-(very) small Sinatra clone.
+(ridiculously) small and powerfull micro web framework.
 
 [![Build Status](https://api.travis-ci.org/alisnic/nyny.png)](https://travis-ci.org/alisnic/nyny)
 [![Coverage Status](https://coveralls.io/repos/alisnic/nyny/badge.png)](https://coveralls.io/r/alisnic/nyny)
@@ -63,20 +63,19 @@ So I decided I should re-implement the basic things Sinatra has.
 Thus, __NYNY__ was born.
 
 # Philosophy
-NYNY should have only the bare minimum to write basic web servers comfortably,
-everything else should be in a extension. It is also
-trivial to use NYNY to build large and complex apps, by writing multiple sub
-apps and using Rack to mount them, or by using those sub apps in the "main" app
-as middleware.
+NYNY is unassuming, it has all the core stuff to get running, but nothing else.
+Your app is the framework.
 
-# Why use NYNY instead of Sinatra
-- It's very small (~300 LOC), which is just a little overhead on top of Rack.
-- Sinatra is a drop-in replacement for NYNY. Anytime you feel that you need more,
-  you can just change your app to inherit from `Sinatra::Base`, your code will
-  still work, and you will be able to use any of the Sinatra features.
-- It's __~2 times faster__ than Sinatra (see [Performance][performance] for details)
+At the same time, it's trivial to extend NYNY via its
+[extension interface](#extensions).
+
+# Why use NYNY instead of Sinatra or anything else of from this camp
+- It's very small (<300 LOC), which is just a little overhead on top of Rack.
+- It's __~30%__ faster than Sinatra (see [Performance][performance] for details)
 - You want to dig into the source code and change to your needs (NYNY's source code is more welcoming)
 - Each NYNY app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.
+- __It uses Journey for routing (Rails' router)__, which makes its routing logic
+  a lot more powerful and reliable that in most micro web frameworks.
 
 # Usage
 
