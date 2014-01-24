@@ -135,7 +135,7 @@ in the case a error occurs during a request.
 ## Defining routes
 
 NYNY uses [Journey][journey] for routing, that means that NYNY has all the
-awesomemeness the Rails' router has.
+awesomeness the Rails' router has.
 
 NYNY supports the following verbs for defining a route: delete, get, head,
 options, patch, post, put and trace.
@@ -166,7 +166,7 @@ arguments to route definition:
 
 ```ruby
 class App < NYNY::App
-  get '/', {}, {:format => 'html'} do
+  get '/', :defaults => {:format => 'html'} do
     'html'
   end
 end
