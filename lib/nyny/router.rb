@@ -1,4 +1,6 @@
-require 'journey'
+require 'active_support/concern'
+require 'action_dispatch/routing'
+require 'action_dispatch/journey'
 
 module NYNY
   class Router
@@ -25,12 +27,13 @@ module NYNY
     private
 
     def prepare_for_journey route_defs
-      @journey = Journey::Router.new(Journey::Routes.new, {
+      routes = ActionDispatch::Journey::Routes.new
+      @journey = ActionDispatch::Journey::Router.new(routes, {
         :parameters_key => 'nyny.params'
       })
 
       route_defs.each do |path, options, handler|
-        pat         = Journey::Path::Pattern.new(path)
+        pat         = ActionDispatch::Journey::Path::Pattern.new(path)
         constraints = options.fetch(:constraints, {})
         defaults    = options.fetch(:defaults, {})
 
@@ -40,13 +43,7 @@ module NYNY
 
     def compile handler
       Proc.new do |env|
-        request = Request.new(env)
-        request.params.merge! env["nyny.params"]
-        request.params.default_proc = lambda do |h, k|
-          h.fetch(k.to_s, nil) || h.fetch(k.to_sym, nil)
-        end
-
-        scope = scope_class.new(request)
+        scope = scope_class.new(env)
 
         response = catch (:halt) do
           before_hooks.each {|h| scope.instance_eval &h }

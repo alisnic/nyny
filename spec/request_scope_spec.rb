@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe RequestScope do
   let (:env) { Rack::MockRequest.env_for '/', :params => {:some => 'param'} }
-  let (:dummy_request) { Rack::Request.new(env) }
-  let (:subject) { RequestScope.new dummy_request }
+  let (:subject) { RequestScope.new env.merge('nyny.params' => {}) }
+  let (:dummy_request) { subject.request }
   let (:handler) {
     Proc.new {"hello"}
   }
