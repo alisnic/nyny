@@ -6,11 +6,12 @@ module NYNY
     extend Forwardable
 
     attr_reader :request, :response
-    def_delegators :request, :params, :session
+    def_delegators :request, :session, :params
     def_delegators :response, :headers
 
-    def initialize request
-      @request  = request
+    def initialize env
+      @request  = Request.new(env)
+      @request.params.merge! env['nyny.params']
       @response = Response.new [], 200, {'Content-Type' => 'text/html'}
     end
 

@@ -66,8 +66,15 @@ module NYNY
       end
 
       def namespace url, &block
-        app = Class.new(NYNY::App, &block)
-        builder.map (url) { use app }
+        scope  = self.scope_class
+        parent = self.superclass
+
+        klass = Class.new parent do
+          self.scope_class = scope
+          class_eval(&block)
+        end
+
+        builder.map (url) { use klass }
       end
 
       def before &blk
