@@ -16,11 +16,11 @@ describe RequestScope do
     it 'params should have insensitive keys' do
       app = mock_app do
         get '/' do
-          params[:foo].should == params['foo']
+          params[:foo][:bar].should == params['foo']['bar']
         end
       end
 
-      app.get '/?foo=bar'
+      app.get '/', :params => {:foo => {:bar => 'baz'}}
     end
 
     describe 'cookies' do

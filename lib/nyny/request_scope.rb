@@ -1,23 +1,18 @@
 require 'forwardable'
 require 'rack/contrib/cookies'
-require 'active_support/hash_with_indifferent_access'
 
 module NYNY
   class RequestScope
     extend Forwardable
 
     attr_reader :request, :response
-    def_delegators :request, :session
+    def_delegators :request, :session, :params
     def_delegators :response, :headers
 
     def initialize env
       @request  = Request.new(env)
       @request.params.merge! env['nyny.params']
       @response = Response.new [], 200, {'Content-Type' => 'text/html'}
-    end
-
-    def params
-      @params ||= ActiveSupport::HashWithIndifferentAccess.new(request.params)
     end
 
     def cookies

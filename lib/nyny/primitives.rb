@@ -1,5 +1,10 @@
+require 'active_support/hash_with_indifferent_access'
+
 module NYNY
   class Request < Rack::Request
+    def params
+      @params ||= ActiveSupport::HashWithIndifferentAccess.new(super)
+    end
   end
 
   class Response < Rack::Response
