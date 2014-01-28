@@ -66,8 +66,10 @@ module NYNY
       end
 
       def namespace url, &block
-        scope = self.scope_class
-        klass = Class.new NYNY::App do
+        scope  = self.scope_class
+        parent = self.superclass
+
+        klass = Class.new parent do
           self.scope_class = scope
           class_eval(&block)
         end

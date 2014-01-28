@@ -80,8 +80,9 @@ describe NYNY::App do
       child.get('/helpers')
     end
 
-    it 'works correctly for inherited helpers inside namespaces' do
-      child.get('/nested')
+    it 'works correctly for namespaces' do
+      child.get('/nested').headers['parent before'].should_not be_nil
+      child.get('/nested').headers['parent after'].should_not be_nil
     end
   end
 end
