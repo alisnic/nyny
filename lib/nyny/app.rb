@@ -26,11 +26,12 @@ module NYNY
       super
     end
 
-    inheritable :builder,       Rack::Builder.new
-    inheritable :route_defs,    []
-    inheritable :before_hooks,  []
-    inheritable :after_hooks,   []
-    inheritable :scope_class,   Class.new(RequestScope)
+    inheritable :builder,         Rack::Builder.new
+    inheritable :route_defs,      []
+    inheritable :before_hooks,    []
+    inheritable :after_hooks,     []
+    inheritable :scope_class,     Class.new(RequestScope)
+    inheritable :default_options, {:constraints => {}}
 
     def initialize app=nil
       self.class.builder.run Router.new({
@@ -52,7 +53,7 @@ module NYNY
     class << self
       HTTP_VERBS.each do |method|
         define_method method do |path, options={}, &block|
-          options[:constraints] ||= {}
+          options.merge! default_options
           options[:constraints].merge!(:request_method => method.to_s.upcase)
           define_route path, options, &block
         end
@@ -78,6 +79,13 @@ module NYNY
         end
 
         builder.map (url) { use klass }
+      end
+
+      def constraints opts, &block
+        old_constraints = self.default_options[:constraints]
+        self.default_options[:constraints] = opts
+        instance_eval(&block)
+        self.default_options[:constraints] = old_constraints
       end
 
       def before &blk
