@@ -37,6 +37,12 @@ describe NYNY::App do
         headers['child after'] = 'true'
       end
 
+      namespace '/nested' do
+        get '/' do
+          parent_helper.should == :parent
+        end
+      end
+
       get '/helpers' do
         parent_helper.should == :parent
         child_helper.should == :child
@@ -72,6 +78,10 @@ describe NYNY::App do
     it 'works correctly for helpers' do
       parent.get('/helpers')
       child.get('/helpers')
+    end
+
+    it 'works correctly for inherited helpers inside namespaces' do
+      child.get('/nested')
     end
   end
 end
