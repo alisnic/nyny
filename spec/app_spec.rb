@@ -27,8 +27,15 @@ describe App do
   describe 'namespace' do
     let (:app) do
       mock_app do
+        helpers do
+          def le_helper
+            :lulwut
+          end
+        end
+
         namespace '/foo' do
           get '/' do
+            le_helper.should == :lulwut
             'bar'
           end
         end
@@ -36,6 +43,7 @@ describe App do
         namespace '/nested' do
           namespace '/space' do
             get '/' do
+              le_helper.should == :lulwut
               'caramba'
             end
           end
