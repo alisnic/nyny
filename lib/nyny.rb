@@ -1,9 +1,5 @@
-require 'rack'
-
 require 'nyny/version'
 require 'nyny/app'
-require 'nyny/core-ext/runner'
-require 'nyny/core-ext/templates'
 
 module NYNY
   class EnvString < String
@@ -27,8 +23,4 @@ module NYNY
   def self.env
     @env ||= EnvString.new(ENV['RACK_ENV'] || 'development')
   end
-
-  App.register NYNY::Runner
-  App.register NYNY::Templates
 end
-

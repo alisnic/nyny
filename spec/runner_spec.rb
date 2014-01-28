@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Runner do
+describe 'App.run!' do
   let (:kls) { mock_app_class {} }
 
   before do

@@ -1,6 +1,10 @@
+require 'rack'
+require 'better_errors'
+
 require 'nyny/primitives'
 require 'nyny/request_scope'
 require 'nyny/router'
+require 'nyny/core-ext/templates'
 
 module NYNY
   class App
@@ -67,9 +71,8 @@ module NYNY
 
       def namespace url, &block
         scope  = self.scope_class
-        parent = self.superclass
 
-        klass = Class.new parent do
+        klass = Class.new self.superclass do
           self.scope_class = scope
           class_eval(&block)
         end
@@ -93,6 +96,14 @@ module NYNY
         args << Module.new(&block) if block_given?
         args.each {|m| scope_class.send :include, m }
       end
+
+      def run! port=9292
+        use Rack::CommonLogger
+        use BetterErrors::Middleware unless NYNY.env.production?
+        Rack::Handler.pick(['thin', 'webrick']).run new, :Port => port
+      end
     end #class methods
+
+    register NYNY::Templates
   end
 end
