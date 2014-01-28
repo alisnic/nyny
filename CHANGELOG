@@ -2,7 +2,6 @@
   - Use Journey directly from ActionDispatch, since rails/journey is obsolete
   - Fix indifferent nested params
   - Make helpers accessible inside namespaces
-  - Improve the inheritance behaviour of namespaces
 
 3.2.1
   - Fallback to Tilt 1.4.1 since 2.0.0 has conflicts with a lot
