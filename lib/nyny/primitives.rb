@@ -1,4 +1,5 @@
 require 'active_support/hash_with_indifferent_access'
+require 'pathname'
 
 module NYNY
   class EnvString < String
@@ -9,14 +10,8 @@ module NYNY
     end
   end
 
-  class PathString < String
-    def join other
-      File.join(self, other)
-    end
-  end
-
   def self.root
-    @root ||= PathString.new(Dir.pwd)
+    @root ||= Pathname.pwd
   end
 
   def self.env
