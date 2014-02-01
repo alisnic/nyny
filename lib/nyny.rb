@@ -1,5 +1,5 @@
 require 'rack'
-
+require 'pathname'
 require 'nyny/version'
 require 'nyny/app'
 require 'nyny/core-ext/runner'
@@ -14,14 +14,8 @@ module NYNY
     end
   end
 
-  class PathString < String
-    def join other
-      File.join(self, other)
-    end
-  end
-
   def self.root
-    @root ||= PathString.new(Dir.pwd)
+    @root ||= Pathname.pwd
   end
 
   def self.env

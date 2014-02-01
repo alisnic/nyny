@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe NYNY do
   its 'root points to pwd' do
-    NYNY.root.should == Dir.pwd
+    NYNY.root.should == Pathname.pwd
   end
 
   it 'has the correct env' do
@@ -10,6 +10,6 @@ describe NYNY do
   end
 
   its 'root can join a path' do
-    NYNY.root.join("foo").should == File.join(Dir.pwd, "foo")
+    NYNY.root.join("foo").should == Pathname.pwd + "foo"
   end
 end
