@@ -5,6 +5,7 @@ require 'nyny/primitives'
 require 'nyny/request_scope'
 require 'nyny/router'
 require 'nyny/templates'
+require 'nyny/assets'
 
 module NYNY
   class App
@@ -31,7 +32,6 @@ module NYNY
     inheritable :before_hooks,    []
     inheritable :after_hooks,     []
     inheritable :scope_class,     Class.new(RequestScope)
-    #inheritable :default_options, {:constraints => {}}
 
     def initialize app=nil
       self.class.builder.run Router.new({
@@ -53,7 +53,6 @@ module NYNY
     class << self
       HTTP_VERBS.each do |method|
         define_method method do |path, options={}, &block|
-          #options.merge! default_options
           options[:constraints] ||= {}
           options[:constraints].merge!(:request_method => method.to_s.upcase)
           define_route path, options, &block
@@ -82,13 +81,6 @@ module NYNY
         builder.map (url) { use klass }
       end
 
-      def constraints opts, &block
-        old_constraints = self.default_options[:constraints]
-        self.default_options[:constraints] = old_constraints.merge(opts)
-        instance_eval(&block)
-        self.default_options[:constraints] = old_constraints
-      end
-
       def before &blk
         before_hooks << Proc.new(&blk)
       end
@@ -114,5 +106,6 @@ module NYNY
     end #class methods
 
     register NYNY::Templates
+    register NYNY::Assets
   end
 end

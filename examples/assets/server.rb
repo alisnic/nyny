@@ -5,16 +5,12 @@ require 'haml'
 require 'coffee_script'
 
 class App < NYNY::App
-  sprockets = Sprockets::Environment.new do |env|
-    env.append_path 'vendor/javascripts'
-    env.append_path 'app/assets/javascripts'
-    env.append_path 'app/assets/stylesheets'
-    env.append_path 'app/assets/images'
-  end
-
-  builder.map '/assets' do
-    run sprockets
-  end
+  assets :url => '/assets', :paths => [
+    'vendor/javascripts',
+    'app/assets/javascripts',
+    'app/assets/stylesheets',
+    'app/assets/images'
+  ]
 
   get '/' do
     render 'app/views/index.haml'
