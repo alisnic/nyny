@@ -1,24 +1,16 @@
 #!ruby -I ../../lib -I lib
-require 'nyny'
-require 'sprockets'
-require 'haml'
-require 'coffee_script'
+require 'bundler'
+ENV['RACK_ENV'] ||= 'development'
+Bundler.require(:default, ENV['RACK_ENV'].to_sym)
 
 class App < NYNY::App
-  sprockets = Sprockets::Environment.new do |env|
-    env.append_path 'vendor/javascripts'
-    env.append_path 'app/assets/javascripts'
-    env.append_path 'app/assets/stylesheets'
-    env.append_path 'app/assets/images'
-  end
+  register Sprockets::NYNY
 
-  builder.map '/assets' do
-    run sprockets
-  end
+  config.assets.paths << 'vendor/javascripts'
 
   get '/' do
     render 'app/views/index.haml'
   end
 end
 
-App.run!
+App.run! if __FILE__ == $0
