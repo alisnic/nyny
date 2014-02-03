@@ -1,9 +1,5 @@
 module NYNY
   module Assets
-    module Helpers
-      #
-    end
-
     def assets options
       require 'sprockets'
 
@@ -13,10 +9,6 @@ module NYNY
       builder.map (options.fetch(:url, '/assets')) { run sprockets }
     rescue LoadError
       puts "To use asset pipeline, install the 'sprockets' gem"
-    end
-
-    def self.registered app
-      app.helpers Helpers
     end
   end
 end
