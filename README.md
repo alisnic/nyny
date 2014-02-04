@@ -107,7 +107,6 @@ true
 ```
 
 ## Configuration
-config, before_init, after_init
 You can configure your app by attaching arbitrary properties to config object:
 ```ruby
 class App << NYNY::App
