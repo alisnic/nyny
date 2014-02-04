@@ -1,6 +1,5 @@
 require 'rack'
 require 'better_errors'
-
 require 'nyny/primitives'
 require 'nyny/request_scope'
 require 'nyny/router'

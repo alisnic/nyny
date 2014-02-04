@@ -12,6 +12,7 @@ describe NYNY::App do
       end
 
       after_initialize do |app, prc|
+        app.is_a?(NYNY::App).should == true
         prc.respond_to?(:call).should == true
         Rack::Builder.any_instance.should_not_receive(:to_app)
       end
