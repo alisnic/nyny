@@ -40,6 +40,7 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
 - [Why use NYNY instead of Sinatra](#why-use-nyny-instead-of-sinatra)
 - [Usage](#usage)
     - [Environment](#environment)
+    - [Configuration](#configuration)
     - [Running](#running)
     - [Defining routes](#defining-routes)
     - [Request scope](#request-scope)
@@ -103,6 +104,35 @@ false
 $ ruby env.rb RACK_ENV=production
 production
 true
+```
+
+## Configuration
+config, before_init, after_init
+You can configure your app by attaching arbitrary properties to config object:
+```ruby
+class App << NYNY::App
+  config.foo = 'bar'
+end
+
+App.config.foo #=> 'bar'
+```
+
+Or, you can use the configure block:
+
+```ruby
+class App < NYNY::App
+  configure do
+    config.always = true
+  end
+
+  configdure :production do
+    config.prod = true
+  end
+
+  configure :test, :development do
+    config.unsafe = true
+  end
+end
 ```
 
 ## Running
