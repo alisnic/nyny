@@ -135,6 +135,22 @@ class App < NYNY::App
 end
 ```
 
+Also, NYNY provides a simple api for hooking into the app's initialization:
+```ruby
+class App < NYNY::App
+  before_initialize do |app|
+    #this will be executed just before the Rack app is compiled
+    #'app' is the a App instance
+  end
+
+  after_initialize do |app, rack_app|
+    #this will be executed after the Rack app is compiled
+    #'app' is the a App instance
+    #'rack_app' is the main block which will be called on any request
+  end
+end
+```
+
 ## Running
 There are two ways to run a NYNY app __directly__ [[?]](#middleware):
 
