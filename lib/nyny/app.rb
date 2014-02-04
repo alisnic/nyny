@@ -8,23 +8,8 @@ require 'nyny/templates'
 
 module NYNY
   class App
+    include NYNY::Inheritable
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
-
-    def self.inheritable name, value
-      @_inheritables ||= []
-      @_inheritables << name
-      self.class.send :attr_accessor, name
-      self.send "#{name}=", value
-    end
-
-    def self.inherited subclass
-      @_inheritables.each do |attr|
-        subclass.send "#{attr}=", self.send(attr).clone
-        subclass.instance_variable_set "@_inheritables", @_inheritables.clone
-      end
-
-      super
-    end
 
     inheritable :builder,         Rack::Builder.new
     inheritable :route_defs,      []
