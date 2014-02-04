@@ -11,12 +11,14 @@ module NYNY
     include NYNY::Inheritable
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
 
-    inheritable :builder,         Rack::Builder.new
-    inheritable :route_defs,      []
-    inheritable :before_hooks,    []
-    inheritable :after_hooks,     []
-    inheritable :scope_class,     Class.new(RequestScope)
-    inheritable :config,          OpenStruct.new
+    inheritable :builder,           Rack::Builder.new
+    inheritable :scope_class,       Class.new(RequestScope)
+    inheritable :config,            OpenStruct.new
+    inheritable :route_defs,        []
+    inheritable :before_hooks,      []
+    inheritable :after_hooks,       []
+    inheritable :before_init_hooks, []
+    inheritable :after_init_hooks,  []
 
     def initialize app=nil
       self.class.builder.run Router.new({
@@ -27,7 +29,9 @@ module NYNY
         :fallback       => app
       })
 
+      self.class.before_init_hooks.each {|h| h.call(self)}
       @app = self.class.builder.to_app
+      self.class.after_init_hooks.each {|h| h.call(self, @app)}
     end
 
     def call env
@@ -70,14 +74,22 @@ module NYNY
         before_hooks << Proc.new(&blk)
       end
 
+      def after &blk
+        after_hooks << Proc.new(&blk)
+      end
+
+      def before_initialize &blk
+        before_init_hooks << Proc.new(&blk)
+      end
+
+      def after_initialize &blk
+        after_init_hooks << Proc.new(&blk)
+      end
+
       def configure *envs, &block
         if envs.map(&:to_sym).include?(NYNY.env.to_sym) or envs.empty?
           instance_eval(&block)
         end
-      end
-
-      def after &blk
-        after_hooks << Proc.new(&blk)
       end
 
       def use middleware, *args, &block
