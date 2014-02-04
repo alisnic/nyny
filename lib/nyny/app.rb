@@ -1,5 +1,6 @@
 require 'rack'
 require 'better_errors'
+require 'ostruct'
 require 'nyny/primitives'
 require 'nyny/request_scope'
 require 'nyny/router'
