@@ -91,6 +91,7 @@
 
 <ul>
 <li><a href="#environment">Environment</a></li>
+<li><a href="#configuration">Configuration</a></li>
 <li><a href="#running">Running</a></li>
 <li><a href="#defining-routes">Defining routes</a></li>
 <li><a href="#request-scope">Request scope</a></li>
@@ -159,6 +160,51 @@ development
 <span class="nv">$ </span>ruby env.rb <span class="nv">RACK_ENV</span><span class="o">=</span>production
 production
 <span class="nb">true</span>
+</pre></div>
+
+<h2>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>You can configure your app by attaching arbitrary properties to config object:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="s1">'bar'</span>
+<span class="k">end</span>
+
+<span class="no">App</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">foo</span> <span class="c1">#=&gt; 'bar'</span>
+</pre></div>
+
+<p>Or, you can use the configure block:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">configure</span> <span class="k">do</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">always</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="k">end</span>
+
+  <span class="n">configure</span> <span class="ss">:production</span> <span class="k">do</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">prod</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="k">end</span>
+
+  <span class="n">configure</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:development</span> <span class="k">do</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">unsafe</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>Also, NYNY provides a simple api for hooking into the app's initialization:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">before_initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="o">|</span>
+    <span class="c1">#this will be executed just before the Rack app is compiled</span>
+    <span class="c1">#'app' is the a App instance</span>
+  <span class="k">end</span>
+
+  <span class="n">after_initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="p">,</span> <span class="n">rack_app</span><span class="o">|</span>
+    <span class="c1">#this will be executed after the Rack app is compiled</span>
+    <span class="c1">#'app' is the a App instance</span>
+    <span class="c1">#'rack_app' is the main block which will be called on any request</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 </pre></div>
 
 <h2>
@@ -476,6 +522,7 @@ written for NYNY will always work with Sinatra. (Forward compatible)</p>
 <li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
 <li>Create new Pull Request</li>
 </ol>
+
         </section>
 
         <footer>
