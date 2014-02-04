@@ -7,6 +7,8 @@ describe NYNY::App do
         def parent_helper; :parent; end
       end
 
+      config.parent = true
+
       before do
         headers['parent before'] = 'true'
       end
@@ -83,6 +85,13 @@ describe NYNY::App do
     it 'works correctly for namespaces' do
       child.get('/nested').headers['parent before'].should_not be_nil
       child.get('/nested').headers['parent after'].should_not be_nil
+    end
+
+    it 'works correctly for config' do
+      Child.config.parent.should == true
+      Child.config.parent = false
+      Child.config.parent.should == false
+      Parent.config.parent.should == true
     end
   end
 end

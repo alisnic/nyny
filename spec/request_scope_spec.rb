@@ -43,7 +43,7 @@ describe RequestScope do
           delete '/cookie_halt' do
             cookies.delete 'foo'
             halt 200, {}, 'blah'
-            'blah'
+            cookies[:foo] = 'bar'
           end
         end
       end

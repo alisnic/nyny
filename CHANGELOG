@@ -1,3 +1,8 @@
+3.3.0
+  - App.config
+  - before_initialize hooks
+  - after_initialize hooks
+
 3.2.2
   - Use Journey directly from ActionDispatch, since rails/journey is obsolete
   - Fix indifferent nested params
