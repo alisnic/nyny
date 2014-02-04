@@ -1,5 +1,5 @@
 3.3.0
-  - App.config (ActiveSupport::Configurable)
+  - App.config
   - before_initialize hooks
   - after_initialize hooks
 
