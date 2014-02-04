@@ -5,7 +5,6 @@ require 'nyny/primitives'
 require 'nyny/request_scope'
 require 'nyny/router'
 require 'nyny/templates'
-require 'nyny/config'
 
 module NYNY
   class App
@@ -113,6 +112,5 @@ module NYNY
     end #class methods
 
     register NYNY::Templates
-    register NYNY::Config
   end
 end
