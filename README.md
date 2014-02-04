@@ -124,7 +124,7 @@ class App < NYNY::App
     config.always = true
   end
 
-  configdure :production do
+  configure :production do
     config.prod = true
   end
 
