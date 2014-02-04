@@ -1,16 +1,11 @@
 #!ruby -I ../../lib -I lib
-
 ENV['RACK_ENV'] ||= 'development'
-
-require 'rubygems'
 require 'bundler'
-Bundler.setup(:default, ENV['RACK_ENV'].to_sym)
+Bundler.require(:default, ENV['RACK_ENV'].to_sym)
 
-require 'nyny'
 require_relative 'database'
-
-#Require all models
 Dir[File.dirname(__FILE__) + "/models/*.rb"].each {|file| require file }
+
 TEMPLATE = DATA.read.freeze
 
 class App < NYNY::App

@@ -1,12 +1,8 @@
 #!ruby -I ../../lib -I lib
-
 ENV['RACK_ENV'] ||= 'development'
-
-require 'rubygems'
 require 'bundler'
-Bundler.setup(:default, ENV['RACK_ENV'].to_sym)
+Bundler.require(:default, ENV['RACK_ENV'].to_sym)
 
-require 'nyny'
 require_relative 'database'
 
 TEMPLATE = DATA.read.freeze
