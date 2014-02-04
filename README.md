@@ -4,7 +4,6 @@
 [![Build Status](https://api.travis-ci.org/alisnic/nyny.png)](https://travis-ci.org/alisnic/nyny)
 [![Coverage Status](https://coveralls.io/repos/alisnic/nyny/badge.png)](https://coveralls.io/r/alisnic/nyny)
 [![Code Climate](https://codeclimate.com/repos/521b7ee513d637348712864a/badges/60e3637788bbac94f1cb/gpa.png)](https://codeclimate.com/repos/521b7ee513d637348712864a/feed)
-[![Dependency Status](https://gemnasium.com/alisnic/nyny.png)](https://gemnasium.com/alisnic/nyny)
 [![Gem Version](https://badge.fury.io/rb/nyny.png)](http://badge.fury.io/rb/nyny)
 
 ```ruby
@@ -59,7 +58,7 @@ Your app is the framework. However, it's trivial to extend NYNY via its
 [extension interface](#extensions).
 
 # Why use NYNY instead of any other small web framework
-- It's __very__ small (<300 LOC), which is just a little overhead on top of Rack.
+- It's __very__ small (~300 LOC), which is just a little overhead on top of Rack.
 - You want to dig into the source code and change to your needs (NYNY's source code is more welcoming)
 - Each NYNY app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.
 - __It uses Journey for routing (Rails' router)__, which makes its routing logic
