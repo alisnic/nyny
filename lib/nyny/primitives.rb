@@ -17,7 +17,6 @@ module NYNY
             subclass.send "#{attr}=", self.send(attr).clone
             subclass.instance_variable_set "@_inheritables", @_inheritables.clone
           end
-
           super
         end
       end
@@ -30,14 +29,6 @@ module NYNY
         self == env.to_s
       end
     end
-  end
-
-  def self.root
-    @root ||= Pathname.pwd
-  end
-
-  def self.env
-    @env ||= EnvString.new(ENV['RACK_ENV'] || 'development')
   end
 
   class Request < Rack::Request
@@ -55,5 +46,13 @@ module NYNY
       write str
     end
     alias_method :body=, :rewrite
+  end
+
+  def self.root
+    @root ||= Pathname.pwd
+  end
+
+  def self.env
+    @env ||= EnvString.new(ENV['RACK_ENV'] || 'development')
   end
 end
