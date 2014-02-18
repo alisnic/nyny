@@ -30,7 +30,7 @@ module NYNY
       def run! port=9292
         use Rack::CommonLogger
         use BetterErrors::Middleware unless NYNY.env.production?
-        Rack::Handler.pick(['puma', 'webrick']).run new, :Port => port
+        Rack::Handler.pick(['puma', 'thin', 'webrick']).run new, :Port => port
       end
     end
   end
