@@ -35,7 +35,7 @@ module NYNY
     alias_method :redirect, :redirect_to
 
     def apply_to &handler
-      response.body = instance_eval(&handler)
+      response.write instance_eval(&handler)
       cookies.finish!(response) if @cookies
       response
     end

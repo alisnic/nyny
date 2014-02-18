@@ -38,19 +38,8 @@ module NYNY
   end
 
   class Response < Rack::Response
-    def body= data
-      if data.respond_to?(:each)
-        @chunked = true
-        @body = data
-      else
-        @chunked = false
-        @length = 0
-        write data
-      end
-    end
-
-    def finish
-      @chunked ? [status, headers, body] : super
+    def write str
+      super if str.respond_to? :<<
     end
   end
 
