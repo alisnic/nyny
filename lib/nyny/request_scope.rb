@@ -24,9 +24,7 @@ module NYNY
     end
 
     def halt status, headers={}, body=''
-      response.status = status
-      response.headers.merge! headers
-      response.rewrite body
+      @response = Response.new body, status, headers
       cookies.finish!(response) if @cookies
       throw :halt, response.finish
     end
