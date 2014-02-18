@@ -40,6 +40,17 @@ module NYNY
   class Response < Rack::Response
   end
 
+  class StreamedResponse < Response
+    def initialize body, status, header
+      @body, @status = body, status.to_i
+      @header = Rack::Utils::HeaderHash.new.merge(header)
+    end
+
+    def finish
+      [status, headers, body]
+    end
+  end
+
   def self.root
     @root ||= Pathname.pwd
   end
