@@ -26,7 +26,7 @@ module NYNY
     def halt status, headers={}, body=''
       @response = Response.new body, status, headers
       cookies.finish!(response) if @cookies
-      throw :halt, response.finish
+      throw :halt, response
     end
 
     def redirect_to uri, status=302
@@ -37,7 +37,7 @@ module NYNY
     def apply_to &handler
       response.write instance_eval(&handler)
       cookies.finish!(response) if @cookies
-      response.finish
+      response
     end
   end
 end

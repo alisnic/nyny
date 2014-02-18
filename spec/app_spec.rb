@@ -1,11 +1,17 @@
 require 'spec_helper'
 
 describe App do
+  let (:klass) { mock_app_class {} }
   let (:app) { mock_app {} }
 
   it 'should return a rack response on call' do
-    response = app.get '/'
-    response.should be_a(Rack::Response)
+    env = Rack::MockRequest.env_for '/'
+    res = klass.new.call(env)
+    res.should be_a(Array)
+    res.size.should == 3
+    res[0].should == 404
+    res[1].should be_a(Hash)
+    res[2].first.should be_a(String)
   end
 
   it 'should return 404 for non-matched routes' do
