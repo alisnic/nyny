@@ -11,7 +11,7 @@ describe App do
     res.size.should == 3
     res[0].should == 404
     res[1].should be_a(Hash)
-    res[2].first.should be_a(String)
+    res[2].should respond_to(:each)
   end
 
   it 'should return 404 for non-matched routes' do
@@ -150,7 +150,7 @@ describe App do
 
   it 'acts well as a middleware' do
     app = lambda do |env|
-      [210, {}, ['Hello from downstream']]
+      [210, {'Content-Length' => 21}, ['Hello from downstream']]
     end
 
     app_class = mock_app_class do
