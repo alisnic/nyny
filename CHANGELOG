@@ -1,3 +1,8 @@
+3.3.1
+  - Ability to send data in chunks via response.body= enumerable
+  - NYNY::Base for those who love the barebone (lacks config, namespaces,
+    templates, and run!)
+
 3.3.0
   - App.config
   - before_initialize hooks
