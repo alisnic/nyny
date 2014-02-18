@@ -38,16 +38,19 @@ module NYNY
   end
 
   class Response < Rack::Response
-  end
-
-  class StreamedResponse < Response
-    def initialize body, status, header
-      @body, @status = body, status.to_i
-      @header = Rack::Utils::HeaderHash.new.merge(header)
+    def body= data
+      if data.respond_to?(:each)
+        @chunked = true
+        @body = data
+      else
+        @chunked = false
+        @length = 0
+        write data
+      end
     end
 
     def finish
-      [status, headers, body]
+      @chunked ? [status, headers, body] : super
     end
   end
 

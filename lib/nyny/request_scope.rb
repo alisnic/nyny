@@ -15,17 +15,6 @@ module NYNY
       @response = Response.new [], 200, {'Content-Type' => 'text/html'}
     end
 
-    def stream enumerable
-      @response = StreamedResponse.new(enumerable, 200, headers)
-      throw :halt, response
-    end
-
-    def send_file path, disposition="inline"
-      #set length
-      #set disposition
-      #stream
-    end
-
     def cookies
       @cookies ||= Rack::Cookies::CookieJar.new(request.cookies)
     end
@@ -46,7 +35,7 @@ module NYNY
     alias_method :redirect, :redirect_to
 
     def apply_to &handler
-      response.write instance_eval(&handler)
+      response.body = instance_eval(&handler)
       cookies.finish!(response) if @cookies
       response
     end
