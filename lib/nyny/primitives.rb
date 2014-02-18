@@ -38,8 +38,13 @@ module NYNY
   end
 
   class Response < Rack::Response
+    def body= value
+      @overwritten = true
+      super
+    end
+
     def write str
-      super if str.respond_to? :<<
+      super unless @overwritten
     end
   end
 

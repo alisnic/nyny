@@ -69,6 +69,13 @@ module NYNY
         builder.use middleware, *args, &block
       end
 
+      def register *extensions
+        extensions.each do |ext|
+          extend ext
+          ext.registered(self) if ext.respond_to?(:registered)
+        end
+      end
+
       def helpers *args, &block
         args << Module.new(&block) if block_given?
         args.each {|m| scope_class.send :include, m }
