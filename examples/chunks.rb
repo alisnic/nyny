@@ -13,7 +13,7 @@ end
 
 class App < NYNY::App
   get '/' do
-    response.body = Slow
+    Slow
   end
 end
 
