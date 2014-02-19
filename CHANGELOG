@@ -1,5 +1,6 @@
 3.3.1
-  - Ability to send data in chunks via response.body= enumerable
+  - is the response of the route is a enumerable, NYNY will try to
+    send it in chunks (given that both the client and the server support it)
   - NYNY::Base for those who love the barebone (lacks config, namespaces,
     templates, and run!)
 
