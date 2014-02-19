@@ -76,13 +76,13 @@ describe RequestScope do
     it '#headers should set the header values' do
       subject.headers['Head'] = 'Tail'
       response = subject.apply_to &handler
-      response[1]['Head'].should == 'Tail'
+      response.headers['Head'].should == 'Tail'
     end
 
     it '#status should set the response status' do
       forbid = Proc.new { status 403 }
       response = subject.apply_to &forbid
-      response[0].should == 403
+      response.status.should == 403
     end
 
     it 'params should have insensitive keys' do
@@ -138,16 +138,8 @@ describe RequestScope do
     it '#redirect_to should redirect' do
       redir = Proc.new { redirect_to 'http://foo.bar' }
       response = catch(:halt) { subject.apply_to &redir }
-      response[0] == 302
-      response[1]['Location'].should == 'http://foo.bar'
-    end
-
-    it '#apply_to should return a Rack response' do
-      response = subject.apply_to &handler
-      response.length.should == 3
-      response[0].should == 200
-      response[1].should == subject.headers
-      response[2].should be_a(Rack::BodyProxy)
+      response.status == 302
+      response.headers['Location'].should == 'http://foo.bar'
     end
   end
 end

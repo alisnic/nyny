@@ -54,7 +54,7 @@ module NYNY
           after_hooks.each {|h| scope.instance_eval &h }
         end
 
-        response
+        response.finish
       end
     end
   end
