@@ -5,7 +5,7 @@ class App < NYNY::App
   use Rack::Session::Cookie, :secret => 'my_secret' #store session in cookies
 
   before do
-    headers 'Content-Type' => 'text/plain'
+    headers['Content-Type'] = 'text/plain'
   end
 
   get '/' do
