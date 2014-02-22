@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = NYNY::VERSION
   spec.authors       = ["Andrei Lisnic"]
   spec.email         = ["andrei.lisnic@gmail.com"]
-  spec.description   = %q{New York, New York - (very) small Sinatra clone.}
+  spec.description   = %q{New York, New York - a (ridiculously) small and powerful web framework.}
   spec.summary       = %q{New York, New York.}
   spec.homepage      = "http://alisnic.github.io/nyny/"
   spec.license       = "MIT"
