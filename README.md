@@ -108,7 +108,7 @@ true
 ## Configuration
 You can configure your app by attaching arbitrary properties to config object:
 ```ruby
-class App << NYNY::App
+class App < NYNY::App
   config.foo = 'bar'
 end
 
@@ -224,8 +224,6 @@ This means that several methods/objects available inside that block:
 - `request` - A `Rack::Request` object which encapsulates the request
   to that route. (see [Rack::Request documentation][3] for more info)
 - `response` - A `Rack::Response` object which encapsulates the response.
-  Additionally, NYNY's response exposes 2 more methods in addition to Rack's ones.
-  (see [primitives.rb][primitivesrb])
 - `params` - a hash which contains both POST body params and GET querystring params.
 - `headers` - a hash with the response headers
   (ex: `headers['Content-Type'] = 'text/html'`)
