@@ -50,6 +50,13 @@ module NYNY
         self.route_defs << [path, options, Proc.new(&block)]
       end
 
+      def constraints args, &block
+        current = self.default_constraints.dup
+        self.default_constraints = args
+        instance_eval &block
+        self.default_constraints = current
+      end
+
       def before &blk
         before_hooks << Proc.new(&blk)
       end
