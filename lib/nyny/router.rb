@@ -29,7 +29,8 @@ module NYNY
     def prepare_for_journey route_defs
       routes = ActionDispatch::Journey::Routes.new
       @journey = ActionDispatch::Journey::Router.new(routes, {
-        :parameters_key => 'nyny.params'
+        :parameters_key => 'nyny.params',
+        :request_class => NYNY::Request
       })
 
       route_defs.each do |path, options, handler|
