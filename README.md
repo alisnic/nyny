@@ -209,7 +209,7 @@ That means that the route from above will match only if
 
 To group multiple routes for a single constraint, use the constraints block:
 
-``ruby
+```ruby
 class App < NYNY::App
   constraints :content_type => 'text/html' do
     get '/' do
