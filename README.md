@@ -197,12 +197,31 @@ Each route definition call optionally accepts constraints:
 
 ```ruby
 class App < NYNY::App
-  get '/', :constraints => {:format => :html} do
+  get '/', :constraints => {:content_type => 'text/html'} do
     'html'
   end
 end
 ```
-You can use [the same constraints][constraints] you use in Rails.
+
+What are constraints? Constraints are assertions on the request object.
+That means that the route from above will match only if
+`request.content_type` is 'text/html'.
+
+To group multiple routes for a single constraint, use the constraints block:
+
+``ruby
+class App < NYNY::App
+  constraints :content_type => 'text/html' do
+    get '/' do
+      'html'
+    end
+
+    get '/foo' do
+      'foo html'
+    end
+  end
+end
+```
 
 Besides the constraints, you can specify defaults:
 ```ruby
