@@ -3,83 +3,83 @@
 	- Add constraints class method to group constraints
 
 3.3.1
-  - if the response of the route is a enumerable, NYNY will try to
-    send it in chunks (given that both the client and the server support it)
-  - NYNY::Base for those who love the barebone (lacks config, namespaces,
-    templates, and run!)
+	- if the response of the route is a enumerable, NYNY will try to
+	send it in chunks (given that both the client and the server support it)
+- NYNY::Base for those who love the barebone (lacks config, namespaces,
+		templates, and run!)
 
-3.3.0
-  - App.config
-  - before_initialize hooks
-  - after_initialize hooks
+	3.3.0
+	- App.config
+	- before_initialize hooks
+	- after_initialize hooks
 
-3.2.2
-  - Use Journey directly from ActionDispatch, since rails/journey is obsolete
-  - Fix indifferent nested params
-  - Make helpers accessible inside namespaces
-  - Fix namespaces inheritance behaviour
+	3.2.2
+	- Use Journey directly from ActionDispatch, since rails/journey is obsolete
+	- Fix indifferent nested params
+	- Make helpers accessible inside namespaces
+	- Fix namespaces inheritance behaviour
 
-3.2.1
-  - Fallback to Tilt 1.4.1 since 2.0.0 has conflicts with a lot
-    of gems
-  - Improved and fixed the outdated examples
+	3.2.1
+	- Fallback to Tilt 1.4.1 since 2.0.0 has conflicts with a lot
+	of gems
+	- Improved and fixed the outdated examples
 
-3.2.0
-  - Use Rails' Journey router as router to conquer the world and shorten
-    the codebase
+	3.2.0
+	- Use Rails' Journey router as router to conquer the world and shorten
+	the codebase
 
-3.1.0
-  - use latest Tilt (2.0.0)
-  - get rid of silly Rack::Response hacks, write to body properly
-  - Response#rewrite (body= aliases it for backward compatibility)
-  - Refactor .run! implementation, prefer thin, webrik.
-  - NYNY now ships with better_errors, which is only enabled in development
-  - Fixed builder instanciation logic
-  - removed benchmark script, since tilt dep version is not compatible with
-    Sinatra
+	3.1.0
+- use latest Tilt (2.0.0)
+	- get rid of silly Rack::Response hacks, write to body properly
+- Response#rewrite (body= aliases it for backward compatibility)
+	- Refactor .run! implementation, prefer thin, webrik.
+	- NYNY now ships with better_errors, which is only enabled in development
+	- Fixed builder instanciation logic
+	- removed benchmark script, since tilt dep version is not compatible with
+	Sinatra
 
-3.0.1
-  - File SystemStackError when accessing missing param (@holies)
+	3.0.1
+- File SystemStackError when accessing missing param (@holies)
 
-3.0.0
-  - Use Rack builder to shorten and simplify the code
-  - Add support for namespaces by using the builder
-  - Add ruby-prof as a development dependency
-  - NYNY will return a Rack-like response on each request ([status, headers, body])
-  - headers behave like a hash
-  - cookies behave like a hash
-  - added sprockets integration example
-  - improved documentation
-  - Fixed inheritance behaviour for App (routes, filters, helpers, middlewares
-    will be passed down the inheritance chain)
+	3.0.0
+	- Use Rack builder to shorten and simplify the code
+	- Add support for namespaces by using the builder
+	- Add ruby-prof as a development dependency
+- NYNY will return a Rack-like response on each request ([status, headers, body])
+	- headers behave like a hash
+	- cookies behave like a hash
+	- added sprockets integration example
+	- improved documentation
+	- Fixed inheritance behaviour for App (routes, filters, helpers, middlewares
+			will be passed down the inheritance chain)
 
-2.2.1
-  - Added support for templates
+	2.2.1
+	- Added support for templates
 
-2.1.1
-  - After blocks will now be evaluated even if the request was halted
+	2.1.1
+	- After blocks will now be evaluated even if the request was halted
 
-2.1.0
-  - Add ability to define helpers with a block
-  - Remove benchmark folder, and create a single benchmark file which can be
-    executed easily
-  - Simplified and optimized routing logic
-  - Fixed root path processing when a NYNY app is mounted
-  - Added Rails interop example
-  - Added session example
-  - Added NYNY.root
-  - Added NYNY.env
-  - NYNY will not show exceptions in production env
+	2.1.0
+	- Add ability to define helpers with a block
+	- Remove benchmark folder, and create a single benchmark file which can be
+	executed easily
+	- Simplified and optimized routing logic
+	- Fixed root path processing when a NYNY app is mounted
+	- Added Rails interop example
+	- Added session example
+	- Added NYNY.root
+	- Added NYNY.env
+	- NYNY will not show exceptions in production env
 
-2.0.0
-  - Simplified and improved RouteSignature implementation
-  - Simplified and improved RequestScope implementation
-  - Made response object available in RequestScope
-  - removed .use_protection! (the rack-protection middleware can be easily
-    used manually)
-  - added support for extensions (using .register, which works the same way as in sinatra)
+	2.0.0
+	- Simplified and improved RouteSignature implementation
+	- Simplified and improved RequestScope implementation
+	- Made response object available in RequestScope
+	- removed .use_protection! (the rack-protection middleware can be easily
+			used manually)
+- added support for extensions (using .register, which works the same way as in sinatra)
 
-1.0.2
-  - Add rack to runtime deps (@etehtsea)
+	1.0.2
+- Add rack to runtime deps (@etehtsea)
 
-1.0.0 Initial release
+	1.0.0 Initial release
