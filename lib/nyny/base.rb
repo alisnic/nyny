@@ -15,6 +15,7 @@ module NYNY
     inheritable :after_hooks,       []
     inheritable :before_init_hooks, []
     inheritable :after_init_hooks,  []
+    inheritable :default_constraints, {}
 
     def initialize app=nil
       self.class.before_init_hooks.each {|h| h.call(self)}
@@ -39,7 +40,7 @@ module NYNY
     class << self
       HTTP_VERBS.each do |method|
         define_method method do |path, options={}, &block|
-          options[:constraints] ||= {}
+          options[:constraints] = default_constraints.merge(options[:constraints] || {})
           options[:constraints].merge!(:request_method => method.to_s.upcase)
           define_route path, options, &block
         end

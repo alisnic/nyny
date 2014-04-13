@@ -27,6 +27,13 @@ module NYNY
         builder.map (url) { use klass }
       end
 
+      def constraints args, &block
+        current = self.default_constraints.dup
+        self.default_constraints = args
+        instance_eval &block
+        self.default_constraints = current
+      end
+
       def run! port=9292
         use Rack::CommonLogger
         use BetterErrors::Middleware unless NYNY.env.production?

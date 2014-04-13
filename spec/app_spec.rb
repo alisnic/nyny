@@ -19,6 +19,23 @@ describe App do
     response.status.should == 404
   end
 
+  it 'can use constraints block' do
+    app = mock_app do
+      constraints :content_type => 'text/html' do
+        get '/' do
+          'HTML!'
+        end
+      end
+
+      get '/' do
+        'not html'
+      end
+    end
+
+    app.get('/').body.should == 'not html'
+    app.get('/', 'CONTENT_TYPE' => 'text/html').body.should == 'HTML!'
+  end
+
   it 'should able to register a extension' do
     module Foo
       def foo
