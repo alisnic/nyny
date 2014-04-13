@@ -237,7 +237,6 @@ in the case a error occurs during a request.</p>
 
 <h2>
 <a name="defining-routes" class="anchor" href="#defining-routes"><span class="octicon octicon-link"></span></a>Defining routes</h2>
-
 <p>NYNY uses <a href="https://github.com/rails/journey">Journey</a> for routing, that means that NYNY has all the
 awesomeness the Rails' router has. NYNY supports the following verbs for defining a route: delete, get, head,
 options, patch, post, put and trace.</p>
@@ -255,13 +254,30 @@ for the path string.</p>
 <p>Each route definition call optionally accepts constraints:</p>
 
 <div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
-  <span class="n">get</span> <span class="s1">'/'</span><span class="p">,</span> <span class="ss">:constraints</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:format</span> <span class="o">=&gt;</span> <span class="ss">:html</span><span class="p">}</span> <span class="k">do</span>
+  <span class="n">get</span> <span class="s1">'/'</span><span class="p">,</span> <span class="ss">:constraints</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:content_type</span> <span class="o">=&gt;</span> <span class="s1">'text/html'</span><span class="p">}</span> <span class="k">do</span>
     <span class="s1">'html'</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
 
-<p>You can use <a href="http://guides.rubyonrails.org/routing.html#request-based-constraints">the same constraints</a> you use in Rails.</p>
+<p>What are constraints? Constraints are assertions on the request object.
+That means that the route from above will match only if
+<code>request.content_type</code> is 'text/html'.</p>
+
+<p>To group multiple routes for a single constraint, use the constraints block:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">constraints</span> <span class="ss">:content_type</span> <span class="o">=&gt;</span> <span class="s1">'text/html'</span> <span class="k">do</span>
+    <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+      <span class="s1">'html'</span>
+    <span class="k">end</span>
+
+    <span class="n">get</span> <span class="s1">'/foo'</span> <span class="k">do</span>
+      <span class="s1">'foo html'</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
 
 <p>Besides the constraints, you can specify defaults:</p>
 
