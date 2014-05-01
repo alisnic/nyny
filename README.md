@@ -448,10 +448,6 @@ Optionally, an extension can add a `registered` method, which will be invoked
 once the extension is registered. That method will be called with the app class
 as a parameter.
 
-Since NYNY has the same extension interface as Sinatra, some Sinatra extensions
-might work with NYNY, although that is not guaranteed. However, an extension
-written for NYNY will always work with Sinatra. (Forward compatible)
-
 # F. A. Q.
 TBD.
 
