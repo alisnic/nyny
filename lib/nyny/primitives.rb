@@ -17,7 +17,6 @@ module NYNY
             subclass.send "#{attr}=", self.send(attr).clone
             subclass.instance_variable_set "@_inheritables", @_inheritables.clone
           end
-          super
         end
       end
     end
