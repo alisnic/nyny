@@ -8,19 +8,28 @@ module NYNY
     include NYNY::Inheritable
     HTTP_VERBS = [:delete, :get, :head, :options, :patch, :post, :put, :trace]
 
-    inheritable :builder,           Rack::Builder.new
-    inheritable :scope_class,       Class.new(RequestScope)
-    inheritable :route_defs,        []
-    inheritable :before_hooks,      []
-    inheritable :after_hooks,       []
-    inheritable :before_init_hooks, []
-    inheritable :after_init_hooks,  []
+    inheritable :scope_class,         Class.new(RequestScope)
+    inheritable :route_defs,          []
+    inheritable :before_hooks,        []
+    inheritable :after_hooks,         []
+    inheritable :before_init_hooks,   []
+    inheritable :after_init_hooks,    []
     inheritable :default_constraints, {}
+    inheritable :middlewares,         []
+    inheritable :map,                 {}
 
     def initialize app=nil
+      builder = Rack::Builder.new
+
       self.class.before_init_hooks.each {|h| h.call(self)}
 
-      self.class.builder.run Router.new({
+      self.class.middlewares.each do |m, args, blk|
+        builder.use m, *args, &blk
+      end
+
+      self.class.map.each {|url, klass| builder.map(url) { use klass } }
+
+      builder.run Router.new({
         :scope_class    => self.class.scope_class,
         :route_defs     => self.class.route_defs,
         :before_hooks   => self.class.before_hooks,
@@ -28,7 +37,7 @@ module NYNY
         :fallback       => app
       })
 
-      @app = self.class.builder.to_app
+      @app = builder.to_app
       self.class.after_init_hooks.each {|h| h.call(self, @app)}
     end
 
@@ -43,6 +52,15 @@ module NYNY
           options[:constraints] = default_constraints.merge(options[:constraints] || {})
           options[:constraints].merge!(:request_method => method.to_s.upcase)
           define_route path, options, &block
+        end
+      end
+
+      def namespace url, &block
+        scope  = self.scope_class
+
+        map[url] = Class.new self.superclass do
+          self.scope_class = scope
+          class_eval(&block)
         end
       end
 
@@ -74,7 +92,7 @@ module NYNY
       end
 
       def use middleware, *args, &block
-        builder.use middleware, *args, &block
+        middlewares << [middleware, args, block]
       end
 
       def register *extensions
