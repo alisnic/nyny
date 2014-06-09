@@ -34,7 +34,7 @@ describe NYNY::App do
 
     it 'allows to use middlewares inside namespace' do
       kls = Class.new(NYNY::Base) do
-      get '/' do
+        get '/' do
           'foo'
         end
       end
