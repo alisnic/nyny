@@ -1,4 +1,5 @@
 require 'active_support/hash_with_indifferent_access'
+require 'active_support/core_ext/object/deep_dup'
 require 'pathname'
 
 module NYNY
@@ -14,10 +15,8 @@ module NYNY
 
         def self.inherited subclass
           @_inheritables.each do |attr|
-            subclass.send "#{attr}=", self.send(attr).clone
-            subclass.instance_variable_set "@_inheritables", @_inheritables.clone
+            subclass.inheritable attr, self.send(attr).deep_dup
           end
-          super
         end
       end
     end

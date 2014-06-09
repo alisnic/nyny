@@ -16,17 +16,6 @@ module NYNY
         end
       end
 
-      def namespace url, &block
-        scope  = self.scope_class
-
-        klass = Class.new self.superclass do
-          self.scope_class = scope
-          class_eval(&block)
-        end
-
-        builder.map (url) { use klass }
-      end
-
       def run! port=9292
         use Rack::CommonLogger
         use BetterErrors::Middleware unless NYNY.env.production?

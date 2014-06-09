@@ -49,6 +49,7 @@ class NullMiddleware
   end
 
   def call env
+    env['NULL'] = true
     @app.call env
   end
 end
