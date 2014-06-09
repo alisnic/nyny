@@ -26,7 +26,6 @@ module NYNY
       self.class.middlewares.each do |m, args, blk|
         builder.use m, *args, &blk
       end
-
       self.class.map.each {|url, klass| builder.map(url) { use klass } }
 
       builder.run Router.new({

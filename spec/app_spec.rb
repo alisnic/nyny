@@ -170,11 +170,16 @@ describe App do
     let (:app_class) { Class.new(App) }
 
     describe 'middlewares' do
-
       it 'delegates to builder' do
-        kls = mock_app_class
-        kls.builder.should_receive(:use).with(NullMiddleware)
-        kls.use(NullMiddleware)
+        app = mock_app do
+          use NullMiddleware
+
+          get '/' do
+            request.env['NULL'].should == true
+          end
+        end
+
+        app.get('/')
       end
     end
 
