@@ -1,4 +1,5 @@
 require 'securerandom'
+require 'rspec/its'
 ENV['RACK_ENV'] = 'test'
 
 if ENV['TRAVIS']
