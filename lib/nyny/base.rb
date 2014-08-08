@@ -19,15 +19,9 @@ module NYNY
     inheritable :map,                 {}
 
     def initialize app=nil
-      builder = Rack::Builder.new
-
       self.class.before_init_hooks.each {|h| h.call(self)}
 
-      self.class.middlewares.each do |m, args, blk|
-        builder.use m, *args, &blk
-      end
-      self.class.map.each {|url, klass| builder.map(url) { use klass } }
-
+      builder = initialize_builder
       builder.run Router.new({
         :scope_class    => self.class.scope_class,
         :route_defs     => self.class.route_defs,
@@ -38,6 +32,13 @@ module NYNY
 
       @app = builder.to_app
       self.class.after_init_hooks.each {|h| h.call(self, @app)}
+    end
+
+    def initialize_builder
+      builder = Rack::Builder.new
+      self.class.middlewares.each { |m, args, blk| builder.use m, *args, &blk }
+      self.class.map.each {|url, klass| builder.map(url) { use klass } }
+      builder
     end
 
     def call env
@@ -54,13 +55,15 @@ module NYNY
         end
       end
 
-      def namespace url, &block
+      def namespace url, app=nil, &block
         scope  = self.scope_class
 
-        map[url] = Class.new self.superclass do
+        app ||= Class.new self.superclass do
           self.scope_class = scope
           class_eval(&block)
         end
+
+        map[url] = app
       end
 
       def define_route path, options, &block

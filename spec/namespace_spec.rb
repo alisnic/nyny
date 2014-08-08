@@ -32,6 +32,25 @@ describe NYNY::App do
       end
     end
 
+    it 'accepts a app as a parameter' do
+      mounted = mock_app_class do
+        get '/' do
+          'mounted!'
+        end
+      end
+
+      app = mock_app do
+        namespace '/mounted', mounted
+
+        get '/' do
+          'root'
+        end
+      end
+
+      app.get('/').body.should == 'root'
+      app.get('/mounted').body.should == 'mounted!'
+    end
+
     it 'allows to use middlewares inside namespace' do
       kls = Class.new(NYNY::Base) do
         get '/' do
