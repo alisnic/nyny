@@ -262,10 +262,18 @@ You can define namespaces for routes in NYNY. Each namespace is an isolated
 app, which means that you can use the same api that you use in your top app there:
 
 ```ruby
+class Ping < NYNY::App
+  get '/' do #this will be accessbile at '/ping'
+    'pong'
+  end
+end
+
 class App < NYNY::App
   get '/' do
     'Hello'
   end
+
+  namespace '/ping', Ping
 
   namespace '/nested' do
     use SomeMiddleware
