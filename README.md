@@ -273,8 +273,10 @@ class App < NYNY::App
     'Hello'
   end
 
+  # You can pass a Rack app to the namespace
   namespace '/ping', Ping
 
+  # Or you can pass a block, which will create the app for you
   namespace '/nested' do
     use SomeMiddleware
     helpers SomeHelpers
