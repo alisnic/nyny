@@ -1,3 +1,10 @@
+3.4.3
+- Do not use Rack::Chunked by default, leave the option to the user
+- Expose Rack's map method for low level url mapping
+
+3.4.2
+- Add support for passing an app directly to the namespace
+
 3.4.1
 - Fix a bug when a NYNY app is used inside a namespace
 
