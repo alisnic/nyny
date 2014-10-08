@@ -6,6 +6,15 @@
 [![Code Climate](https://codeclimate.com/repos/521b7ee513d637348712864a/badges/60e3637788bbac94f1cb/gpa.png)](https://codeclimate.com/repos/521b7ee513d637348712864a/feed)
 [![Gem Version](https://badge.fury.io/rb/nyny.png)](http://badge.fury.io/rb/nyny)
 
+Install the gem:
+
+```bash
+gem install nyny
+```
+
+Create the `myapp.rb` file:
+
+
 ```ruby
 # myapp.rb
 
@@ -17,12 +26,6 @@ class App < NYNY::App
 end
 
 App.run!
-```
-
-Install the gem:
-
-```bash
-gem install nyny
 ```
 
 Run the file:
