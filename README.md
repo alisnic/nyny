@@ -280,6 +280,10 @@ class AppWithAsses < NYNY::App
   end
 ```
 
+Please note that none of the NYNY's routing helpers are being exposed in a
+map block, the block gets executed in the context of a `Rack::Builder`
+(stuff you're used to see in a config.ru file)
+
 ## Namespaces
 You can define namespaces for routes in NYNY. Each namespace is an isolated
 app, which means that you can use the same api that you use in your top app there:
