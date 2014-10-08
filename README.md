@@ -46,6 +46,7 @@ Open the browser at [http://localhost:9292](http://localhost:9292)
     - [Running](#running)
     - [Defining routes](#defining-routes)
     - [Request scope](#request-scope)
+    - [Maps](#maps)
     - [Namespaces](#namespaces)
     - [Templates](#templates)
     - [Filters](#filters)
@@ -259,6 +260,29 @@ This means that several methods/objects available inside that block:
 - `halt` - allows you to instantly return a response, interrupting current
   handler execution (see [halt][halt-definition])
 
+## Maps
+NYNY uses a Rack::Builder underneath to generate a proper Rack app when it is
+being run. Because of that, NYNY exposes the Builder's `map` method to allow
+fine grained low-level url mapping. The most common use case for that is to
+integrate sprockets into a NYNY app:
+
+```ruby
+class AppWithAsses < NYNY::App
+  map '/assets' do
+    environment = Sprockets::Environment.new
+    environment.append_path 'app/assets/javascripts'
+    environment.append_path 'app/assets/stylesheets'
+    run environment
+  end
+
+  get '/' do
+    'hello'
+  end
+```
+
+Please note that none of the NYNY's routing helpers are being exposed in a
+map block, the block gets executed in the context of a `Rack::Builder`
+(stuff you're used to see in a config.ru file)
 
 ## Namespaces
 You can define namespaces for routes in NYNY. Each namespace is an isolated

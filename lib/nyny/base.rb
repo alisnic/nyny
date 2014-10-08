@@ -16,7 +16,7 @@ module NYNY
     inheritable :after_init_hooks,    []
     inheritable :default_constraints, {}
     inheritable :middlewares,         []
-    inheritable :map,                 {}
+    inheritable :url_map,             {}
 
     def initialize app=nil
       self.class.before_init_hooks.each {|h| h.call(self)}
@@ -37,7 +37,7 @@ module NYNY
     def initialize_builder
       builder = Rack::Builder.new
       self.class.middlewares.each { |m, args, blk| builder.use m, *args, &blk }
-      self.class.map.each {|url, klass| builder.map(url) { use klass } }
+      self.class.url_map.each {|url, block| builder.map(url, &block) }
       builder
     end
 
@@ -55,6 +55,10 @@ module NYNY
         end
       end
 
+      def map url, &block
+        url_map[url] = block
+      end
+
       def namespace url, app=nil, &block
         scope  = self.scope_class
 
@@ -63,7 +67,7 @@ module NYNY
           class_eval(&block)
         end
 
-        map[url] = app
+        map (url) { use app }
       end
 
       def define_route path, options, &block

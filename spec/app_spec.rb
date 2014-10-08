@@ -14,6 +14,21 @@ describe App do
     res[2].should respond_to(:each)
   end
 
+  it 'can use the builder map method' do
+    app = mock_app do
+      map '/map' do
+        run lambda {|env| [200, {}, ["map"]]}
+      end
+
+      get '/' do
+        'root'
+      end
+    end
+
+    app.get('/').body.should == 'root'
+    app.get('/map').body.should == 'map'
+  end
+
   it 'should return 404 for non-matched routes' do
     response = app.get random_url
     response.status.should == 404
