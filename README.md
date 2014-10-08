@@ -267,6 +267,9 @@ fine grained low-level url mapping. The most common use case for that is to
 integrate sprockets into a NYNY app:
 
 ```ruby
+require 'sprockets'
+require 'nyny'
+
 class AppWithAssets < NYNY::App
   map '/assets' do
     environment = Sprockets::Environment.new
