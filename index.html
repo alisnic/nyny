@@ -335,7 +335,7 @@ being run. Because of that, NYNY exposes the Builder's <code>map</code> method t
 fine grained low-level url mapping. The most common use case for that is to
 integrate sprockets into a NYNY app:</p>
 
-<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">AppWithAsses</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">AppWithAssets</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
   <span class="n">map</span> <span class="s1">'/assets'</span> <span class="k">do</span>
     <span class="n">environment</span> <span class="o">=</span> <span class="no">Sprockets</span><span class="o">::</span><span class="no">Environment</span><span class="o">.</span><span class="n">new</span>
     <span class="n">environment</span><span class="o">.</span><span class="n">append_path</span> <span class="s1">'app/assets/javascripts'</span>
@@ -346,6 +346,7 @@ integrate sprockets into a NYNY app:</p>
   <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
     <span class="s1">'hello'</span>
   <span class="k">end</span>
+<span class="k">end</span>
 </pre></div>
 
 <p>Please note that none of the NYNY's routing helpers are being exposed in a
