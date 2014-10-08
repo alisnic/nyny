@@ -281,6 +281,7 @@ class AppWithAssets < NYNY::App
   get '/' do
     'hello'
   end
+end
 ```
 
 Please note that none of the NYNY's routing helpers are being exposed in a
