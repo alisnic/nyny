@@ -56,6 +56,13 @@
   <a href="http://badge.fury.io/rb/nyny"><img src="https://badge.fury.io/rb/nyny.png" alt="Gem Version" style="max-width:100%;"></a>
 </p>
 
+<p>Install the gem:</p>
+
+<div class="highlight highlight-bash"><pre>gem install nyny
+</pre></div>
+
+<p>Create the <code>myapp.rb</code> file:</p>
+
 <div class="highlight highlight-ruby"><pre><span class="c1"># myapp.rb</span>
 
 <span class="nb">require</span> <span class="s1">'nyny'</span>
@@ -68,11 +75,6 @@
 <span class="no">App</span><span class="o">.</span><span class="n">run!</span>
 </pre></div>
 
-<p>Install the gem:</p>
-
-<div class="highlight highlight-bash"><pre>gem install nyny
-</pre></div>
-
 <p>Run the file:</p>
 
 <div class="highlight highlight-bash"><pre>ruby myapp.rb
@@ -80,20 +82,21 @@
 
 <p>Open the browser at <a href="http://localhost:9292">http://localhost:9292</a></p>
 
-<ul>
+<ul class="task-list">
 <li><a href="#new-york-new-york">TOP</a></li>
 <li><a href="#motivation">Motivation</a></li>
 <li><a href="#philosophy">Philosophy</a></li>
-<li><a href="#why-use-nyny-instead-of-sinatra">Why use NYNY instead of Sinatra</a></li>
+<li><a href="#why-use-nyny">Why use NYNY</a></li>
 <li>
 <a href="#usage">Usage</a>
 
-<ul>
+<ul class="task-list">
 <li><a href="#environment">Environment</a></li>
 <li><a href="#configuration">Configuration</a></li>
 <li><a href="#running">Running</a></li>
 <li><a href="#defining-routes">Defining routes</a></li>
 <li><a href="#request-scope">Request scope</a></li>
+<li><a href="#maps">Maps</a></li>
 <li><a href="#namespaces">Namespaces</a></li>
 <li><a href="#templates">Templates</a></li>
 <li><a href="#filters">Filters</a></li>
@@ -105,24 +108,24 @@
 <li><a href="#f-a-q">FAQ</a></li>
 <li><a href="#contributing">Contributing</a></li>
 </ul><h1>
-<a name="philosophy" class="anchor" href="#philosophy"><span class="octicon octicon-link"></span></a>Philosophy</h1>
+<a name="user-content-philosophy" class="anchor" href="#philosophy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Philosophy</h1>
 
 <p>NYNY is unassuming, it has all the core stuff to get running, but nothing else.
 Your app is the framework. However, it's trivial to extend NYNY via its
 <a href="#extensions">extension interface</a>.</p>
 
 <h1>
-<a name="why-use-nyny-instead-of-any-other-small-web-framework" class="anchor" href="#why-use-nyny-instead-of-any-other-small-web-framework"><span class="octicon octicon-link"></span></a>Why use NYNY instead of any other small web framework</h1>
+<a name="user-content-why-use-nyny" class="anchor" href="#why-use-nyny" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why use NYNY</h1>
 
-<ul>
-<li>It's <strong>very</strong> small (&lt;300 LOC), which is just a little overhead on top of Rack.</li>
+<ul class="task-list">
+<li>It's <strong>very</strong> small (~300 LOC), which is just a little overhead on top of Rack.</li>
 <li>You want to dig into the source code and change to your needs (NYNY's source code is more welcoming)</li>
 <li>Each NYNY app is a Rack middleware, so it can be used inside of Sinatra, Rails, or any other Rack-based app.</li>
 <li>
 <strong>It uses Journey for routing (Rails' router)</strong>, which makes its routing logic
 a lot more powerful and reliable that in most micro web frameworks.</li>
 </ul><h1>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+<a name="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
 
 <p>A NYNY app must <em>always</em> be in a class which inherits from <code>NYNY::App</code>:</p>
 
@@ -134,7 +137,7 @@ a lot more powerful and reliable that in most micro web frameworks.</li>
 </pre></div>
 
 <h2>
-<a name="environment" class="anchor" href="#environment"><span class="octicon octicon-link"></span></a>Environment</h2>
+<a name="user-content-environment" class="anchor" href="#environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Environment</h2>
 
 <p>To get the directory in which your app is running use <code>NYNY.root</code></p>
 
@@ -162,11 +165,11 @@ production
 </pre></div>
 
 <h2>
-<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+<a name="user-content-configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2>
 
 <p>You can configure your app by attaching arbitrary properties to config object:</p>
 
-<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
   <span class="n">config</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="s1">'bar'</span>
 <span class="k">end</span>
 
@@ -207,11 +210,11 @@ production
 </pre></div>
 
 <h2>
-<a name="running" class="anchor" href="#running"><span class="octicon octicon-link"></span></a>Running</h2>
+<a name="user-content-running" class="anchor" href="#running" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running</h2>
 
 <p>There are two ways to run a NYNY app <strong>directly</strong> <a href="#middleware">[?]</a>:</p>
 
-<ul>
+<ul class="task-list">
 <li>by requiring it in a <code>config.ru</code> file, and then passing it as argument to the
 Rack's <code>run</code> function:</li>
 </ul><div class="highlight highlight-ruby"><pre><span class="c1"># config.ru</span>
@@ -220,7 +223,7 @@ Rack's <code>run</code> function:</li>
 <span class="n">run</span> <span class="no">App</span><span class="o">.</span><span class="n">new</span>
 </pre></div>
 
-<ul>
+<ul class="task-list">
 <li>by using the <code>run!</code> method directly on the app class:</li>
 </ul><div class="highlight highlight-ruby"><pre><span class="c1"># app.rb</span>
 
@@ -236,7 +239,8 @@ This will show all requests in the log, and will provide useful details
 in the case a error occurs during a request.</p>
 
 <h2>
-<a name="defining-routes" class="anchor" href="#defining-routes"><span class="octicon octicon-link"></span></a>Defining routes</h2>
+<a name="user-content-defining-routes" class="anchor" href="#defining-routes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Defining routes</h2>
+
 <p>NYNY uses <a href="https://github.com/rails/journey">Journey</a> for routing, that means that NYNY has all the
 awesomeness the Rails' router has. NYNY supports the following verbs for defining a route: delete, get, head,
 options, patch, post, put and trace.</p>
@@ -292,20 +296,18 @@ That means that the route from above will match only if
 a request scope. See below what methods are available there.</p>
 
 <h2>
-<a name="request-scope" class="anchor" href="#request-scope"><span class="octicon octicon-link"></span></a>Request scope</h2>
+<a name="user-content-request-scope" class="anchor" href="#request-scope" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request scope</h2>
 
 <p>As was said above, when you pass a block to a route definition,
 that block is evaluated in the context of a <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb">RequestScope</a>.
 This means that several methods/objects available inside that block:</p>
 
-<ul>
+<ul class="task-list">
 <li>
 <code>request</code> - A <code>Rack::Request</code> object which encapsulates the request
 to that route. (see <a href="http://rack.rubyforge.org/doc/classes/Rack/Request.html">Rack::Request documentation</a> for more info)</li>
 <li>
-<code>response</code> - A <code>Rack::Response</code> object which encapsulates the response.
-Additionally, NYNY's response exposes 2 more methods in addition to Rack's ones.
-(see <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/primitives.rb">primitives.rb</a>)</li>
+<code>response</code> - A <code>Rack::Response</code> object which encapsulates the response.</li>
 <li>
 <code>params</code> - a hash which contains both POST body params and GET querystring params.</li>
 <li>
@@ -326,16 +328,51 @@ Additionally, NYNY's response exposes 2 more methods in addition to Rack's ones.
 <code>halt</code> - allows you to instantly return a response, interrupting current
 handler execution (see <a href="https://github.com/alisnic/nyny/blob/master/lib/nyny/request_scope.rb#L36">halt</a>)</li>
 </ul><h2>
-<a name="namespaces" class="anchor" href="#namespaces"><span class="octicon octicon-link"></span></a>Namespaces</h2>
+<a name="user-content-maps" class="anchor" href="#maps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maps</h2>
+
+<p>NYNY uses a Rack::Builder underneath to generate a proper Rack app when it is
+being run. Because of that, NYNY exposes the Builder's <code>map</code> method to allow
+fine grained low-level url mapping. The most common use case for that is to
+integrate sprockets into a NYNY app:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">AppWithAsses</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">map</span> <span class="s1">'/assets'</span> <span class="k">do</span>
+    <span class="n">environment</span> <span class="o">=</span> <span class="no">Sprockets</span><span class="o">::</span><span class="no">Environment</span><span class="o">.</span><span class="n">new</span>
+    <span class="n">environment</span><span class="o">.</span><span class="n">append_path</span> <span class="s1">'app/assets/javascripts'</span>
+    <span class="n">environment</span><span class="o">.</span><span class="n">append_path</span> <span class="s1">'app/assets/stylesheets'</span>
+    <span class="n">run</span> <span class="n">environment</span>
+  <span class="k">end</span>
+
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="s1">'hello'</span>
+  <span class="k">end</span>
+</pre></div>
+
+<p>Please note that none of the NYNY's routing helpers are being exposed in a
+map block, the block gets executed in the context of a <code>Rack::Builder</code>
+(stuff you're used to see in a config.ru file)</p>
+
+<h2>
+<a name="user-content-namespaces" class="anchor" href="#namespaces" aria-hidden="true"><span class="octicon octicon-link"></span></a>Namespaces</h2>
 
 <p>You can define namespaces for routes in NYNY. Each namespace is an isolated
 app, which means that you can use the same api that you use in your top app there:</p>
 
-<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">Ping</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
+  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span> <span class="c1">#this will be accessbile at '/ping'</span>
+    <span class="s1">'pong'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">NYNY</span><span class="o">::</span><span class="no">App</span>
   <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
     <span class="s1">'Hello'</span>
   <span class="k">end</span>
 
+  <span class="c1"># You can pass a Rack app to the namespace</span>
+  <span class="n">namespace</span> <span class="s1">'/ping'</span><span class="p">,</span> <span class="no">Ping</span>
+
+  <span class="c1"># Or you can pass a block, which will create the app for you</span>
   <span class="n">namespace</span> <span class="s1">'/nested'</span> <span class="k">do</span>
     <span class="n">use</span> <span class="no">SomeMiddleware</span>
     <span class="n">helpers</span> <span class="no">SomeHelpers</span>
@@ -348,7 +385,7 @@ app, which means that you can use the same api that you use in your top app ther
 </pre></div>
 
 <h2>
-<a name="templates" class="anchor" href="#templates"><span class="octicon octicon-link"></span></a>Templates</h2>
+<a name="user-content-templates" class="anchor" href="#templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Templates</h2>
 
 <p>NYNY can render templates, all you need is to call the <code>render</code> function:</p>
 
@@ -401,7 +438,7 @@ to create a helper for that:</p>
 <p>NYNY uses <a href="https://github.com/rtomayko/tilt">Tilt</a> for templating, so the list of supported engines is pretty complete.</p>
 
 <h2>
-<a name="filters" class="anchor" href="#filters"><span class="octicon octicon-link"></span></a>Filters</h2>
+<a name="user-content-filters" class="anchor" href="#filters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filters</h2>
 
 <p>Unlike Sinatra, NYNY supports only "generic" before and after filters.
 This means that you can't declare a filter to execute depending on a URL pattern.
@@ -425,7 +462,7 @@ if the request.path matches a pattern.</p>
 </pre></div>
 
 <h2>
-<a name="middleware" class="anchor" href="#middleware"><span class="octicon octicon-link"></span></a>Middleware</h2>
+<a name="user-content-middleware" class="anchor" href="#middleware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Middleware</h2>
 
 <p>A NYNY app is a Rack middleware, which means that it can be used inside
 Sinatra, Rails, or any other Rack-based app:</p>
@@ -448,7 +485,7 @@ Sinatra, Rails, or any other Rack-based app:</p>
 <p>I recommend looking at <a href="https://github.com/rack/rack/wiki/List-of-Middleware">the list of Rack middlewares</a></p>
 
 <h2>
-<a name="helpers" class="anchor" href="#helpers"><span class="octicon octicon-link"></span></a>Helpers</h2>
+<a name="user-content-helpers" class="anchor" href="#helpers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Helpers</h2>
 
 <p>NYNY supports helpers as Sinatra does:</p>
 
@@ -467,7 +504,7 @@ and that all the methods in that module will be available inside a route
 definition block.</p>
 
 <h2>
-<a name="extensions" class="anchor" href="#extensions"><span class="octicon octicon-link"></span></a>Extensions</h2>
+<a name="user-content-extensions" class="anchor" href="#extensions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extensions</h2>
 
 <p>Since version 2.0.0, NYNY added support for extensions.
 This makes possible to include helpers, middlewares and custom app class
@@ -519,20 +556,21 @@ once the extension is registered. That method will be called with the app class
 as a parameter.</p>
 
 <h1>
-<a name="f-a-q" class="anchor" href="#f-a-q"><span class="octicon octicon-link"></span></a>F. A. Q.</h1>
+<a name="user-content-f-a-q" class="anchor" href="#f-a-q" aria-hidden="true"><span class="octicon octicon-link"></span></a>F. A. Q.</h1>
 
 <p>TBD.</p>
 
 <h1>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h1>
+<a name="user-content-contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
 
-<ol>
+<ol class="task-list">
 <li>Fork it</li>
 <li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
 <li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
 <li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
 <li>Create new Pull Request</li>
 </ol>
+
 
         </section>
 
