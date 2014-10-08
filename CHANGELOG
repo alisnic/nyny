@@ -1,6 +1,7 @@
 3.4.3
 - Do not use Rack::Chunked by default, leave the option to the user
 - Expose Rack's map method for low level url mapping
+- Bump ActionPack dependency
 
 3.4.2
 - Add support for passing an app directly to the namespace
