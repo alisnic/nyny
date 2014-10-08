@@ -7,7 +7,6 @@ module NYNY
   class App < Base
     inheritable :config, OpenStruct.new
     register NYNY::Templates
-    use Rack::Chunked
 
     class << self
       def configure *envs, &block
