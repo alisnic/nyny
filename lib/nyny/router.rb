@@ -30,7 +30,7 @@ module NYNY
       routes = ActionDispatch::Journey::Routes.new
       @journey = ActionDispatch::Journey::Router.new(routes, {
         :parameters_key => 'nyny.params',
-        :request_class => NYNY::Request
+        :request_class => scope_class::Request
       })
 
       route_defs.each do |path, options, handler|
