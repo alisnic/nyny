@@ -410,7 +410,7 @@ NYNY also supports middleware itself, and that means you can use Rack middleware
 ```ruby
 class App < NYNY::App
   # this will serve all the files in the "public" folder
-  use Rack::Static :url => ['public']
+  use Rack::Static, :url => ['public']
   use SinatraApp
 end
 ```
