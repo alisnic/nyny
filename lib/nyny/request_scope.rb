@@ -5,6 +5,8 @@ module NYNY
   class RequestScope
     extend Forwardable
 
+    Request = NYNY::Request
+
     attr_reader :request, :response
     def_delegators :request, :session, :params
     def_delegators :response, :headers
